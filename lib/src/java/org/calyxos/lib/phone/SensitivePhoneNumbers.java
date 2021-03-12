@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.lib.phone;
+package org.calyxos.lib.phone;
 
 import android.content.Context;
 import android.os.Environment;
