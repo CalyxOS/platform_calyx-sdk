@@ -15,9 +15,9 @@
 //
 
 android_test {
-    name: "LineageSettingsProviderTests",
+    name: "CalyxSettingsProviderTests",
 
-    instrumentation_for: "LineageSettingsProvider",
+    instrumentation_for: "CalyxSettingsProvider",
 
     srcs: ["**/*.java"],
 
