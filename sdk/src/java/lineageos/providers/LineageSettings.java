@@ -3456,6 +3456,27 @@ public final class LineageSettings {
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
 
         /**
+         * The amount of time in milliseconds before the device automatically reboots
+         * @hide
+         */
+        public static final String DEVICE_REBOOT_TIMEOUT = "device_reboot_timeout";
+
+        /** @hide */
+        public static final Validator DEVICE_REBOOT_TIMEOUT_VALIDATOR =
+                new DiscreteValueValidator(new String[] {
+                        "0",
+                        "3600000",
+                        "7200000",
+                        "14400000",
+                        "28800000",
+                        "43200000",
+                        "86400000",
+                        "129600000",
+                        "172800000",
+                        "259200000"
+                });
+
+        /**
          * Package designated as global VPN provider.
          * @hide
          */
@@ -3503,8 +3524,9 @@ public final class LineageSettings {
         public static final Map<String, Validator> VALIDATORS =
                 new ArrayMap<String, Validator>();
         static {
+            VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
-                    value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
+                    value -> value.isEmpty() || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(TRUST_RESTRICT_USB, TRUST_RESTRICT_USB_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
