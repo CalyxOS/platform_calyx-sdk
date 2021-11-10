@@ -3547,6 +3547,29 @@ public final class LineageSettings {
                 });
 
         /**
+         * The amount of time in milliseconds before the device automatically reboots
+         * @hide
+         */
+        public static final String DEVICE_REBOOT_TIMEOUT = "device_reboot_timeout";
+
+        /** @hide */
+        public static final Validator DEVICE_REBOOT_TIMEOUT_VALIDATOR =
+                new DiscreteValueValidator(new String[] {
+                        "0",
+                        "15000",
+                        "30000",
+                        "60000",
+                        "120000",
+                        "300000",
+                        "600000",
+                        "1800000",
+                        "3600000",
+                        "7200000",
+                        "14400000",
+                        "28800000"
+                });
+
+        /**
          * Package designated as global VPN provider.
          * @hide
          */
@@ -3619,6 +3642,7 @@ public final class LineageSettings {
         static {
             VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(CLEARTEXT_NETWORK_POLICY, CLEARTEXT_NETWORK_POLICY_VALIDATOR);
+            VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
                     value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(WIFI_OFF_TIMEOUT, WIFI_OFF_TIMEOUT_VALIDATOR);
