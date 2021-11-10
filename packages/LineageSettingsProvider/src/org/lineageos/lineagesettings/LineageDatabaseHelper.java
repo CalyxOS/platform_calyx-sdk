@@ -46,7 +46,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -189,6 +189,34 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 db.endTransaction();
             }
             upgradeVersion = 3;
+        }
+
+        if (upgradeVersion < 4) {
+            // Move qs_tiles_toggleable_on_lock_screen to secure from AOSP global, and
+            // flip it's value
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
+                    LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 0);
+
+                // Flip the value
+                settingsValue = settingsValue == 1 ? 0 : 1;
+
+                stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
+                        + " VALUES(?,?);");
+                stmt.bindString(1, LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+                stmt.bindString(2, settingsValue.toString());
+                stmt.execute();
+
+                db.setTransactionSuccessful();
+            } catch (SQLiteDoneException ex) {
+                // LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN is not set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            upgradeVersion = 4;
         }
         // *** Remember to update DATABASE_VERSION above!
     }
