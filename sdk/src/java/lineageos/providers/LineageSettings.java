@@ -17,10 +17,9 @@
 
 package lineageos.providers;
 
-import static android.provider.settings.validators.SettingsValidators.PACKAGE_NAME_VALIDATOR;
-
 import com.android.internal.util.ArrayUtils;
 
+import android.annotation.NonNull;
 import android.content.ContentResolver;
 import android.content.IContentProvider;
 import android.database.Cursor;
@@ -488,6 +487,38 @@ public final class LineageSettings {
             return false;
         }
     }
+
+    public static final Validator PACKAGE_NAME_VALIDATOR = new Validator() {
+        @Override
+        public boolean validate(@NonNull String value) {
+            return value != null && isStringPackageName(value);
+        }
+
+        private boolean isStringPackageName(@NonNull String value) {
+            // The name may contain uppercase or lowercase letters ('A' through 'Z'), numbers,
+            // and underscores ('_'). However, individual package name parts may only
+            // start with letters.
+            // (https://developer.android.com/guide/topics/manifest/manifest-element.html#package)
+            String[] subparts = value.split("\\.");
+            boolean isValidPackageName = true;
+            for (String subpart : subparts) {
+                isValidPackageName &= isSubpartValidForPackageName(subpart);
+                if (!isValidPackageName) break;
+            }
+            return isValidPackageName;
+        }
+
+        private boolean isSubpartValidForPackageName(String subpart) {
+            if (subpart.length() == 0) return false;
+            boolean isValidSubpart = Character.isLetter(subpart.charAt(0));
+            for (int i = 1; i < subpart.length(); i++) {
+                isValidSubpart &= (Character.isLetterOrDigit(subpart.charAt(i))
+                                || (subpart.charAt(i) == '_'));
+                if (!isValidSubpart) break;
+            }
+            return isValidSubpart;
+        }
+    };
     // endregion Validators
 
     /**
@@ -512,6 +543,7 @@ public final class LineageSettings {
         protected static final ArraySet<String> MOVED_TO_SECURE;
         static {
             MOVED_TO_SECURE = new ArraySet<>(1);
+            MOVED_TO_SECURE.add(System.BERRY_BLACK_THEME);
         }
 
         // region Methods
@@ -1411,6 +1443,7 @@ public final class LineageSettings {
 
         /**
          * Whether to use black theme for dark mode
+         * @deprecated
          */
         public static final String BERRY_BLACK_THEME = "berry_black_theme";
 
@@ -2047,86 +2080,7 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
-                LineageSettings.System.NAV_BUTTONS,
-                LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
-                LineageSettings.System.BACK_WAKE_SCREEN,
-                LineageSettings.System.MENU_WAKE_SCREEN,
-                LineageSettings.System.VOLUME_WAKE_SCREEN,
-                LineageSettings.System.KEY_MENU_ACTION,
-                LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_ASSIST_ACTION,
-                LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_APP_SWITCH_ACTION,
-                LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
-                LineageSettings.System.HOME_WAKE_SCREEN,
-                LineageSettings.System.ASSIST_WAKE_SCREEN,
-                LineageSettings.System.APP_SWITCH_WAKE_SCREEN,
-                LineageSettings.System.CAMERA_WAKE_SCREEN,
-                LineageSettings.System.CAMERA_SLEEP_ON_RELEASE,
-                LineageSettings.System.CAMERA_LAUNCH,
-                LineageSettings.System.STYLUS_ICON_ENABLED,
-                LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
-                LineageSettings.System.BATTERY_LIGHT_ENABLED,
-                LineageSettings.System.BATTERY_LIGHT_FULL_CHARGE_DISABLED,
-                LineageSettings.System.BATTERY_LIGHT_PULSE,
-                LineageSettings.System.BATTERY_LIGHT_LOW_COLOR,
-                LineageSettings.System.BATTERY_LIGHT_MEDIUM_COLOR,
-                LineageSettings.System.BATTERY_LIGHT_FULL_COLOR,
-                LineageSettings.System.ENABLE_MWI_NOTIFICATION,
-                LineageSettings.System.PROXIMITY_ON_WAKE,
-                LineageSettings.System.DISPLAY_TEMPERATURE_DAY,
-                LineageSettings.System.DISPLAY_TEMPERATURE_NIGHT,
-                LineageSettings.System.DISPLAY_TEMPERATURE_MODE,
-                LineageSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
-                LineageSettings.System.DISPLAY_ANTI_FLICKER,
-                LineageSettings.System.DISPLAY_READING_MODE,
-                LineageSettings.System.DISPLAY_CABC,
-                LineageSettings.System.DISPLAY_COLOR_ENHANCE,
-                LineageSettings.System.DISPLAY_COLOR_ADJUSTMENT,
-                LineageSettings.System.LIVE_DISPLAY_HINTED,
-                LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
-                LineageSettings.System.RECENTS_SHOW_SEARCH_BAR,
-                LineageSettings.System.NAVBAR_LEFT_IN_LANDSCAPE,
-                LineageSettings.System.T9_SEARCH_INPUT_LOCALE,
-                LineageSettings.System.BLUETOOTH_ACCEPT_ALL_FILES,
-                LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
-                LineageSettings.System.SHOW_ALARM_ICON,
-                LineageSettings.System.STATUS_BAR_IME_SWITCHER,
-                LineageSettings.System.QS_SHOW_BRIGHTNESS_SLIDER,
-                LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
-                LineageSettings.System.VOLBTN_MUSIC_CONTROLS,
-                LineageSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
-                LineageSettings.System.STATUS_BAR_NOTIF_COUNT,
-                LineageSettings.System.CALL_RECORDING_FORMAT,
-                LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
-                LineageSettings.System.NOTIFICATION_LIGHT_SCREEN_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
-                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                LineageSettings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
-                LineageSettings.System.SYSTEM_PROFILES_ENABLED,
-                LineageSettings.System.INCREASING_RING,
-                LineageSettings.System.INCREASING_RING_START_VOLUME,
-                LineageSettings.System.INCREASING_RING_RAMP_UP_TIME,
-                LineageSettings.System.STATUS_BAR_CLOCK,
-                LineageSettings.System.STATUS_BAR_AM_PM,
-                LineageSettings.System.STATUS_BAR_BATTERY_STYLE,
-                LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
-                LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
-                LineageSettings.System.HEADSET_CONNECT_PLAYER,
-                LineageSettings.System.ZEN_ALLOW_LIGHTS,
-                LineageSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK,
+                LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS
         };
 
         /**
@@ -2988,6 +2942,15 @@ public final class LineageSettings {
 
         public static final Validator QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR =
                 sBooleanValidator;
+
+        /**
+         * Whether to use black theme for dark mode
+         * @hide
+         */
+        public static final String BERRY_BLACK_THEME = "berry_black_theme";
+
+        /** @hide */
+        public static final Validator BERRY_BLACK_THEME_VALIDATOR = sBooleanValidator;
         // endregion
 
         /**
@@ -3001,23 +2964,13 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
-                LineageSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
-                LineageSettings.Secure.BUTTON_BRIGHTNESS,
-                LineageSettings.Secure.KEYBOARD_BRIGHTNESS,
-                LineageSettings.Secure.POWER_MENU_ACTIONS,
-                LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
-                LineageSettings.Secure.NAVIGATION_RING_TARGETS[0],
-                LineageSettings.Secure.NAVIGATION_RING_TARGETS[1],
-                LineageSettings.Secure.NAVIGATION_RING_TARGETS[2],
-                LineageSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY,
-                LineageSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX,
-                LineageSettings.Secure.ADVANCED_REBOOT,
-                LineageSettings.Secure.LOCKSCREEN_TARGETS,
-                LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
-                LineageSettings.Secure.DEVELOPMENT_SHORTCUT,
-                LineageSettings.Secure.QS_LOCATION_ADVANCED,
-                LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
-                LineageSettings.Secure.LOCK_PASS_TO_SECURITY_VIEW
+                LineageSettings.Secure.BERRY_BLACK_THEME,
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE,
+                LineageSettings.Secure.NETWORK_TRAFFIC_MODE,
+                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS,
+                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS,
+                LineageSettings.Secure.PANIC_IN_POWER_MENU,
+                LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS
         };
 
         /**
@@ -3039,6 +2992,7 @@ public final class LineageSettings {
         public static final Map<String, Validator> VALIDATORS =
                 new ArrayMap<String, Validator>();
         static {
+            VALIDATORS.put(BERRY_BLACK_THEME, BERRY_BLACK_THEME_VALIDATOR);
             VALIDATORS.put(GESTURE_BACK_EXCLUDE_TOP, GESTURE_BACK_EXCLUDE_TOP_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_MODE, NETWORK_TRAFFIC_MODE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
@@ -3074,8 +3028,21 @@ public final class LineageSettings {
                 CALL_METHOD_PUT_GLOBAL,
                 sProviderHolder);
 
-        // region Methods
+        /** @hide */
+        protected static final ArraySet<String> MOVED_TO_SECURE;
+        static {
+            MOVED_TO_SECURE = new ArraySet<>(1);
+            MOVED_TO_SECURE.add(Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+        }
 
+        /** @hide */
+        protected static final ArraySet<String> MOVED_TO_SYSTEM;
+        static {
+            MOVED_TO_SYSTEM = new ArraySet<>(1);
+            MOVED_TO_SYSTEM.add(Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+        }
+
+        // region Methods
 
         /**
          * Put a delimited list as a string
@@ -3150,6 +3117,15 @@ public final class LineageSettings {
         /** @hide */
         public static String getStringForUser(ContentResolver resolver, String name,
                 int userId) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.Secure, value is unchanged.");
+                return LineageSettings.Secure.getStringForUser(resolver, name, userId);
+            } else if (MOVED_TO_SYSTEM.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.System, value is unchanged.");
+                return LineageSettings.Secure.getStringForUser(resolver, name, userId);
+            }
             return sNameValueCache.getStringForUser(resolver, name, userId);
         }
 
@@ -3167,6 +3143,15 @@ public final class LineageSettings {
         /** @hide */
         public static boolean putStringForUser(ContentResolver resolver, String name, String value,
                 int userId) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.Secure, value is unchanged.");
+                return false;
+            } else if (MOVED_TO_SYSTEM.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.System, value is unchanged.");
+                return false;
+            }
             return sNameValueCache.putStringForUser(resolver, name, value, userId);
         }
 
@@ -3515,6 +3500,29 @@ public final class LineageSettings {
                 });
 
         /**
+         * The amount of time in milliseconds before the device automatically reboots
+         * @hide
+         */
+        public static final String DEVICE_REBOOT_TIMEOUT = "device_reboot_timeout";
+
+        /** @hide */
+        public static final Validator DEVICE_REBOOT_TIMEOUT_VALIDATOR =
+                new DiscreteValueValidator(new String[] {
+                        "0",
+                        "15000",
+                        "30000",
+                        "60000",
+                        "120000",
+                        "300000",
+                        "600000",
+                        "1800000",
+                        "3600000",
+                        "7200000",
+                        "14400000",
+                        "28800000"
+                });
+
+        /**
          * Package designated as global VPN provider.
          * @hide
          */
@@ -3538,6 +3546,29 @@ public final class LineageSettings {
         public static final Validator CLEARTEXT_NETWORK_POLICY_VALIDATOR =
                 new InclusiveIntegerRangeValidator(-1, 2);
 
+        /**
+         * Whether to scramble a pin unlock layout
+         * @deprecated
+         * @hide
+         */
+        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT =
+                "lockscreen_scramble_pin_layout";
+
+        /** @hide */
+        public static final Validator LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR =
+                sBooleanValidator;
+
+        /**
+         * Whether user is allowed to interact with quick settings on lockscreen.
+         * @deprecated
+         * @hide
+         */
+        public static final String QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN =
+                "qs_tiles_toggleable_on_lock_screen";
+
+        /** @hide */
+        public static final Validator QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR =
+                sBooleanValidator;
         // endregion
 
         /**
@@ -3559,11 +3590,13 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
-                LineageSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                LineageSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
-                LineageSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
-                LineageSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION
+                LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT,
+                LineageSettings.Global.CLEARTEXT_NETWORK_POLICY,
+                LineageSettings.Global.DEVICE_REBOOT_TIMEOUT,
+                LineageSettings.Global.GLOBAL_VPN_APP,
+                LineageSettings.Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                LineageSettings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN,
+                LineageSettings.Global.WIFI_OFF_TIMEOUT,
         };
 
         /**
@@ -3587,8 +3620,13 @@ public final class LineageSettings {
         static {
             VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(CLEARTEXT_NETWORK_POLICY, CLEARTEXT_NETWORK_POLICY_VALIDATOR);
+            VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
                     value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
+            VALIDATORS.put(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                    LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR);
+            VALIDATORS.put(QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN,
+                    QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR);
             VALIDATORS.put(WIFI_OFF_TIMEOUT, WIFI_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
