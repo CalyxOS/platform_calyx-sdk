@@ -19,7 +19,6 @@
     <java-symbol type="drawable" name="ic_launcher_lineageos" />
 
     <!-- Profiles -->
-    <java-symbol type="xml" name="profile_default" />
     <java-symbol type="string" name="wildcardProfile" />
 
     <!-- Proximity check on screen on -->

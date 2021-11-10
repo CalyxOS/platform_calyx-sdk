@@ -34,18 +34,6 @@ public final class LineageContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
-     * {@link lineageos.app.ProfileManager} for informing the user of
-     * background events.
-     *
-     * @see android.content.Context#getSystemService
-     * @see lineageos.app.ProfileManager
-     *
-     * @hide
-     */
-    public static final String LINEAGE_PROFILE_SERVICE = "profile";
-
-    /**
-     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link lineageos.hardware.LineageHardwareManager} to manage the extended
      * hardware features of the device.
      *
@@ -103,14 +91,6 @@ public final class LineageContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String HARDWARE_ABSTRACTION = "org.lineageos.hardware";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the lineage profiles service
-         * utilized by the lineage sdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String PROFILES = "org.lineageos.profiles";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and

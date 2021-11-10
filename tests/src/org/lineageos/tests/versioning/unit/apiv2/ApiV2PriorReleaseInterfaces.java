@@ -26,31 +26,6 @@ public class ApiV2PriorReleaseInterfaces {
     private static Map<String, Map<String, Integer>> mApiMethodsAndValues =
             new HashMap<String, Map<String, Integer>>();
 
-    //Profiles Aidl (IProfileManager)
-    static {
-        Map<String, Integer> profilesMap = getInternalInterfaceMap("IProfileManager");
-        // APRICOT + BOYSENBERRY + CANTALOUPE
-        profilesMap.put("setActiveProfile", 1);
-        profilesMap.put("etActiveProfileByName", 2);
-        profilesMap.put("getActiveProfile", 3);
-        profilesMap.put("addProfile", 4);
-        profilesMap.put("removeProfile", 5);
-        profilesMap.put("updateProfile", 6);
-        profilesMap.put("getProfile", 7);
-        profilesMap.put("getProfileByName", 8);
-        profilesMap.put("getProfiles", 9);
-        profilesMap.put("profileExists", 10);
-        profilesMap.put("profileExistsByName", 11);
-        profilesMap.put("notificationGroupExistsByName", 12);
-        profilesMap.put("getNotificationGroups", 13);
-        profilesMap.put("addNotificationGroup", 14);
-        profilesMap.put("removeNotificationGroup", 15);
-        profilesMap.put("updateNotificationGroup", 16);
-        profilesMap.put("getNotificationGroupForPackage", 17);
-        profilesMap.put("getNotificationGroup", 18);
-        profilesMap.put("resetAll", 19);
-    }
-
     //LineageHardwareManager Aidl (ILineageHardwareService)
     static {
         Map<String, Integer> hardwareMap = getInternalInterfaceMap("ILineageHardwareService");

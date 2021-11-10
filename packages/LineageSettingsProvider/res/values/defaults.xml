@@ -58,9 +58,6 @@
          when Do Not Disturb is active -->
     <integer name="def_notification_brightness_level_zen">255</integer>
 
-    <!-- Default for LineageSettings.System.SYSTEM_PROFILES_ENABLED -->
-    <bool name="def_profiles_enabled">true</bool>
-
     <!-- Default value for notification LED customization -->
     <bool name="def_notification_pulse_custom_enable">false</bool>
     <string name="def_notification_pulse_custom_value"></string>

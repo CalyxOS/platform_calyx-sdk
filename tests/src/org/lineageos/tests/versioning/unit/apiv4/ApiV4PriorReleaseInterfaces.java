@@ -23,14 +23,6 @@ public class ApiV4PriorReleaseInterfaces {
     private static Map<String, Map<String, Integer>> mApiMethodsAndValues =
             new HashMap<String, Map<String, Integer>>();
 
-    //Profiles Aidl (IProfileManager)
-    static {
-        Map<String, Integer> profilesMap = getInternalInterfaceMap("IProfileManager");
-        // APRICOT + BOYSENBERRY + CANTALOUPE to 19
-        // DRAGONFRUIT BEGIN
-        profilesMap.put("isEnabled", 20);
-    }
-
     //LineageHardwareManager Aidl (ILineageHardwareService)
     static {
         Map<String, Integer> hardwareMap = getInternalInterfaceMap("ILineageHardwareService");
