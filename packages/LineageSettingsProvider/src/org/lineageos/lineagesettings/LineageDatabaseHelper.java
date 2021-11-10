@@ -221,6 +221,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
         // Custom AOSP to LineageSettings migration, table change
         loadLockscreenScramblePinLayoutSetting(db);
+        // Same as above, and additionally a value flip
+        loadQsTilesToggleableOnLockScreenSetting(db);
     }
 
     private void loadSecureSettings(SQLiteDatabase db) {
@@ -317,6 +319,30 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
         } catch (SQLiteDoneException ex) {
             // LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT is not set
+        } finally {
+            if (stmt != null) stmt.close();
+        }
+    }
+
+    private void loadQsTilesToggleableOnLockScreenSetting(SQLiteDatabase db) {
+        // Move qs_tiles_toggleable_on_lock_screen to secure from AOSP global, and
+        // flip it's value
+        SQLiteStatement stmt = null;
+        try {
+            Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
+                LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 0);
+
+            // Flip the value
+            settingsValue = settingsValue == 1 ? 0 : 1;
+
+            stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
+                    + " VALUES(?,?);");
+            stmt.bindString(1, LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+            stmt.bindString(2, settingsValue.toString());
+            stmt.execute();
+
+        } catch (SQLiteDoneException ex) {
+            // LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN is not set
         } finally {
             if (stmt != null) stmt.close();
         }
