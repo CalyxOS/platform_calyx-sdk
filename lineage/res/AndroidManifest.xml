@@ -52,13 +52,6 @@
                 android:description="@string/permdesc_writeSecureSettings"
                 android:protectionLevel="signature|privileged|development" />
 
-    <!-- Allows low-level access to performance management.
-         <p>Not for use by third-party applications. -->
-    <permission android:name="lineageos.permission.PERFORMANCE_ACCESS"
-                android:label="@string/permlab_perfAccess"
-                android:description="@string/permdesc_perfAccessDesc"
-                android:protectionLevel="signature|privileged" />
-
     <!-- Allows an application to observe system-wide changes to audio sessions
          @hide -->
     <permission android:name="lineageos.permission.OBSERVE_AUDIO_SESSIONS"

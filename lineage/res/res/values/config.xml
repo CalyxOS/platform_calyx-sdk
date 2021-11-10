@@ -102,7 +102,6 @@
          should publish as a binder services in its onStart -->
     <string-array name="config_externalLineageServices">
         <item>org.lineageos.platform.internal.LineageHardwareService</item>
-        <item>org.lineageos.platform.internal.PerformanceManagerService</item>
         <item>org.lineageos.platform.internal.display.LiveDisplayService</item>
         <item>org.lineageos.platform.internal.TrustInterfaceService</item>
         <item>org.lineageos.platform.internal.LineageSettingsService</item>

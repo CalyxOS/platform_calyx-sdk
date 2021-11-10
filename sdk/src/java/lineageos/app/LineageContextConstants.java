@@ -45,13 +45,6 @@ public final class LineageContextConstants {
     public static final String LINEAGE_HARDWARE_SERVICE = "lineagehardware";
 
     /**
-     * Control device power profile and characteristics.
-     *
-     * @hide
-     */
-    public static final String LINEAGE_PERFORMANCE_SERVICE = "lineageperformance";
-
-    /**
      * Manages composed icons
      *
      * @hide
@@ -102,14 +95,6 @@ public final class LineageContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String HARDWARE_ABSTRACTION = "org.lineageos.hardware";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the lineage performance service
-         * utilized by the lineage sdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String PERFORMANCE = "org.lineageos.performance";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
