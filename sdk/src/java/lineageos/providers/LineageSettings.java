@@ -2045,86 +2045,7 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
-                LineageSettings.System.NAV_BUTTONS,
-                LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
-                LineageSettings.System.BACK_WAKE_SCREEN,
-                LineageSettings.System.MENU_WAKE_SCREEN,
-                LineageSettings.System.VOLUME_WAKE_SCREEN,
-                LineageSettings.System.KEY_MENU_ACTION,
-                LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_ASSIST_ACTION,
-                LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION,
-                LineageSettings.System.KEY_APP_SWITCH_ACTION,
-                LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
-                LineageSettings.System.HOME_WAKE_SCREEN,
-                LineageSettings.System.ASSIST_WAKE_SCREEN,
-                LineageSettings.System.APP_SWITCH_WAKE_SCREEN,
-                LineageSettings.System.CAMERA_WAKE_SCREEN,
-                LineageSettings.System.CAMERA_SLEEP_ON_RELEASE,
-                LineageSettings.System.CAMERA_LAUNCH,
-                LineageSettings.System.STYLUS_ICON_ENABLED,
-                LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
-                LineageSettings.System.BATTERY_LIGHT_ENABLED,
-                LineageSettings.System.BATTERY_LIGHT_FULL_CHARGE_DISABLED,
-                LineageSettings.System.BATTERY_LIGHT_PULSE,
-                LineageSettings.System.BATTERY_LIGHT_LOW_COLOR,
-                LineageSettings.System.BATTERY_LIGHT_MEDIUM_COLOR,
-                LineageSettings.System.BATTERY_LIGHT_FULL_COLOR,
-                LineageSettings.System.ENABLE_MWI_NOTIFICATION,
-                LineageSettings.System.PROXIMITY_ON_WAKE,
-                LineageSettings.System.DISPLAY_TEMPERATURE_DAY,
-                LineageSettings.System.DISPLAY_TEMPERATURE_NIGHT,
-                LineageSettings.System.DISPLAY_TEMPERATURE_MODE,
-                LineageSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
-                LineageSettings.System.DISPLAY_ANTI_FLICKER,
-                LineageSettings.System.DISPLAY_READING_MODE,
-                LineageSettings.System.DISPLAY_CABC,
-                LineageSettings.System.DISPLAY_COLOR_ENHANCE,
-                LineageSettings.System.DISPLAY_COLOR_ADJUSTMENT,
-                LineageSettings.System.LIVE_DISPLAY_HINTED,
-                LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
-                LineageSettings.System.RECENTS_SHOW_SEARCH_BAR,
-                LineageSettings.System.NAVBAR_LEFT_IN_LANDSCAPE,
-                LineageSettings.System.T9_SEARCH_INPUT_LOCALE,
-                LineageSettings.System.BLUETOOTH_ACCEPT_ALL_FILES,
-                LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
-                LineageSettings.System.SHOW_ALARM_ICON,
-                LineageSettings.System.STATUS_BAR_IME_SWITCHER,
-                LineageSettings.System.QS_SHOW_BRIGHTNESS_SLIDER,
-                LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
-                LineageSettings.System.VOLBTN_MUSIC_CONTROLS,
-                LineageSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
-                LineageSettings.System.STATUS_BAR_NOTIF_COUNT,
-                LineageSettings.System.CALL_RECORDING_FORMAT,
-                LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
-                LineageSettings.System.NOTIFICATION_LIGHT_SCREEN_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
-                LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
-                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                LineageSettings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
-                LineageSettings.System.SYSTEM_PROFILES_ENABLED,
-                LineageSettings.System.INCREASING_RING,
-                LineageSettings.System.INCREASING_RING_START_VOLUME,
-                LineageSettings.System.INCREASING_RING_RAMP_UP_TIME,
-                LineageSettings.System.STATUS_BAR_CLOCK,
-                LineageSettings.System.STATUS_BAR_AM_PM,
-                LineageSettings.System.STATUS_BAR_BATTERY_STYLE,
-                LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
-                LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
-                LineageSettings.System.HEADSET_CONNECT_PLAYER,
-                LineageSettings.System.ZEN_ALLOW_LIGHTS,
-                LineageSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK,
+                LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS
         };
 
         /**
@@ -2962,6 +2883,25 @@ public final class LineageSettings {
                 sBooleanValidator;
 
         /**
+         * Whether to use black theme for dark mode
+         * @hide
+         */
+        public static final String BERRY_BLACK_THEME = "berry_black_theme";
+
+        /** @hide */
+        public static final Validator BERRY_BLACK_THEME_VALIDATOR = sBooleanValidator;
+
+        /**
+         * Whether the Panic button should be shown in the power menu.
+         * 0 = false, 1 = true
+         * @hide
+         */
+        public static final String PANIC_IN_POWER_MENU = "panic_in_power_menu";
+
+        /** @hide */
+        public static final Validator PANIC_IN_POWER_MENU_VALIDATOR = sBooleanValidator;
+
+        /**
          * Whether tethering is allowed to use VPN upstreams
          * 0 = false, 1 = true
          */
@@ -2982,23 +2922,13 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
-                LineageSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
-                LineageSettings.Secure.BUTTON_BRIGHTNESS,
-                LineageSettings.Secure.KEYBOARD_BRIGHTNESS,
-                LineageSettings.Secure.POWER_MENU_ACTIONS,
-                LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
-                LineageSettings.Secure.NAVIGATION_RING_TARGETS[0],
-                LineageSettings.Secure.NAVIGATION_RING_TARGETS[1],
-                LineageSettings.Secure.NAVIGATION_RING_TARGETS[2],
-                LineageSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY,
-                LineageSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX,
-                LineageSettings.Secure.ADVANCED_REBOOT,
-                LineageSettings.Secure.LOCKSCREEN_TARGETS,
-                LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
-                LineageSettings.Secure.DEVELOPMENT_SHORTCUT,
-                LineageSettings.Secure.QS_LOCATION_ADVANCED,
-                LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
-                LineageSettings.Secure.LOCK_PASS_TO_SECURITY_VIEW
+                LineageSettings.Secure.BERRY_BLACK_THEME,
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE,
+                LineageSettings.Secure.NETWORK_TRAFFIC_MODE,
+                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS,
+                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS,
+                LineageSettings.Secure.PANIC_IN_POWER_MENU,
+                LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS
         };
 
         /**
@@ -3020,11 +2950,13 @@ public final class LineageSettings {
         public static final Map<String, Validator> VALIDATORS =
                 new ArrayMap<String, Validator>();
         static {
+            VALIDATORS.put(BERRY_BLACK_THEME, BERRY_BLACK_THEME_VALIDATOR);
             VALIDATORS.put(GESTURE_BACK_EXCLUDE_TOP, GESTURE_BACK_EXCLUDE_TOP_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_MODE, NETWORK_TRAFFIC_MODE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_UNITS, NETWORK_TRAFFIC_UNITS_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_SHOW_UNITS, NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR);
+            VALIDATORS.put(PANIC_IN_POWER_MENU, PANIC_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(TETHERING_ALLOW_VPN_UPSTREAMS, TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR);
             VALIDATORS.put(TRUST_RESTRICT_USB_KEYGUARD, TRUST_RESTRICT_USB_KEYGUARD_VALIDATOR);
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
@@ -3445,6 +3377,50 @@ public final class LineageSettings {
          * @hide
          */
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
+
+        /**
+         * The amount of time in milliseconds before bluetooth is turned off
+         * @hide
+         */
+        public static final String BLUETOOTH_OFF_TIMEOUT = "bluetooth_off_timeout";
+
+        /**
+         * The amount of time in milliseconds before wifi is turned off
+         * @hide
+         */
+        public static final String WIFI_OFF_TIMEOUT = "wifi_off_timeout";
+
+        /**
+         * Global cleartext (aka non-TLS) traffic blocking
+         *
+         * Values are:
+         * 0: StrictMode.NETWORK_POLICY_ACCEPT - Allow all cleartext traffic.
+         * 1: StrictMode.NETWORK_POLICY_LOG - Log all cleartext traffic.
+         *    This is not in logcat by default but it piggy backs on the existing
+         *    StrictMode code for cleartext network penalties.
+         * 2: StrictMode.NETWORK_POLICY_REJECT - Reject all cleartext traffic.
+         * @hide
+         */
+        public static final String CLEARTEXT_NETWORK_POLICY = "cleartext_network_policy";
+
+        /**
+         * Package designated as global VPN provider.
+         * @hide
+         */
+        public static final String GLOBAL_VPN_APP = "global_vpn_app";
+
+        /**
+         * Whether to scramble a pin unlock layout
+         * @hide
+         */
+        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
+
+        /**
+         * Whether user is allowed to interact with quick settings on lockscreen.
+         * @hide
+         */
+        public static final String QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN =
+                "qs_tiles_toggleable_on_lock_screen";
         // endregion
 
         /**
@@ -3458,11 +3434,12 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
-                LineageSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                LineageSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
-                LineageSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
-                LineageSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION
+                LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT,
+                LineageSettings.Global.WIFI_OFF_TIMEOUT,
+                LineageSettings.Global.CLEARTEXT_NETWORK_POLICY,
+                LineageSettings.Global.GLOBAL_VPN_APP,
+                LineageSettings.Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                LineageSettings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN
         };
 
         /**
