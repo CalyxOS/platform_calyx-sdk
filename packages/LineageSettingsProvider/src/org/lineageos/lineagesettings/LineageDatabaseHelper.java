@@ -46,7 +46,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -166,6 +166,90 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             }
             upgradeVersion = 2;
         }
+
+        if (upgradeVersion < 3) {
+            // Move berry_black_theme to system
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
+                stmt.bindString(1, LineageSettings.Secure.BERRY_BLACK_THEME);
+                long value = stmt.simpleQueryForLong();
+
+                stmt = db.compileStatement("INSERT INTO system (name, value) VALUES (?, ?)");
+                stmt.bindString(1, LineageSettings.System.BERRY_BLACK_THEME);
+                stmt.bindLong(2, value);
+                stmt.execute();
+
+                stmt = db.compileStatement("DELETE FROM secure WHERE name=?");
+                stmt.bindString(1, LineageSettings.Secure.BERRY_BLACK_THEME);
+                stmt.execute();
+
+                db.setTransactionSuccessful();
+            } catch (SQLiteDoneException ex) {
+                // LineageSettings.Secure.BERRY_BLACK_THEME is not set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                // Move lockscreen_scramble_pin_layout to system
+                db.beginTransaction();
+                stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
+                    stmt.bindString(1, LineageSettings.Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+                    long value = stmt.simpleQueryForLong();
+
+                    stmt = db.compileStatement("INSERT INTO system (name, value) VALUES (?, ?)");
+                    stmt.bindString(1, LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+                    stmt.bindLong(2, value);
+                    stmt.execute();
+
+                    stmt = db.compileStatement("DELETE FROM global WHERE name=?");
+                    stmt.bindString(1, LineageSettings.Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+                    stmt.execute();
+
+                    db.setTransactionSuccessful();
+                } catch (SQLiteDoneException ex) {
+                    // LineageSettings.Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+
+                // Move qs_tiles_toggleable_on_lock_screen to secure
+                db.beginTransaction();
+                stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
+                    stmt.bindString(1, LineageSettings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+                    long value = stmt.simpleQueryForLong();
+
+                    // Flip the value
+                    value = value == 1 ? 0 : 1;
+
+                    stmt = db.compileStatement("INSERT INTO secure (name, value) VALUES (?, ?)");
+                    stmt.bindString(1, LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+                    stmt.bindLong(2, value);
+                    stmt.execute();
+
+                    stmt = db.compileStatement("DELETE FROM global WHERE name=?");
+                    stmt.bindString(1, LineageSettings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+                    stmt.execute();
+
+                    db.setTransactionSuccessful();
+                } catch (SQLiteDoneException ex) {
+                    // LineageSettings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+            }
+            upgradeVersion = 3;
+        }
+
         // *** Remember to update DATABASE_VERSION above!
     }
 
