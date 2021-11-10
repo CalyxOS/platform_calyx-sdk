@@ -510,9 +510,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadIntegerSetting(stmt, LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_ZEN,
                     R.integer.def_notification_brightness_level_zen);
 
-            loadBooleanSetting(stmt, LineageSettings.System.SYSTEM_PROFILES_ENABLED,
-                    R.bool.def_profiles_enabled);
-
             loadBooleanSetting(stmt, LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
                     R.bool.def_notification_pulse_custom_enable);
 

@@ -55,9 +55,6 @@ public class LineageSettingsProviderDefaultsTest extends AndroidTestCase {
                 LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                 "R.integer.def_notification_brightness_level"));
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
-                LineageSettings.System.SYSTEM_PROFILES_ENABLED,
-                "R.bool.def_profiles_enabled"));
-        SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
                 LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
                 "R.bool.def_notification_pulse_custom_enable"));
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(

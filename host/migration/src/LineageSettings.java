@@ -53,12 +53,6 @@ public final class LineageSettings {
                 "high_touch_sensitivity_enable";
 
         /**
-         * Show the pending notification counts as overlays on the status bar
-         * @hide
-         */
-        public static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
-
-        /**
          * Whether to show the clock in the right or left position or show it in the center
          * 0: show the clock in the right position (LTR)
          * 1: show the clock in the center
@@ -629,7 +623,6 @@ public final class LineageSettings {
                 LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                 LineageSettings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
-                LineageSettings.System.SYSTEM_PROFILES_ENABLED,
                 LineageSettings.System.INCREASING_RING,
                 LineageSettings.System.INCREASING_RING_START_VOLUME,
                 LineageSettings.System.INCREASING_RING_RAMP_UP_TIME,

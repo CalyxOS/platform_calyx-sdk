@@ -26,13 +26,9 @@
     <protected-broadcast android:name="lineageos.intent.action.INITIALIZE_LINEAGE_HARDWARE" />
     <protected-broadcast android:name="lineageos.intent.action.INITIALIZE_LIVEDISPLAY" />
     <protected-broadcast android:name="lineageos.intent.action.ACTION_AUDIO_SESSIONS_CHANGED" />
-    <protected-broadcast android:name="lineageos.platform.intent.action.PROFILE_SELECTED" />
 
     <protected-broadcast android:name="lineageos.intent.action.UPDATE_PREFERENCE" />
     <protected-broadcast android:name="lineageos.intent.action.REFRESH_PREFERENCE" />
-
-    <protected-broadcast android:name="lineageos.platform.intent.action.PROFILE_UPDATED" />
-    <protected-broadcast android:name="lineageos.platform.intent.action.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED" />
 
     <protected-broadcast android:name="lineageos.platform.intent.action.UPDATE_TWILIGHT_STATE" />
 
@@ -47,12 +43,6 @@
     <permission android:name="lineageos.permission.WRITE_SETTINGS"
                 android:label="@string/permlab_writeSettings"
                 android:description="@string/permdesc_writeSettings"
-                android:protectionLevel="normal" />
-
-    <!-- Allows an application to modify system profiles -->
-    <permission android:name="lineageos.permission.MODIFY_PROFILES"
-                android:label="@string/permlab_modifyProfiles"
-                android:description="@string/permdesc_modifyProfiles"
                 android:protectionLevel="normal" />
 
     <!-- Allows an application to write to secure Lineage system settings.
