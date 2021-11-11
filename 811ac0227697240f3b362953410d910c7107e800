@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5362df2_46bf1d2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-11-11T11:48:08Z",
+      "side": 1,
+      "message": "Same, it\u0027s not changing package name, only the module names.",
+      "revId": "811ac0227697240f3b362953410d910c7107e800",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
