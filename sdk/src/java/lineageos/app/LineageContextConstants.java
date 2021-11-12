@@ -58,14 +58,6 @@ public final class LineageContextConstants {
      */
     public static final String LINEAGE_LIVEDISPLAY_SERVICE = "lineagelivedisplay";
 
-
-    /**
-     * Manages enhanced audio functionality
-     *
-     * @hide
-     */
-    public static final String LINEAGE_AUDIO_SERVICE = "lineageaudio";
-
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link lineageos.trust.TrustInterface} to access the Trust interface.
@@ -103,14 +95,6 @@ public final class LineageContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String LIVEDISPLAY = "org.lineageos.livedisplay";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the Lineage audio extensions
-         * utilized by the lineage sdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String AUDIO = "org.lineageos.audio";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
