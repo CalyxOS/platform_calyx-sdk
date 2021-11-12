@@ -45,13 +45,6 @@ public final class LineageContextConstants {
     public static final String LINEAGE_HARDWARE_SERVICE = "lineagehardware";
 
     /**
-     * Manages composed icons
-     *
-     * @hide
-     */
-    public static final String LINEAGE_ICON_CACHE_SERVICE = "lineageiconcache";
-
-    /**
      * Manages display color adjustments
      *
      * @hide
