@@ -16,6 +16,24 @@
       "message": "Is JNI even used for anything now?\n\nAFAICT this was all.",
       "revId": "d5558fe9dbb25aae2c831fa88f4de841fae99f71",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00d3448d_3d2b4954",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-11-12T22:24:25Z",
+      "side": 1,
+      "message": "Yes but removing jni is a different part requiring more changes.",
+      "parentUuid": "b2f1367b_333455f0",
+      "revId": "d5558fe9dbb25aae2c831fa88f4de841fae99f71",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
