@@ -58,7 +58,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final String TAG = "LineageDatabaseHelper";
     private static final boolean LOCAL_LOGV = false;
 
-    private static final String DATABASE_NAME = "lineagesettings.db";
+    private static final String DATABASE_NAME = "calyxsettings.db";
     private static final int DATABASE_VERSION = 1;
 
     public static class LineageTableNames {
