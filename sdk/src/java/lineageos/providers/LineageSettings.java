@@ -3461,6 +3461,12 @@ public final class LineageSettings {
          */
         public static final String QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN =
                 "qs_tiles_toggleable_on_lock_screen";
+
+        /**
+         * The amount of time in milliseconds before bluetooth is turned off
+         * @hide
+         */
+        public static final String BLUETOOTH_OFF_TIMEOUT = "bluetooth_off_timeout";
         // endregion
 
         /**
