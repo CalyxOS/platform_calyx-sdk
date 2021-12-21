@@ -2960,6 +2960,17 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator PANIC_IN_POWER_MENU_VALIDATOR = sBooleanValidator;
+
+        /**
+         * Whether user is allowed to interact with quick settings on lockscreen.
+         * @hide
+         */
+        public static final String QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN =
+                "qs_tiles_toggleable_on_lock_screen";
+
+        /** @hide */
+        public static final Validator QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR =
+                sBooleanValidator;
         // endregion
 
         /**
@@ -2989,6 +3000,8 @@ public final class LineageSettings {
             VALIDATORS.put(NETWORK_TRAFFIC_UNITS, NETWORK_TRAFFIC_UNITS_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_SHOW_UNITS, NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR);
             VALIDATORS.put(PANIC_IN_POWER_MENU, PANIC_IN_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN,
+                    QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR);
             VALIDATORS.put(TETHERING_ALLOW_VPN_UPSTREAMS, TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR);
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
