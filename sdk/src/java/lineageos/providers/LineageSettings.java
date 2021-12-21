@@ -17,6 +17,8 @@
 
 package lineageos.providers;
 
+import static android.provider.settings.validators.SettingsValidators.PACKAGE_NAME_VALIDATOR;
+
 import com.android.internal.util.ArrayUtils;
 
 import android.content.ContentResolver;
@@ -3511,6 +3513,12 @@ public final class LineageSettings {
                         "14400000",
                         "28800000"
                 });
+
+        /**
+         * Package designated as global VPN provider.
+         * @hide
+         */
+        public static final String GLOBAL_VPN_APP = "global_vpn_app";
         // endregion
 
         /**
@@ -3559,6 +3567,8 @@ public final class LineageSettings {
                 new ArrayMap<String, Validator>();
         static {
             VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(GLOBAL_VPN_APP,
+                    value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(WIFI_OFF_TIMEOUT, WIFI_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
