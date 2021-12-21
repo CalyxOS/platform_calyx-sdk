@@ -2951,6 +2951,15 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator BERRY_BLACK_THEME_VALIDATOR = sBooleanValidator;
+
+        /**
+         * Whether the Panic button should be shown in the power menu.
+         * @hide
+         */
+        public static final String PANIC_IN_POWER_MENU = "panic_in_power_menu";
+
+        /** @hide */
+        public static final Validator PANIC_IN_POWER_MENU_VALIDATOR = sBooleanValidator;
         // endregion
 
         /**
@@ -2979,6 +2988,7 @@ public final class LineageSettings {
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_UNITS, NETWORK_TRAFFIC_UNITS_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_SHOW_UNITS, NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR);
+            VALIDATORS.put(PANIC_IN_POWER_MENU, PANIC_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(TETHERING_ALLOW_VPN_UPSTREAMS, TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR);
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
