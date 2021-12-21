@@ -3473,6 +3473,12 @@ public final class LineageSettings {
          * @hide
          */
         public static final String WIFI_OFF_TIMEOUT = "wifi_off_timeout";
+
+        /**
+         * Package designated as global VPN provider.
+         * @hide
+         */
+        public static final String GLOBAL_VPN_APP = "global_vpn_app";
         // endregion
 
         /**
