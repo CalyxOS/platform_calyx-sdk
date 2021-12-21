@@ -3467,6 +3467,12 @@ public final class LineageSettings {
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
 
         /**
+         * Package designated as global VPN provider.
+         * @hide
+         */
+        public static final String GLOBAL_VPN_APP = "global_vpn_app";
+
+        /**
          * Restrict USB
          * 0 = Off, never
          * 1 = Only when the screen is locked
@@ -3508,6 +3514,8 @@ public final class LineageSettings {
         public static final Map<String, Validator> VALIDATORS =
                 new ArrayMap<String, Validator>();
         static {
+            VALIDATORS.put(GLOBAL_VPN_APP,
+                    value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(TRUST_RESTRICT_USB, TRUST_RESTRICT_USB_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
