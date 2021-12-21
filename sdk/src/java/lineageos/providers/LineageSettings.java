@@ -3462,6 +3462,24 @@ public final class LineageSettings {
          * @hide
          */
         public static final String GLOBAL_VPN_APP = "global_vpn_app";
+
+        /**
+         * Global cleartext (aka non-TLS) traffic blocking
+         *
+         * Values are:
+         * -1: StrictMode.NETWORK_POLICY_INVALID - Remove global cleartext traffic rule
+         *  0: StrictMode.NETWORK_POLICY_ACCEPT - Allow all cleartext traffic.
+         *  1: StrictMode.NETWORK_POLICY_LOG - Log all cleartext traffic.
+         *     Does not appear in logcat by default. Uses existing StrictMode logging
+         *     for cleartext network penalties.
+         *  2: StrictMode.NETWORK_POLICY_REJECT - Reject all cleartext traffic.
+         * @hide
+         */
+        public static final String CLEARTEXT_NETWORK_POLICY = "cleartext_network_policy";
+
+        /** @hide */
+        public static final Validator CLEARTEXT_NETWORK_POLICY_VALIDATOR =
+                new InclusiveIntegerRangeValidator(-1, 2);
         // endregion
 
         /**
@@ -3508,6 +3526,7 @@ public final class LineageSettings {
                 new ArrayMap<String, Validator>();
         static {
             VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(CLEARTEXT_NETWORK_POLICY, CLEARTEXT_NETWORK_POLICY_VALIDATOR);
             VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
                     value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
