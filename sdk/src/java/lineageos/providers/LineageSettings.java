@@ -3488,6 +3488,29 @@ public final class LineageSettings {
                         "14400000",
                         "28800000"
                 });
+
+        /**
+         * The amount of time in milliseconds before wifi is turned off
+         * @hide
+         */
+        public static final String WIFI_OFF_TIMEOUT = "wifi_off_timeout";
+
+        /** @hide */
+        public static final Validator WIFI_OFF_TIMEOUT_VALIDATOR =
+                new DiscreteValueValidator(new String[] {
+                        "0",
+                        "15000",
+                        "30000",
+                        "60000",
+                        "120000",
+                        "300000",
+                        "600000",
+                        "1800000",
+                        "3600000",
+                        "7200000",
+                        "14400000",
+                        "28800000"
+                });
         // endregion
 
         /**
@@ -3536,6 +3559,7 @@ public final class LineageSettings {
                 new ArrayMap<String, Validator>();
         static {
             VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(WIFI_OFF_TIMEOUT, WIFI_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
