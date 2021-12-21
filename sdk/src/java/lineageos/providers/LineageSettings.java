@@ -2969,6 +2969,14 @@ public final class LineageSettings {
 
         public static final Validator TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR = sBooleanValidator;
 
+        /**
+         * Whether the Panic button should be shown in the power menu.
+         * @hide
+         */
+        public static final String PANIC_IN_POWER_MENU = "panic_in_power_menu";
+
+        public static final Validator PANIC_IN_POWER_MENU_VALIDATOR = sBooleanValidator;
+
         // endregion
 
         /**
@@ -3029,6 +3037,7 @@ public final class LineageSettings {
             VALIDATORS.put(TRUST_RESTRICT_USB_KEYGUARD, TRUST_RESTRICT_USB_KEYGUARD_VALIDATOR);
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
+            VALIDATORS.put(PANIC_IN_POWER_MENU, PANIC_IN_POWER_MENU_VALIDATOR);
         }
     }
 
