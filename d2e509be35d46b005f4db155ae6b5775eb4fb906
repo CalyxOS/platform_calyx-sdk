@@ -33,6 +33,24 @@
       "message": "Should we add a check for isApp here? Not sure if there would be side effects, one would hope AOSP put the necessary permissions for anything that isn\u0027t an app but needs to be allowlisted.\nChecked other patches and doesn\u0027t look like it would be needed anywhere else.",
       "revId": "d2e509be35d46b005f4db155ae6b5775eb4fb906",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1df67d4f_ba1a6bf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-22T13:38:53Z",
+      "side": 1,
+      "message": "No it\u0027s fine, I think it\u0027s safe to assume any packages would be \"apps\"",
+      "parentUuid": "70ba48ee_a9ad8231",
+      "revId": "d2e509be35d46b005f4db155ae6b5775eb4fb906",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
