@@ -16,6 +16,23 @@
       "message": "Code looks good, haven\u0027t tested yet.",
       "revId": "d2e509be35d46b005f4db155ae6b5775eb4fb906",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70ba48ee_a9ad8231",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-12-22T12:55:12Z",
+      "side": 1,
+      "message": "Should we add a check for isApp here? Not sure if there would be side effects, one would hope AOSP put the necessary permissions for anything that isn\u0027t an app but needs to be allowlisted.\nChecked other patches and doesn\u0027t look like it would be needed anywhere else.",
+      "revId": "d2e509be35d46b005f4db155ae6b5775eb4fb906",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
