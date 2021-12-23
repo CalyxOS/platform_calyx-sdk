@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "62c0cd07_d5879d15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-23T13:31:02Z",
+      "side": 1,
+      "message": "This will have to account for https://review.calyxos.org/c/CalyxOS/platform_frameworks_base/+/6903\n\nIt enables internet for all apps regardless of setting in 11.\n\n",
+      "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "468178c6_8c4796a7",
