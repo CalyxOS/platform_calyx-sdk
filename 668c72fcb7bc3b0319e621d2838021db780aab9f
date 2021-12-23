@@ -16,6 +16,24 @@
       "message": "Not working.",
       "revId": "668c72fcb7bc3b0319e621d2838021db780aab9f",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87cf5d4a_5789ca8a",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-23T14:30:56Z",
+      "side": 1,
+      "message": "This can be easily tested on 12 too.\n\nJust move this up to version 6 instead, try it out.\nIf it doesn\u0027t work, make changes, bump to 7, and try again, and so on.\n\nOnce working, it can come back to version 3, and we can test an upgrade from 11.",
+      "parentUuid": "adac5387_36fd0224",
+      "revId": "668c72fcb7bc3b0319e621d2838021db780aab9f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
