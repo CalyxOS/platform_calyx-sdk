@@ -46,7 +46,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 4;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -166,6 +166,53 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             }
             upgradeVersion = 2;
         }
+
+        if (upgradeVersion < 3) {
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                // Move lockscreen_scramble_pin_layout to system
+                moveSettingsToNewTable(db, LineageTableNames.TABLE_GLOBAL,
+                        LineageTableNames.TABLE_SYSTEM, new String[] {
+                        LineageSettings.Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT
+                }, true);
+
+                // Move qs_tiles_toggleable_on_lock_screen to secure
+                moveSettingsToNewTable(db, LineageTableNames.TABLE_GLOBAL,
+                        LineageTableNames.TABLE_SECURE, new String[] {
+                        LineageSettings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN
+                }, true);
+            }
+            upgradeVersion = 3;
+        }
+
+        if (upgradeVersion < 4) {
+            // Flip qs_tiles_toggleable_on_lock_screen value
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
+                    stmt.bindString(1, LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+                    long value = stmt.simpleQueryForLong();
+
+                    // Flip the value
+                    value = value == 1 ? 0 : 1;
+
+                    stmt = db.compileStatement("UPDATE secure SET value=? WHERE name=?");
+                    stmt.bindLong(1, value);
+                    stmt.bindString(2, LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+                    stmt.execute();
+
+                    db.setTransactionSuccessful();
+                } catch (SQLiteDoneException ex) {
+                    // LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+            }
+            upgradeVersion = 4;
+        }
+
         // *** Remember to update DATABASE_VERSION above!
     }
 

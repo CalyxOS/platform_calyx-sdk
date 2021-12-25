@@ -3017,8 +3017,21 @@ public final class LineageSettings {
                 CALL_METHOD_PUT_GLOBAL,
                 sProviderHolder);
 
-        // region Methods
+        /** @hide */
+        protected static final ArraySet<String> MOVED_TO_SECURE;
+        static {
+            MOVED_TO_SECURE = new ArraySet<>(1);
+            MOVED_TO_SECURE.add(Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
+        }
 
+        /** @hide */
+        protected static final ArraySet<String> MOVED_TO_SYSTEM;
+        static {
+            MOVED_TO_SYSTEM = new ArraySet<>(1);
+            MOVED_TO_SYSTEM.add(Global.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+        }
+
+        // region Methods
 
         /**
          * Put a delimited list as a string
@@ -3093,6 +3106,15 @@ public final class LineageSettings {
         /** @hide */
         public static String getStringForUser(ContentResolver resolver, String name,
                 int userId) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.Secure, value is unchanged.");
+                return LineageSettings.Secure.getStringForUser(resolver, name, userId);
+            } else if (MOVED_TO_SYSTEM.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.System, value is unchanged.");
+                return LineageSettings.Secure.getStringForUser(resolver, name, userId);
+            }
             return sNameValueCache.getStringForUser(resolver, name, userId);
         }
 
@@ -3110,6 +3132,15 @@ public final class LineageSettings {
         /** @hide */
         public static boolean putStringForUser(ContentResolver resolver, String name, String value,
                 int userId) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.Secure, value is unchanged.");
+                return false;
+            } else if (MOVED_TO_SYSTEM.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from LineageSettings.Global"
+                        + " to LineageSettings.System, value is unchanged.");
+                return false;
+            }
             return sNameValueCache.putStringForUser(resolver, name, value, userId);
         }
 
@@ -3504,6 +3535,29 @@ public final class LineageSettings {
         public static final Validator CLEARTEXT_NETWORK_POLICY_VALIDATOR =
                 new InclusiveIntegerRangeValidator(-1, 2);
 
+        /**
+         * Whether to scramble a pin unlock layout
+         * @deprecated
+         * @hide
+         */
+        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT =
+                "lockscreen_scramble_pin_layout";
+
+        /** @hide */
+        public static final Validator LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR =
+                sBooleanValidator;
+
+        /**
+         * Whether user is allowed to interact with quick settings on lockscreen.
+         * @deprecated
+         * @hide
+         */
+        public static final String QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN =
+                "qs_tiles_toggleable_on_lock_screen";
+
+        /** @hide */
+        public static final Validator QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR =
+                sBooleanValidator;
         // endregion
 
         /**
@@ -3558,6 +3612,10 @@ public final class LineageSettings {
             VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
                     value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
+            VALIDATORS.put(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                    LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR);
+            VALIDATORS.put(QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN,
+                    QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN_VALIDATOR);
             VALIDATORS.put(WIFI_OFF_TIMEOUT, WIFI_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
