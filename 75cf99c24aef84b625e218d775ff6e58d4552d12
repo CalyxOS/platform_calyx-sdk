@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "804258c5_cd42bb5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-25T23:43:20Z",
+      "side": 1,
+      "message": "I think this could probably be abandoned.\n\nEverything needed here has been split up in separate commits.",
+      "revId": "75cf99c24aef84b625e218d775ff6e58d4552d12",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
