@@ -19,6 +19,7 @@ package lineageos.providers;
 
 import com.android.internal.util.ArrayUtils;
 
+import android.annotation.NonNull;
 import android.content.ContentResolver;
 import android.content.IContentProvider;
 import android.database.Cursor;
@@ -487,6 +488,39 @@ public final class LineageSettings {
             return false;
         }
     }
+
+    // Copied from android.provider.settings.validators.SettingsValidators.PACKAGE_NAME_VALIDATOR
+    public static final Validator PACKAGE_NAME_VALIDATOR = new Validator() {
+        @Override
+        public boolean validate(@NonNull String value) {
+            return value != null && isStringPackageName(value);
+        }
+
+        private boolean isStringPackageName(@NonNull String value) {
+            // The name may contain uppercase or lowercase letters ('A' through 'Z'), numbers,
+            // and underscores ('_'). However, individual package name parts may only
+            // start with letters.
+            // (https://developer.android.com/guide/topics/manifest/manifest-element.html#package)
+            String[] subparts = value.split("\\.");
+            boolean isValidPackageName = true;
+            for (String subpart : subparts) {
+                isValidPackageName &= isSubpartValidForPackageName(subpart);
+                if (!isValidPackageName) break;
+            }
+            return isValidPackageName;
+        }
+
+        private boolean isSubpartValidForPackageName(String subpart) {
+            if (subpart.length() == 0) return false;
+            boolean isValidSubpart = Character.isLetter(subpart.charAt(0));
+            for (int i = 1; i < subpart.length(); i++) {
+                isValidSubpart &= (Character.isLetterOrDigit(subpart.charAt(i))
+                                || (subpart.charAt(i) == '_'));
+                if (!isValidSubpart) break;
+            }
+            return isValidSubpart;
+        }
+    };
     // endregion Validators
 
     /**
