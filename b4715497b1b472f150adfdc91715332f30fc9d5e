@@ -16,6 +16,40 @@
       "message": "Split this up to make it easier to review and merge",
       "revId": "b4715497b1b472f150adfdc91715332f30fc9d5e",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80c843f2_409b2bc4",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 3024,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-25T20:33:04Z",
+      "side": 1,
+      "message": "Is this actually needed?",
+      "revId": "b4715497b1b472f150adfdc91715332f30fc9d5e",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9afad5ac_5c4553c5",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 3112,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-25T20:33:04Z",
+      "side": 1,
+      "message": "Same question.",
+      "revId": "b4715497b1b472f150adfdc91715332f30fc9d5e",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
