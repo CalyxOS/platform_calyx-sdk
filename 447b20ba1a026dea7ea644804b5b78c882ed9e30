@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd3144e6_00f14776",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-25T23:42:52Z",
+      "side": 1,
+      "message": "Works!\n\nold is pre-running this code, new is after.\n\nold2/global\n73:qs_tiles_toggleable_on_lock_screen\u003d1\n\nold2/lglobal\n4:qs_tiles_toggleable_on_lock_screen\u003d1\n\nnew2/global\n73:qs_tiles_toggleable_on_lock_screen\u003d1\n\nnew2/lglobal\n4:qs_tiles_toggleable_on_lock_screen\u003d1\n\nnew2/lsecure\n3:qs_tiles_toggleable_on_lock_screen\u003d0\n\nIgnore \u0027lglobal\u0027 aka lineage global, looks like I forgot to delete it before running the migration.\n\nBut one can see that the AOSP value is flipped and added to secure.\n",
+      "revId": "447b20ba1a026dea7ea644804b5b78c882ed9e30",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
