@@ -46,7 +46,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -165,6 +165,30 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 db.endTransaction();
             }
             upgradeVersion = 2;
+        }
+
+        if (upgradeVersion < 3) {
+            // Move lockscreen_scramble_pin_layout to system from AOSP global
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
+                        LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0);
+
+                stmt = db.compileStatement("INSERT OR IGNORE INTO system(name,value)"
+                        + " VALUES(?,?);");
+                stmt.bindString(1, LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+                stmt.bindString(2, settingsValue.toString());
+                stmt.execute();
+
+                db.setTransactionSuccessful();
+            } catch (SQLiteDoneException ex) {
+                // LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT is not set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            upgradeVersion = 3;
         }
         // *** Remember to update DATABASE_VERSION above!
     }
