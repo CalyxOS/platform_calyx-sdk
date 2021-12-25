@@ -53,7 +53,7 @@ import lineageos.trust.TrustInterface;
  */
 public final class LineageSettings {
     private static final String TAG = "LineageSettings";
-    private static final boolean LOCAL_LOGV = false;
+    private static final boolean LOCAL_LOGV = true;
 
     public static final String AUTHORITY = "lineagesettings";
 

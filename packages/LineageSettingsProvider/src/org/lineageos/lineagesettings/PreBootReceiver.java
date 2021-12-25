@@ -28,7 +28,7 @@ import lineageos.providers.LineageSettings;
 
 public class PreBootReceiver extends BroadcastReceiver{
     private static final String TAG = "LineageSettingsReceiver";
-    private static final boolean LOCAL_LOGV = false;
+    private static final boolean LOCAL_LOGV = true;
 
     @Override
     public void onReceive(Context context, Intent intent) {
