@@ -55,7 +55,7 @@ import java.util.regex.Pattern;
  */
 public class LineageSettingsProvider extends ContentProvider {
     public static final String TAG = "LineageSettingsProvider";
-    private static final boolean LOCAL_LOGV = false;
+    private static final boolean LOCAL_LOGV = true;
 
     private static final boolean USER_CHECK_THROWS = true;
 
