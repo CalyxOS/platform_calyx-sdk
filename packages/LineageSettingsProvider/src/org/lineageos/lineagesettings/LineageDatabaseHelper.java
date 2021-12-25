@@ -219,6 +219,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         if (mUserHandle == UserHandle.USER_OWNER) {
             loadGlobalSettings(db);
         }
+        // Custom AOSP to LineageSettings migration, table change
+        loadLockscreenScramblePinLayoutSetting(db);
     }
 
     private void loadSecureSettings(SQLiteDatabase db) {
@@ -295,6 +297,26 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadStringSetting(stmt,
                     LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
                     R.string.def_power_notifications_ringtone);
+        } finally {
+            if (stmt != null) stmt.close();
+        }
+    }
+
+    private void loadLockscreenScramblePinLayoutSetting(SQLiteDatabase db) {
+        // Move lockscreen_scramble_pin_layout to system from AOSP global
+        SQLiteStatement stmt = null;
+        try {
+            Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
+                    LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0);
+
+            stmt = db.compileStatement("INSERT OR IGNORE INTO system(name,value)"
+                    + " VALUES(?,?);");
+            stmt.bindString(1, LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+            stmt.bindString(2, settingsValue.toString());
+            stmt.execute();
+
+        } catch (SQLiteDoneException ex) {
+            // LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT is not set
         } finally {
             if (stmt != null) stmt.close();
         }
