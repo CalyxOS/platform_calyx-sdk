@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24c7c58d_e81ec6e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-25T20:26:38Z",
+      "side": 1,
+      "message": "Any reason to keep it in global still?\n\nWe don\u0027t have any code that relies on it.\n\nAnd this way if it does, it\u0027s a compile time error which we can fix.",
+      "revId": "50ce5288159b5f210c74391470c6add7576062e8",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
