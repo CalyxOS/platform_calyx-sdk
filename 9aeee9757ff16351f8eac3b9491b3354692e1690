@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64c23f65_a35deb3a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-26T00:09:51Z",
+      "side": 1,
+      "message": "If cleartext needs a migration, then it\u0027ll have to be removed from this patch, and we\u0027ll have to do something similar to the patches following this (like pin scramble and qs tiles)",
+      "revId": "9aeee9757ff16351f8eac3b9491b3354692e1690",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b2c57d8_446fb025",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3529,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-26T00:09:51Z",
+      "side": 1,
+      "message": "May have to drop this from here if it needs a value change, as we found it, it\u0027s better to do both at once.",
+      "revId": "9aeee9757ff16351f8eac3b9491b3354692e1690",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
