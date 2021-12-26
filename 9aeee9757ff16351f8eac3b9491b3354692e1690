@@ -33,6 +33,24 @@
       "message": "May have to drop this from here if it needs a value change, as we found it, it\u0027s better to do both at once.",
       "revId": "9aeee9757ff16351f8eac3b9491b3354692e1690",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31d9e677_9ceb78f8",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3529,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-26T22:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b2c57d8_446fb025",
+      "revId": "9aeee9757ff16351f8eac3b9491b3354692e1690",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
