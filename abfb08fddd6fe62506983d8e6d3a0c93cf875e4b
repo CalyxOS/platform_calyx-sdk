@@ -51,6 +51,24 @@
       "parentUuid": "468178c6_8c4796a7",
       "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a20c14bf_64cfe1d5",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-12-27T20:14:06Z",
+      "side": 1,
+      "message": "Not sure I follow 100%. This setting is not exposed nor written to anywhere afaict. Only stuff with WRITE_SECURE_SETTINGS would be able to.\n\nThe list should remain intact if this setting was somehow tampered with since it is its own separate setting. With restricted networking mode off it would return to normal AOSP networking.",
+      "parentUuid": "468178c6_8c4796a7",
+      "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
