@@ -87,6 +87,24 @@
       "parentUuid": "a20c14bf_64cfe1d5",
       "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f191d7e9_7f79be94",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-12-27T20:28:19Z",
+      "side": 1,
+      "message": "Yeah, only adb shell afaik",
+      "parentUuid": "7d78447d_f9d6af75",
+      "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
