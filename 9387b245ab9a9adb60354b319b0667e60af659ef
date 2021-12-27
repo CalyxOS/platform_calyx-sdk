@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9487158b_bbb2cc23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-27T20:11:38Z",
+      "side": 1,
+      "message": "This is run early in the boot process.\n\nWe can\u0027t call NetworkPolicyManagerService from here, since it\u0027s not running when this is run.\n\nErgo, we can just add all packages to the restricted networking allowlist.\n\nThen, when NetworkPolicyManagerService does run, if there\u0027s anything uids to remove, it can do that.\n\n",
+      "revId": "9387b245ab9a9adb60354b319b0667e60af659ef",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}

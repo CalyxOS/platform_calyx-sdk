@@ -33,6 +33,24 @@
       "message": "I think we should also do this in Settings / Parts / Datura, in case it gets flipped off somewhere somehow. Though I don\u0027t know if that\u0027s possible.\n\nAssuming the list may still be ok at that point.",
       "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74706169_a6c84fc7",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-27T20:11:38Z",
+      "side": 1,
+      "message": "This is more of a general question and not related to this commit.",
+      "parentUuid": "468178c6_8c4796a7",
+      "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
