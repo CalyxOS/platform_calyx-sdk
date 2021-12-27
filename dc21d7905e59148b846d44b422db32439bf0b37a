@@ -16,6 +16,23 @@
       "message": "Will need https://review.calyxos.org/c/CalyxOS/platform_frameworks_base/+/7475\n",
       "revId": "dc21d7905e59148b846d44b422db32439bf0b37a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "443b0577_f5f30306",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-27T20:04:46Z",
+      "side": 1,
+      "message": "Seems to work, (accidentally) tested by trying to use adb shell settings without the linked Shell patch.",
+      "revId": "dc21d7905e59148b846d44b422db32439bf0b37a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
