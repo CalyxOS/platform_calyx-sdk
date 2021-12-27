@@ -69,6 +69,24 @@
       "parentUuid": "468178c6_8c4796a7",
       "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d78447d_f9d6af75",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-27T20:26:27Z",
+      "side": 1,
+      "message": "What I meant was if this somehow got flipped, there\u0027d be no way for the user to turn it back on.\n\nHowever it\u0027s a rare edge-case, since there\u0027s no easy way to change it.",
+      "parentUuid": "a20c14bf_64cfe1d5",
+      "revId": "abfb08fddd6fe62506983d8e6d3a0c93cf875e4b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
