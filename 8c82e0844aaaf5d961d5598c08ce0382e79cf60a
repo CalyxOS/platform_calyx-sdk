@@ -22,6 +22,30 @@
       },
       "revId": "8c82e0844aaaf5d961d5598c08ce0382e79cf60a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "311a04d2_a8924da9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-28T19:11:56Z",
+      "side": 1,
+      "message": "LOL fixed.\n\n:mapleleaf:",
+      "parentUuid": "eff1b598_a297b31f",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "8c82e0844aaaf5d961d5598c08ce0382e79cf60a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
