@@ -46,7 +46,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -156,16 +156,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         if (LOCAL_LOGV) Log.d(TAG, "Upgrading from version: " + oldVersion + " to " + newVersion);
         int upgradeVersion = oldVersion;
 
-        if (upgradeVersion < 2) {
-            db.beginTransaction();
-            try {
-                loadSettings(db);
-                db.setTransactionSuccessful();
-            } finally {
-                db.endTransaction();
-            }
-            upgradeVersion = 2;
-        }
         // *** Remember to update DATABASE_VERSION above!
     }
 
