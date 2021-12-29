@@ -58,7 +58,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -167,6 +167,34 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (LOCAL_LOGV) Log.d(TAG, "Upgrading from version: " + oldVersion + " to " + newVersion);
         int upgradeVersion = oldVersion;
+
+        if (upgradeVersion < 2) {
+            if (mUserHandle == UserHandle.USER_SYSTEM) {
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
+                            LineageSettings.Global.CLEARTEXT_NETWORK_POLICY, -1);
+
+                    if (settingsValue.equals(0)) {
+                        settingsValue = -1;
+                    }
+
+                    stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
+                            + " VALUES(?,?);");
+                    stmt.bindString(1, LineageSettings.Global.CLEARTEXT_NETWORK_POLICY);
+                    stmt.bindString(2, settingsValue.toString());
+                    stmt.execute();
+                    db.setTransactionSuccessful();
+                } catch (SQLiteDoneException ex) {
+                    // LineageSettings.Global.CLEARTEXT_NETWORK_POLICY is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+            }
+            upgradeVersion = 2;
+        }
 
         // *** Remember to update DATABASE_VERSION above!
     }
