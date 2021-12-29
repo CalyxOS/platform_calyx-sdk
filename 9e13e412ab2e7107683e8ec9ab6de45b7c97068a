@@ -16,6 +16,24 @@
       "message": "Need to make sure this doesn\u0027t overwrite user choice.",
       "revId": "9e13e412ab2e7107683e8ec9ab6de45b7c97068a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b73925e5_535f6522",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-29T19:37:00Z",
+      "side": 1,
+      "message": "It only runs once so it won\u0027t.\n\nhttps://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper#onCreate(android.database.sqlite.SQLiteDatabase)\n\n\u003e Called when the database is created for the first time. This is where the creation of tables and the initial population of the tables should happen.",
+      "parentUuid": "f6e7087c_65c33552",
+      "revId": "9e13e412ab2e7107683e8ec9ab6de45b7c97068a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
