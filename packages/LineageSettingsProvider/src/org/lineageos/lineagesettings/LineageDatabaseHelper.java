@@ -235,6 +235,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadRestrictedNetworkingModeSetting();
             // Migrate from pre-12 usb setting
             loadTrustRestrictUsbSetting(db);
+            // Custom AOSP to LineageSettings migration
+            loadCleartextNetworkPolicySettingg(db);
         }
         // Custom AOSP to LineageSettings migration, table change
         loadLockscreenScramblePinLayoutSetting(db);
@@ -447,6 +449,29 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
         } catch (SQLiteDoneException ex) {
             // LineageSettings.Global.TRUST_RESTRICT_USB is not set
+        } finally {
+            if (stmt != null) stmt.close();
+        }
+    }
+
+    private void loadCleartextNetworkPolicySettingg(SQLiteDatabase db) {
+        SQLiteStatement stmt = null;
+        try {
+            Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
+                    LineageSettings.Global.CLEARTEXT_NETWORK_POLICY, -1);
+
+            if (settingsValue.equals(0)) {
+                settingsValue = -1;
+            }
+
+            stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
+                    + " VALUES(?,?);");
+            stmt.bindString(1, LineageSettings.Global.CLEARTEXT_NETWORK_POLICY);
+            stmt.bindString(2, settingsValue.toString());
+            stmt.execute();
+
+        } catch (SQLiteDoneException ex) {
+            // LineageSettings.System.CLEARTEXT_NETWORK_POLICY is not set
         } finally {
             if (stmt != null) stmt.close();
         }
