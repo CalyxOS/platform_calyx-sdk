@@ -3431,17 +3431,15 @@ public final class LineageSettings {
         public static final Validator DEVICE_REBOOT_TIMEOUT_VALIDATOR =
                 new DiscreteValueValidator(new String[] {
                         "0",
-                        "15000",
-                        "30000",
-                        "60000",
-                        "120000",
-                        "300000",
-                        "600000",
-                        "1800000",
                         "3600000",
                         "7200000",
                         "14400000",
-                        "28800000"
+                        "28800000",
+                        "43200000",
+                        "86400000",
+                        "129600000",
+                        "172800000",
+                        "259200000"
                 });
 
         /**
