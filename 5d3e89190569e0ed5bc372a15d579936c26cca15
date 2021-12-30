@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ad70538_a2eae256",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-30T15:53:24Z",
+      "side": 1,
+      "message": "To quickly test migration on 12\n\n```\nadb shell pm clear org.lineageos.lineagesettings\nadb shell setprop persist.security.deny_new_usb dynamic # (or disabled or enabled)\nadb shell stop \u0026\u0026 adb shell start\nadb shell settings get --lineage global trust_restrict_usb\n```",
+      "revId": "5d3e89190569e0ed5bc372a15d579936c26cca15",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb8d955f_9e7558af",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-30T15:53:24Z",
+      "side": 1,
+      "message": "Need to test, _might_ need SELinux rules to read this.",
+      "revId": "5d3e89190569e0ed5bc372a15d579936c26cca15",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
