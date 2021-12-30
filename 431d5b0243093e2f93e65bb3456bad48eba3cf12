@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8c1bf8b_0805b66f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-30T12:01:59Z",
+      "side": 1,
+      "message": "This is a per-device value, so it makes sense to have it in global, I think.",
+      "revId": "431d5b0243093e2f93e65bb3456bad48eba3cf12",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
