@@ -233,6 +233,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadGlobalSettings(db);
             // Initialize restricted-networking-mode
             loadRestrictedNetworkingModeSetting();
+            // Migrate from pre-12 usb setting
+            loadTrustRestrictUsbSetting(db);
         }
         // Custom AOSP to LineageSettings migration, table change
         loadLockscreenScramblePinLayoutSetting(db);
@@ -382,6 +384,38 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             ConnectivitySettingsManager.setUidsAllowedOnRestrictedNetworks(mContext, uids);
         } catch (RemoteException e) {
             Log.e(TAG, "Failed to set uids allowed on restricted networks");
+        }
+    }
+
+    private void loadTrustRestrictUsbSetting(SQLiteDatabase db) {
+        // This used to be a property pre-12, migrate it to setting
+        SQLiteStatement stmt = null;
+        try {
+            // Default is allow usb only when unlocked
+            String propertyValue = SystemProperties.get("persist.security.deny_new_usb", "dynamic")
+            Integer settingsValue = 1;
+            switch (propertyValue) {
+                case "disabled":
+                    settingsValue = 0;
+                    break;
+                case "dynamic":
+                    settingsValue = 1;
+                    break;
+                case "enabled":
+                    settingsValue = 2:
+                    break;
+            }
+
+            stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
+                    + " VALUES(?,?);");
+            stmt.bindString(1, LineageSettings.Global.TRUST_RESTRICT_USB);
+            stmt.bindString(2, settingsValue.toString());
+            stmt.execute();
+
+        } catch (SQLiteDoneException ex) {
+            // LineageSettings.Global.TRUST_RESTRICT_USB is not set
+        } finally {
+            if (stmt != null) stmt.close();
         }
     }
 
