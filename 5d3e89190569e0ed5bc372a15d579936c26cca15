@@ -18,6 +18,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c599d4bf_e78705cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-31T14:02:44Z",
+      "side": 1,
+      "message": "This does work on 12 so the code is ok in general.",
+      "parentUuid": "9ad70538_a2eae256",
+      "revId": "5d3e89190569e0ed5bc372a15d579936c26cca15",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fb8d955f_9e7558af",
