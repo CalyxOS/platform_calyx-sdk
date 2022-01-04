@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f032df9_72f4ce12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-04T16:13:53Z",
+      "side": 1,
+      "message": "Let\u0027s call it\n\nLoad default values for settings we use\n\n* Lineage settings used but missing defaults\n* Calyx settings",
+      "revId": "13020b84c96cc42950168b92aa6c1730d5e48ad4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "7e1dd317_1268ec28",
@@ -14,6 +31,23 @@
       "writtenOn": "2022-01-04T15:25:26Z",
       "side": 1,
       "message": "I think I got all our added settings but let me know if I missed any",
+      "revId": "13020b84c96cc42950168b92aa6c1730d5e48ad4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43d90028_60111b98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-04T16:13:53Z",
+      "side": 1,
+      "message": "Defaults look ok",
       "revId": "13020b84c96cc42950168b92aa6c1730d5e48ad4",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
