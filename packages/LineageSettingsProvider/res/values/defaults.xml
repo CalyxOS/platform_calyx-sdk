@@ -24,6 +24,27 @@
     <!-- Default for LineageSettings.Secure.VOLUME_PANEL_ON_LEFT -->
     <bool name="def_volume_panel_on_left">false</bool>
 
+    <!-- Default for LineageSettings.Secure.BERRY_BLACK_THEME -->
+    <bool name="def_berry_black_theme">false</bool>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_MODE -->
+    <integer name="def_network_traffic_mode">0</integer>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE -->
+    <bool name="def_network_traffic_autohide">false</bool>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_UNITS -->
+    <integer name="def_network_traffic_units">0</integer>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS -->
+    <bool name="def_network_traffic_show_units">false</bool>
+
+    <!-- Default for LineageSettings.Secure.PANIC_IN_POWER_MENU -->
+    <bool name="def_panic_in_power_menu">false</bool>
+
+    <!-- Default for LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS -->
+    <bool name="def_tethering_allow_vpn_upstreams">false</bool>
+
     <!-- Defaults for System -->
 
     <!-- Default for LineageSettings.System.FORCE_SHOW_NAVBAR -->
@@ -72,6 +93,9 @@
     -->
     <integer name="def_clock_position">2</integer>
 
+    <!-- Default value for navigation bar arrow keys -->
+    <bool name="def_navigation_bar_arrow_keys">false</bool>
+
     <!-- Defaults for Global -->
 
     <!-- Default for LineageSettings.Global.POWER_NOTIFICATIONS_VIBRATE -->
@@ -79,5 +103,14 @@
 
     <!-- Default for LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE -->
     <string name="def_power_notifications_ringtone" translatable="false">/system/product/media/audio/ui/WirelessChargingStarted.ogg</string>
+
+    <!-- Default for LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT -->
+    <integer name="def_bluetooth_off_timeout">0</integer>
+
+    <!-- Default for LineageSettings.Global.DEVICE_REBOOT_TIMEOUT -->
+    <integer name="def_device_reboot_timeout">0</integer>
+
+    <!-- Default for LineageSettings.Global.GLOBAL_VPN_APP -->
+    <string name="def_global_vpn_app" translatable="false"></string>
 
 </resources>
