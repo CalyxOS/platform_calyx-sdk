@@ -28,6 +28,24 @@
     <!-- Default for LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER -->
     <bool name="def_qs_show_brightness_slider">true</bool>
 
+    <!-- Default for LineageSettings.Secure.BERRY_BLACK_THEME -->
+    <bool name="def_berry_black_theme">false</bool>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_MODE -->
+    <integer name="def_network_traffic_mode">0</integer>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE -->
+    <bool name="def_network_traffic_autohide">false</bool>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_UNITS -->
+    <integer name="def_network_traffic_units">0</integer>
+
+    <!-- Default for LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS -->
+    <bool name="def_network_traffic_show_units">false</bool>
+
+    <!-- Default for LineageSettings.Secure.PANIC_IN_POWER_MENU -->
+    <bool name="def_panic_in_power_menu">false</bool>
+
     <!-- Defaults for System -->
 
     <!-- Default for LineageSettings.System.FORCE_SHOW_NAVBAR -->
@@ -75,5 +93,16 @@
          * 2: show the clock in the left position (LTR)
     -->
     <integer name="def_clock_position">2</integer>
+
+    <!-- Default value for navigation bar arrow keys -->
+    <bool name="def_navigation_bar_arrow_keys">false</bool>
+
+    <!-- Defaults for Global -->
+
+    <!-- Default for LineageSettings.Global.DEVICE_REBOOT_TIMEOUT -->
+    <integer name="def_device_reboot_timeout">0</integer>
+
+    <!-- Default for LineageSettings.Global.GLOBAL_VPN_APP -->
+    <string name="def_global_vpn_app" translatable="false"></string>
 
 </resources>
