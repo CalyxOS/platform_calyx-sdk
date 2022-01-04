@@ -16,6 +16,23 @@
       "message": "Looks ok on fresh install of 12.\n\nI _think_ it should be fine even when migration from 11, but I\u0027d like to double check.",
       "revId": "14f01b0f94402af01d5dfce8ff8a6d9662986022",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd7080a6_9982608a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-04T21:33:32Z",
+      "side": 1,
+      "message": "Handled upgrade fine, didn\u0027t overwrite 11 setting.",
+      "revId": "14f01b0f94402af01d5dfce8ff8a6d9662986022",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
