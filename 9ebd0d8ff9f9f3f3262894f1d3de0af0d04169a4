@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f44c8628_0b1a56bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-04T14:07:44Z",
+      "side": 1,
+      "message": "Just did another run with the chain, everything migrates fine.",
+      "revId": "9ebd0d8ff9f9f3f3262894f1d3de0af0d04169a4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
