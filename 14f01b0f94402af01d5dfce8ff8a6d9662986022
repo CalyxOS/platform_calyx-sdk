@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6afb0fb3_7a5d6c5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-04T20:53:27Z",
+      "side": 1,
+      "message": "Looks ok on fresh install of 12.\n\nI _think_ it should be fine even when migration from 11, but I\u0027d like to double check.",
+      "revId": "14f01b0f94402af01d5dfce8ff8a6d9662986022",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
