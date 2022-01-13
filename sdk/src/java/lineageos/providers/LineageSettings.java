@@ -3509,7 +3509,7 @@ public final class LineageSettings {
             VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
-                    value -> (value == null) || PACKAGE_NAME_VALIDATOR.validate(value));
+                    value -> value.equals("") || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(TRUST_RESTRICT_USB, TRUST_RESTRICT_USB_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
