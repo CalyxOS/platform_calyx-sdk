@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee0b08a1_45541c90",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3512,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-14T21:26:48Z",
+      "side": 1,
+      "message": "I\u0027d do value.isEmpty() instead.",
+      "revId": "0e49aa0457b6fd349abcdcbd3d89f3e7051568de",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
