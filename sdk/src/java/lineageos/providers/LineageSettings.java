@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017-2021 The LineageOS Project
+ *               2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1718,15 +1718,6 @@ public final class LineageSettings {
                 sBooleanValidator;
 
         /**
-         * Show the pending notification counts as overlays on the status bar
-         */
-        public static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
-
-        /** @hide */
-        public static final Validator STATUS_BAR_NOTIF_COUNT_VALIDATOR =
-                sBooleanValidator;
-
-        /**
          * Call recording format value
          * 0: AMR_WB
          * 1: MPEG_4
@@ -2182,7 +2173,6 @@ public final class LineageSettings {
             VALIDATORS.put(VOLBTN_MUSIC_CONTROLS, VOLBTN_MUSIC_CONTROLS_VALIDATOR);
             VALIDATORS.put(USE_EDGE_SERVICE_FOR_GESTURES,
                     USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_NOTIF_COUNT, STATUS_BAR_NOTIF_COUNT_VALIDATOR);
             VALIDATORS.put(CALL_RECORDING_FORMAT, CALL_RECORDING_FORMAT_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_BRIGHTNESS_LEVEL,
                     BATTERY_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR);
@@ -3371,18 +3361,6 @@ public final class LineageSettings {
          */
         public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED =
                 "wake_when_plugged_or_unplugged";
-
-        /**
-         * Whether to vibrate when charger power is connected/disconnected
-         * @hide
-         */
-        public static final String POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
-
-        /**
-         * URI for power notification sounds
-         * @hide
-         */
-        public static final String POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
 
         /**
          * @hide
