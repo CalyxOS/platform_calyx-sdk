@@ -1,6 +1,6 @@
 /**
- * Copyright (c) 2015, The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ *               2019-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -448,12 +448,6 @@ public final class LineageSettings {
         public static final String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
 
         /**
-         * Show the pending notification counts as overlays on the status bar
-         * @hide
-         */
-        public static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
-
-        /**
          * Call recording format value
          * 0: AMR_WB
          * 1: MPEG_4
@@ -606,7 +600,6 @@ public final class LineageSettings {
                 LineageSettings.System.VOLBTN_MUSIC_CONTROLS,
                 LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
                 LineageSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
-                LineageSettings.System.STATUS_BAR_NOTIF_COUNT,
                 LineageSettings.System.CALL_RECORDING_FORMAT,
                 LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                 LineageSettings.System.NOTIFICATION_LIGHT_SCREEN_ON,
@@ -862,18 +855,6 @@ public final class LineageSettings {
                 BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX = "bluetooth_a2dp_src_priority_";
 
         /**
-         * Whether to vibrate when charger power is connected/disconnected
-         * @hide
-         */
-        public static final String POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
-
-        /**
-         * URI for power notification sounds
-         * @hide
-         */
-        public static final String POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
-
-        /**
          * @hide
          */
         public static final String ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK =
@@ -893,8 +874,6 @@ public final class LineageSettings {
          */
         public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
                 LineageSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                LineageSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
                 LineageSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
                 LineageSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION};
 

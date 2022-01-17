@@ -45,7 +45,6 @@ import lineageos.providers.LineageSettings;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -333,14 +332,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
                     + " VALUES(?,?);");
             // Global
-            loadBooleanSetting(stmt,
-                    LineageSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                    R.bool.def_power_notifications_vibrate);
-
-            loadStringSetting(stmt,
-                    LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
-                    R.string.def_power_notifications_ringtone);
-
             loadIntegerSetting(stmt, LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT,
                     R.integer.def_bluetooth_off_timeout);
 
