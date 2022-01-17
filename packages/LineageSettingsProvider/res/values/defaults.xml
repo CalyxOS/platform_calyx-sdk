@@ -98,12 +98,6 @@
 
     <!-- Defaults for Global -->
 
-    <!-- Default for LineageSettings.Global.POWER_NOTIFICATIONS_VIBRATE -->
-    <bool name="def_power_notifications_vibrate">false</bool>
-
-    <!-- Default for LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE -->
-    <string name="def_power_notifications_ringtone" translatable="false">/system/product/media/audio/ui/WirelessChargingStarted.ogg</string>
-
     <!-- Default for LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT -->
     <integer name="def_bluetooth_off_timeout">0</integer>
 
