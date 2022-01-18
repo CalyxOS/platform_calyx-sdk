@@ -33,6 +33,24 @@
       "message": "I know it\u0027s upstream but why was this moved?\n\nIt could be outside the try block.\n\nWe also have other stuff above so now it\u0027s out of sync, but I don\u0027t think we can move those easily since it\u0027d become something like statement inside statement.\n\nShould be fine but I\u0027d like to test it once real quick just to be sure, don\u0027t wanna take any chances.",
       "revId": "45fc422dafbdb338b798bd7c96529bc2c2a530ef",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31087cd1_85cea070",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2022-01-18T00:34:34Z",
+      "side": 1,
+      "message": "There was no comment about the location of this in upstream commit. We can just move it back for now.",
+      "parentUuid": "a5b1cbc9_c26c6a72",
+      "revId": "45fc422dafbdb338b798bd7c96529bc2c2a530ef",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
