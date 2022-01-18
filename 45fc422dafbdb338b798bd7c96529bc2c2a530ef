@@ -104,6 +104,24 @@
       "parentUuid": "31087cd1_85cea070",
       "revId": "45fc422dafbdb338b798bd7c96529bc2c2a530ef",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "feb01064_91fc2df4",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-18T00:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32a33d54_ec39d0ed",
+      "revId": "45fc422dafbdb338b798bd7c96529bc2c2a530ef",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
