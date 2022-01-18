@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "741cf095_698dadab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-18T00:14:02Z",
+      "side": 1,
+      "message": "This should be fine, but given how much we\u0027ve tested things I\u0027d prefer if we left this part out for now.",
+      "revId": "45fc422dafbdb338b798bd7c96529bc2c2a530ef",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5b1cbc9_c26c6a72",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-18T00:14:02Z",
+      "side": 1,
+      "message": "I know it\u0027s upstream but why was this moved?\n\nIt could be outside the try block.\n\nWe also have other stuff above so now it\u0027s out of sync, but I don\u0027t think we can move those easily since it\u0027d become something like statement inside statement.\n\nShould be fine but I\u0027d like to test it once real quick just to be sure, don\u0027t wanna take any chances.",
+      "revId": "45fc422dafbdb338b798bd7c96529bc2c2a530ef",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
