@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0796b755_4576a6ef",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-15T20:24:49Z",
+      "side": 0,
+      "message": "Keep this",
+      "revId": "f2cd2481f3db97eb3cd6b150b6931a1dcfce0238",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
