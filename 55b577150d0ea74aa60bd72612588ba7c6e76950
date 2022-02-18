@@ -16,6 +16,24 @@
       "message": "This could be done in onUpgrade now that we\u0027re shipping",
       "revId": "55b577150d0ea74aa60bd72612588ba7c6e76950",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a73872f3_589bc40e",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-18T19:50:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef9b4566_d030c664",
+      "revId": "55b577150d0ea74aa60bd72612588ba7c6e76950",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
