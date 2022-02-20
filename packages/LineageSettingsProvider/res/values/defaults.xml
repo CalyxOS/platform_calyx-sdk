@@ -43,7 +43,7 @@
     <bool name="def_panic_in_power_menu">false</bool>
 
     <!-- Default for LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS -->
-    <bool name="def_tethering_allow_vpn_upstreams">false</bool>
+    <bool name="def_tethering_allow_vpn_upstreams">true</bool>
 
     <!-- Defaults for System -->
 
