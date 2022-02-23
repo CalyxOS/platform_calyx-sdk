@@ -16,6 +16,24 @@
       "message": "Can remove this now",
       "revId": "f2cd2481f3db97eb3cd6b150b6931a1dcfce0238",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17a9c831_569f822b",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-23T18:00:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99da2412_7df6a4f2",
+      "revId": "f2cd2481f3db97eb3cd6b150b6931a1dcfce0238",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
