@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d98952e0_1048f8df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000034
+      },
+      "writtenOn": "2022-03-07T13:44:46Z",
+      "side": 1,
+      "message": "\"fixup\", rather use new API behavior?",
+      "revId": "a0ea6403a36f6152b3d4c5cdb8b0a051a7e06e38",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
