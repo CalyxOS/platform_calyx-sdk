@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5faf73f6_06a7d884",
+        "filename": "lineage/res/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-25T16:48:28Z",
+      "side": 1,
+      "message": "Worth trying this for statement service v1",
+      "revId": "08ae3e7f4899153c2fbd5caa8a3518d40f992644",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
