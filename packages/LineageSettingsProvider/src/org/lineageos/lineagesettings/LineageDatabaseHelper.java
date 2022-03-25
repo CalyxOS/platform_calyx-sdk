@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017-2021 The LineageOS Project
+ *               2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             }
             upgradeVersion = 2;
         }
-
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
             Log.wtf(TAG, "warning: upgrading settings database to version "
