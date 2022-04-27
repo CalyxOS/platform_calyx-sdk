@@ -42,9 +42,6 @@
     <!-- Default for LineageSettings.Secure.PANIC_IN_POWER_MENU -->
     <bool name="def_panic_in_power_menu">false</bool>
 
-    <!-- Default for LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS -->
-    <bool name="def_tethering_allow_vpn_upstreams">false</bool>
-
     <!-- Defaults for System -->
 
     <!-- Default for LineageSettings.System.FORCE_SHOW_NAVBAR -->
