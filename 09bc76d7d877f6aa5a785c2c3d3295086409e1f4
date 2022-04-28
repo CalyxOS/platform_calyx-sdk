@@ -51,6 +51,24 @@
       "message": "Could write 1 here to turn it on for existing users but I don\u0027t know if we want to do that.",
       "revId": "09bc76d7d877f6aa5a785c2c3d3295086409e1f4",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e61e95d_07dc08cf",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-04-28T17:04:59Z",
+      "side": 1,
+      "message": "Let\u0027s not change things for existing users.",
+      "parentUuid": "a41bde1e_11bdfb15",
+      "revId": "09bc76d7d877f6aa5a785c2c3d3295086409e1f4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
