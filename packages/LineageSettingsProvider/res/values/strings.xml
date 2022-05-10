@@ -16,4 +16,6 @@
 -->
 <resources>
     <string name="app_name">Lineage Settings Storage</string>
+
+    <string name="calyx_fdroid_repo_location" translatable="false">/product/fdroid/repo</string>
 </resources>
