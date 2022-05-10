@@ -33,6 +33,42 @@
       "message": "https://zifb.in/9Ua8KbQDPr",
       "revId": "a0a84be038bb1ebb52f627bca201fc4d8717a428",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52d8ac3d_a381923c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-05-10T10:35:17Z",
+      "side": 1,
+      "message": "\u003e I BackupManagerService: [UserID:0] Package org.fdroid.fdroid not installed; dropping from full backup\n\nI guess it\u0027ll get re-added\n\n\u003e E JobScheduler.Component: Job exists for non-existent package: org.fdroid.fdroid\n\nShould get re-added on first launch, good to verify.\n\nI\u0027d say:\n\nLaunch F-Droid once, set auto update internal to lowest\n\nInstall an older version of some app, and maybe wait a bit to see if it prompts to update?\n\nOr just check jobscheduler through adb to make sure job is registered so that we know f-droid works",
+      "parentUuid": "b437aa69_aff98710",
+      "revId": "a0a84be038bb1ebb52f627bca201fc4d8717a428",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73deccd2_f6d34e0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-05-10T10:35:17Z",
+      "side": 1,
+      "message": "Given that it works, we can ship the upstream key change, and then wait a bit before shipping this to make sure everyone is on that.",
+      "parentUuid": "6dab9d98_1466c1c2",
+      "revId": "a0a84be038bb1ebb52f627bca201fc4d8717a428",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
