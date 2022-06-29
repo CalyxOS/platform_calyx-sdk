@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "412cf938_39be7c78",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/BootReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-06-29T16:47:52Z",
+      "side": 1,
+      "message": "This is going to get removed from SuW and move to Lupin.\n\nCan potentially move this to that then.",
+      "revId": "29937135df90fb1cef70b454faad142fb8ed1d3b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
