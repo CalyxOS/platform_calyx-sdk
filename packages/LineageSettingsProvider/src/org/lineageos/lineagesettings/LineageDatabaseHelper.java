@@ -285,7 +285,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         if (mUserHandle == UserHandle.USER_SYSTEM) {
             loadGlobalSettings(db);
             // Initialize restricted-networking-mode
-            loadRestrictedNetworkingModeSetting();
+            //loadRestrictedNetworkingModeSetting();
             // Migrate from pre-12 usb setting
             loadTrustRestrictUsbSetting(db);
         }
