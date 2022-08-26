@@ -3411,29 +3411,6 @@ public final class LineageSettings {
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
 
         /**
-         * The amount of time in milliseconds before bluetooth is turned off
-         * @hide
-         */
-        public static final String BLUETOOTH_OFF_TIMEOUT = "bluetooth_off_timeout";
-
-        /** @hide */
-        public static final Validator BLUETOOTH_OFF_TIMEOUT_VALIDATOR =
-                new DiscreteValueValidator(new String[] {
-                        "0",
-                        "15000",
-                        "30000",
-                        "60000",
-                        "120000",
-                        "300000",
-                        "600000",
-                        "1800000",
-                        "3600000",
-                        "7200000",
-                        "14400000",
-                        "28800000"
-                });
-
-        /**
          * The amount of time in milliseconds before the device automatically reboots
          * @hide
          */
@@ -3512,7 +3489,6 @@ public final class LineageSettings {
          * @hide
          */
         public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
-                LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT,
                 LineageSettings.Global.DEVICE_REBOOT_TIMEOUT,
                 LineageSettings.Global.GLOBAL_VPN_APP,
         };
@@ -3536,7 +3512,6 @@ public final class LineageSettings {
         public static final Map<String, Validator> VALIDATORS =
                 new ArrayMap<String, Validator>();
         static {
-            VALIDATORS.put(BLUETOOTH_OFF_TIMEOUT, BLUETOOTH_OFF_TIMEOUT_VALIDATOR);
             VALIDATORS.put(CLEARTEXT_NETWORK_POLICY, CLEARTEXT_NETWORK_POLICY_VALIDATOR);
             VALIDATORS.put(DEVICE_REBOOT_TIMEOUT, DEVICE_REBOOT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(GLOBAL_VPN_APP,
