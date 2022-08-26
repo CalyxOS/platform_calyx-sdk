@@ -95,9 +95,6 @@
 
     <!-- Defaults for Global -->
 
-    <!-- Default for LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT -->
-    <integer name="def_bluetooth_off_timeout">0</integer>
-
     <!-- Default for LineageSettings.Global.DEVICE_REBOOT_TIMEOUT -->
     <integer name="def_device_reboot_timeout">0</integer>
 
