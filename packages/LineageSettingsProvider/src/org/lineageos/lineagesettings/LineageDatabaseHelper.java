@@ -58,7 +58,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -214,6 +214,26 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
                     oldSetting);
             upgradeVersion = 3;
+        }
+
+        if (upgradeVersion < 4) {
+            Integer oldSetting = 0;
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
+                stmt.bindString(1, Settings.Global.BLUETOOTH_OFF_TIMEOUT);
+                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
+            } catch (SQLiteDoneException ex) {
+                // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            Settings.Secure.putInt(mContext.getContentResolver(),
+                    Settings.Global.BLUETOOTH_OFF_TIMEOUT,
+                    oldSetting);
+            upgradeVersion = 4;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
@@ -383,9 +403,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
                     + " VALUES(?,?);");
             // Global
-            loadIntegerSetting(stmt, LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT,
-                    R.integer.def_bluetooth_off_timeout);
-
             loadIntegerSetting(stmt, LineageSettings.Global.DEVICE_REBOOT_TIMEOUT,
                     R.integer.def_device_reboot_timeout);
 
