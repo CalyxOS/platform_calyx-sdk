@@ -16,6 +16,24 @@
       "message": "We use putLong in Settings",
       "revId": "5f4317b68e25bfdf42ca8c0636cf5fab67c622b0",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ed5842c_bb5110f8",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-08T20:55:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a87dfbf_371e0f47",
+      "revId": "5f4317b68e25bfdf42ca8c0636cf5fab67c622b0",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
