@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4023951_c6fc3269",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-08T16:24:42Z",
+      "side": 1,
+      "message": "Fully works, tested on sunfish.\n\nGiven the method being used it should work on all devices.",
+      "revId": "f786a7e030cced6fdc8023557288406f1151b406",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
