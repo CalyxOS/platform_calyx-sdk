@@ -16,6 +16,24 @@
       "message": "Something\u0027s off\n\n13/settings/lineage/global\n1:bluetooth_off_timeout\u003d28800000\n\n13/settings/aosp/secure\n15:bluetooth_off_timeout\u003d0\n\n\n`for i in global system secure; do adb shell settings list $i; done\n\nfor i in global system secure; do adb shell settings list --lineage $i; done\n\nadb shell pm list packages`",
       "revId": "f370a44b1f6c1cdf3f44f50847f686000b16fbed",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "192244a6_3e4624b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-09T14:23:38Z",
+      "side": 1,
+      "message": "Last time we did this for easier debugging I\u0027d just keep doing it on the same Android version by bumping the version here.\n\nSo bump version to 5, change code for that, then run it again. And then 6 and 7 and 8 till it starts working. Delete the setting from AOSP db via adb manually before each attempt.",
+      "parentUuid": "f98b4c23_b9268baf",
+      "revId": "f370a44b1f6c1cdf3f44f50847f686000b16fbed",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
