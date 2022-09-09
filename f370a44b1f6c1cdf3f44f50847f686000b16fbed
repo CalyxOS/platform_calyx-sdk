@@ -34,6 +34,69 @@
       "parentUuid": "f98b4c23_b9268baf",
       "revId": "f370a44b1f6c1cdf3f44f50847f686000b16fbed",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "599eda31_f62ded72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-09-09T14:53:58Z",
+      "side": 1,
+      "message": "I think the missing piece is that it is a global settings but some references are to the secure table",
+      "revId": "f370a44b1f6c1cdf3f44f50847f686000b16fbed",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b691cfb_be1c2c84",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-09-09T14:53:58Z",
+      "side": 1,
+      "message": "global",
+      "range": {
+        "startLine": 224,
+        "startChar": 62,
+        "endLine": 224,
+        "endChar": 69
+      },
+      "revId": "f370a44b1f6c1cdf3f44f50847f686000b16fbed",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a35dddf9_f2d998e0",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-09-09T14:53:58Z",
+      "side": 1,
+      "message": "Global",
+      "range": {
+        "startLine": 233,
+        "startChar": 21,
+        "endLine": 233,
+        "endChar": 27
+      },
+      "revId": "f370a44b1f6c1cdf3f44f50847f686000b16fbed",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
