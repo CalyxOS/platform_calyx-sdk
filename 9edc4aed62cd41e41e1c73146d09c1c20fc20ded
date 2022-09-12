@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba150699_13765ae6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-12T16:30:53Z",
+      "side": 1,
+      "message": "Doesn\u0027t work for tethering.\n\nI don\u0027t know if or how well that actually worked in 12L either though",
+      "revId": "9edc4aed62cd41e41e1c73146d09c1c20fc20ded",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
