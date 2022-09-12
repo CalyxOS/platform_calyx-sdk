@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a9724b6_457dcd22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-12T15:52:23Z",
+      "side": 1,
+      "message": "Let\u0027s not do changes like this downstream.\n\nSend upstream, and lets wait for review, makes our life merging this easier.\n\nAlso hard to keep something like this in sync so we\u0027ll just pull it in directly when merged.",
+      "revId": "f11e49831da81c6cda2fce950406845d56d249e5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
