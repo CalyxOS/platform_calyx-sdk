@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55c67855_4cc0331b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-12T15:54:10Z",
+      "side": 1,
+      "message": "FYI this is not a permalink and the code will move around.",
+      "revId": "ac86a61d57ec6e341b5cd41030c1e7e92bb051bf",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b75dcf59_acbd7739",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-12T15:54:10Z",
+      "side": 1,
+      "message": "Pedantic nit",
+      "revId": "ac86a61d57ec6e341b5cd41030c1e7e92bb051bf",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
