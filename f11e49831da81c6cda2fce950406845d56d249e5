@@ -16,6 +16,24 @@
       "message": "Let\u0027s not do changes like this downstream.\n\nSend upstream, and lets wait for review, makes our life merging this easier.\n\nAlso hard to keep something like this in sync so we\u0027ll just pull it in directly when merged.",
       "revId": "f11e49831da81c6cda2fce950406845d56d249e5",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bc5d1d5_a47f85f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-23T18:18:39Z",
+      "side": 1,
+      "message": "Given that this unintentionally includes functional changes that fix this feature, shipping it.\n\nCode looks and mostly works ok. Tethering _might_ need some adjustments still depending on device, but I\u0027m not sure how well it worked in 12L either.\n\nStill need to send it upstream.",
+      "parentUuid": "0a9724b6_457dcd22",
+      "revId": "f11e49831da81c6cda2fce950406845d56d249e5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
