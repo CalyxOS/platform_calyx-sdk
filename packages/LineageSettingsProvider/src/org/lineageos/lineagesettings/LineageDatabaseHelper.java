@@ -217,22 +217,25 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 4) {
-            Long oldSetting = 0L;
-            db.beginTransaction();
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
-                stmt.bindString(1, Settings.Global.BLUETOOTH_OFF_TIMEOUT);
-                oldSetting = Long.parseLong(stmt.simpleQueryForString());
-            } catch (SQLiteDoneException ex) {
-                // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
-            } finally {
-                if (stmt != null) stmt.close();
-                db.endTransaction();
+            // The global table only exists for the 'owner' user
+            if (mUserHandle == UserHandle.USER_SYSTEM) {
+                Long oldSetting = 0L;
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
+                    stmt.bindString(1, Settings.Global.BLUETOOTH_OFF_TIMEOUT);
+                    oldSetting = Long.parseLong(stmt.simpleQueryForString());
+                } catch (SQLiteDoneException ex) {
+                    // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+                Settings.Global.putLong(mContext.getContentResolver(),
+                        Settings.Global.BLUETOOTH_OFF_TIMEOUT,
+                        oldSetting);
             }
-            Settings.Global.putLong(mContext.getContentResolver(),
-                    Settings.Global.BLUETOOTH_OFF_TIMEOUT,
-                    oldSetting);
             upgradeVersion = 4;
         }
         // *** Remember to update DATABASE_VERSION above!
