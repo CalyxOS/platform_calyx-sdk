@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c587b5e_aac94e83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-23T15:32:27Z",
+      "side": 1,
+      "message": "Tiny little change made secondary users unusable for many people.\n\nHopefully this fixes it!",
+      "revId": "ea46e808d7480d02cd0689867f5eb8142ba94d39",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
