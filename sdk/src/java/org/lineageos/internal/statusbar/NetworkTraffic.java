@@ -41,12 +41,12 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
+import lineageos.providers.LineageSettings;
+
 import org.lineageos.platform.internal.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import lineageos.providers.LineageSettings;
 
 public class NetworkTraffic extends TextView {
     private static final String TAG = "NetworkTraffic";
@@ -190,7 +190,8 @@ public class NetworkTraffic extends TextView {
                         mMode == MODE_UPSTREAM_ONLY || mMode == MODE_UPSTREAM_AND_DOWNSTREAM;
                 final boolean showDownstream =
                         mMode == MODE_DOWNSTREAM_ONLY || mMode == MODE_UPSTREAM_AND_DOWNSTREAM;
-                final boolean shouldHide = mAutoHide && (!showUpstream || mTxKbps < mAutoHideThreshold)
+                final boolean shouldHide = mAutoHide
+                        && (!showUpstream || mTxKbps < mAutoHideThreshold)
                         && (!showDownstream || mRxKbps < mAutoHideThreshold);
 
                 if (!enabled || shouldHide) {
@@ -382,8 +383,7 @@ public class NetworkTraffic extends TextView {
     }
 
     private boolean isConnectionAvailable() {
-        ConnectivityManager cm =
-                (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = mContext.getSystemService(ConnectivityManager.class);
         return cm.getActiveNetwork() != null;
     }
 
@@ -446,7 +446,8 @@ public class NetworkTraffic extends TextView {
 
     private void updateTrafficDrawableColor() {
         if (mDrawable != null) {
-            mDrawable.setColorFilter(new PorterDuffColorFilter(mIconTint, PorterDuff.Mode.MULTIPLY));
+            mDrawable.setColorFilter(
+                    new PorterDuffColorFilter(mIconTint, PorterDuff.Mode.MULTIPLY));
         }
     }
 
