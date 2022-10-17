@@ -177,6 +177,7 @@ java_library {
 
     // List of apex modules that can link against this lib
     apex_available: [
+        "//apex_available:platform",
         "com.android.tethering",
     ],
 }
