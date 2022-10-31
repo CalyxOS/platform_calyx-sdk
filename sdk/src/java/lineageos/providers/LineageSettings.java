@@ -3468,6 +3468,16 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator CLEARTEXT_NETWORK_POLICY_VALIDATOR =
                 new InclusiveIntegerRangeValidator(-1, 2);
+        /**
+         *
+         *
+         * @hide
+         */
+        public static final String OS_SECURITY_LEVEL = "os_security_level";
+
+        /** @hide */
+        public static final Validator OS_SECURITY_LEVEL_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
         // endregion
 
         /**
