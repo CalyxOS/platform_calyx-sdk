@@ -3468,6 +3468,22 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator CLEARTEXT_NETWORK_POLICY_VALIDATOR =
                 new InclusiveIntegerRangeValidator(-1, 2);
+
+        /**
+         * Device operating mode
+         *
+         * Apply privacy/security improving settings based on the mode.
+         * Values are:
+         * 0: Standard (default)
+         * 1: Safer
+         * 2: Safest
+         * @hide
+         */
+        public static final String GARLIC_LEVEL = "garlic_level";
+
+        /** @hide */
+        public static final Validator GARLIC_LEVEL_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
         // endregion
 
         /**
@@ -3517,6 +3533,7 @@ public final class LineageSettings {
             VALIDATORS.put(GLOBAL_VPN_APP,
                     value -> value.isEmpty() || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(TRUST_RESTRICT_USB, TRUST_RESTRICT_USB_VALIDATOR);
+            VALIDATORS.put(GARLIC_LEVEL, GARLIC_LEVEL_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
