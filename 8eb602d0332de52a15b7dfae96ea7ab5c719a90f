@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdd0ed8c_b33fc11f",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3471,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-14T15:29:53Z",
+      "side": 1,
+      "message": "Needs newline above",
+      "revId": "8eb602d0332de52a15b7dfae96ea7ab5c719a90f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b2da3b7_9e7a7c1a",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3472,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-14T15:29:53Z",
+      "side": 1,
+      "message": "I like.",
+      "revId": "8eb602d0332de52a15b7dfae96ea7ab5c719a90f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc1e98c5_bb221997",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3477,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-14T15:29:53Z",
+      "side": 1,
+      "message": "Safer",
+      "revId": "8eb602d0332de52a15b7dfae96ea7ab5c719a90f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}

@@ -35,6 +35,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7b60962_de9cc313",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3472,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-14T15:29:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c3a1f05_ff43a5ae",
+      "revId": "867cb2f05a0aadafb4ef61f3a8265af4388e630d",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "560f67c8_b98b1c2c",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-11-02T17:43:10Z",
       "side": 1,
       "message": "`GARLIC_LEVEL` wins per the vote.\n\nNote: That\u0027s only for internal usage, as a codename and for variables.\n\nUser facing strings (whenever ready) should be \"Security level\", or something else as decided.",
+      "revId": "867cb2f05a0aadafb4ef61f3a8265af4388e630d",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32097c98_4105a185",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3476,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-14T15:29:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "560f67c8_b98b1c2c",
       "revId": "867cb2f05a0aadafb4ef61f3a8265af4388e630d",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
