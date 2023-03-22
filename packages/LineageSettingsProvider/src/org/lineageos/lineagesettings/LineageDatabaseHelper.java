@@ -58,7 +58,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -267,6 +267,28 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     oldSetting);
             upgradeVersion = 5;
         }
+
+        if (upgradeVersion < 6) {
+            try {
+                List<PackageInfo> packages = new ArrayList<>();
+                for (UserInfo userInfo : UserManager.get(mContext).getAliveUsers()) {
+                    packages.addAll(AppGlobals.getPackageManager().getPackagesHoldingPermissions(
+                            new String[]{Manifest.permission.INTERNET},
+                            PackageManager.MATCH_SYSTEM_ONLY
+                                    | PackageManager.MATCH_UNINSTALLED_PACKAGES,
+                            userInfo.id).getList());
+                }
+                Set<Integer> uids = ConnectivitySettingsManager.getUidsAllowedOnRestrictedNetworks(
+                        mContext);
+                uids.addAll(packages.stream().map(packageInfo ->
+                        packageInfo.applicationInfo.uid).collect(Collectors.toSet()));
+                ConnectivitySettingsManager.setUidsAllowedOnRestrictedNetworks(mContext, uids);
+            } catch (RemoteException e) {
+                Log.e(TAG, "Failed to migrate uids allowed on restricted networks", e);
+            }
+            upgradeVersion = 7;
+        }
+
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
             Log.wtf(TAG, "warning: upgrading settings database to version "
