@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "348fa883_9526ac6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-03-22T15:36:58Z",
+      "side": 1,
+      "message": "If we do decide to enable network access for all system apps for this one-time migration, we want to wait until we have a fix for the problem first so that we don\u0027t need to do this again. That will likely come in the form of relying on `POLICY_REJECT_ALL` rather than the restricted mode allowlist uids setting. Setting -2 until such a change is in.",
+      "revId": "ffc6c4df8fa8d5050bc91f04ba768809ca4f030b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de9e0e52_bd43824b",
