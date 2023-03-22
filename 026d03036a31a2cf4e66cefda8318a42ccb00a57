@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "928b3c88_13f2fa54",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-03-22T15:46:36Z",
+      "side": 1,
+      "message": "Should we guard by `if (mUserHandle \u003d\u003d UserHandle.USER_SYSTEM) {`",
+      "range": {
+        "startLine": 272,
+        "startChar": 12,
+        "endLine": 272,
+        "endChar": 17
+      },
+      "revId": "026d03036a31a2cf4e66cefda8318a42ccb00a57",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
