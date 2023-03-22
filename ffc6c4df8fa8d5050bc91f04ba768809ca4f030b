@@ -33,6 +33,24 @@
       "message": "should be upgradeVersion \u003d 6?",
       "revId": "ffc6c4df8fa8d5050bc91f04ba768809ca4f030b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06954701_6c826a5b",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-03-22T15:37:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de9e0e52_bd43824b",
+      "revId": "ffc6c4df8fa8d5050bc91f04ba768809ca4f030b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
