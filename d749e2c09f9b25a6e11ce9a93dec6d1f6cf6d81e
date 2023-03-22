@@ -16,6 +16,24 @@
       "message": "We should NEVER just turn on access for all apps like this.\n\nThere\u0027s multiple other options put in the ticket, anything except this one is fine.",
       "revId": "d749e2c09f9b25a6e11ce9a93dec6d1f6cf6d81e",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0184f7b5_fe6305ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-22T20:59:13Z",
+      "side": 1,
+      "message": "I\u0027m ok with special casing Lupin.Installer safely here (This _may_ be too early to call PackageManager, we have to be careful about that)\n\nI\u0027m also ok with it not being a perfect solution, and us needing to do another migration afterwards if we find out some other app had the same issue. But as discussed on gitlab, there should be ways to determine that already.",
+      "parentUuid": "c0fb8dbd_5845532e",
+      "revId": "d749e2c09f9b25a6e11ce9a93dec6d1f6cf6d81e",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
