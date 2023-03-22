@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0fb8dbd_5845532e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-22T17:25:56Z",
+      "side": 1,
+      "message": "We should NEVER just turn on access for all apps like this.\n\nThere\u0027s multiple other options put in the ticket, anything except this one is fine.",
+      "revId": "d749e2c09f9b25a6e11ce9a93dec6d1f6cf6d81e",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
