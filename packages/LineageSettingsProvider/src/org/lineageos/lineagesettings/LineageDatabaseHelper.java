@@ -20,6 +20,7 @@ package org.lineageos.lineagesettings;
 import android.Manifest;
 import android.app.AppGlobals;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.UserInfo;
@@ -58,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -269,6 +270,16 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     oldSetting);
             upgradeVersion = 5;
         }
+
+        if (upgradeVersion < 6) {
+            if (oldVersion == 5) {
+                // This problem specifically affects devices that received CalyxOS 4.7.6.
+                // Database version 5 was introduced with CalyxOS 4.7.5. That will have to be
+                // good enough; this way, we are only affecting these two versions.
+                removeMistakenSystemAppSuspensions();
+            }
+            upgradeVersion = 6;
+        }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
             Log.wtf(TAG, "warning: upgrading settings database to version "
@@ -276,6 +287,43 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                             + upgradeVersion +
                             " instead; this is probably a bug. Did you update DATABASE_VERSION?",
                     new RuntimeException("db upgrade error"));
+        }
+    }
+
+    private void removeMistakenSystemAppSuspensions() {
+        try {
+            final String PLATFORM_PACKAGE_NAME = "android";
+
+            // Ideally, we could check whether there is a device owner here, but the
+            // DevicePolicyManager service is not yet available.
+
+            Log.w(TAG, "Trying to remove package suspensions by " + PLATFORM_PACKAGE_NAME);
+            final var ipm = AppGlobals.getPackageManager();
+            for (final var userInfo : UserManager.get(mContext).getUsers()) {
+                final List<ApplicationInfo> userApplications = ipm.getInstalledApplications(
+                        PackageManager.MATCH_UNINSTALLED_PACKAGES, userInfo.id).getList();
+
+                // All we know is that these apps are suspended. We don't know who suspended them,
+                // and packages can be suspended by multiple suspending packages at a time.
+                final String[] suspendedPackageNames = userApplications.stream()
+                        .filter(app -> (app.flags & ApplicationInfo.FLAG_SUSPENDED) != 0)
+                        .map(app -> app.packageName).toArray(String[]::new);
+
+                // Remove any platform package suspensions. Packages *not* suspended by the
+                // platform package will be unaffected, e.g. packages suspended by the launcher
+                // prior to CalyxOS 4.7.6 or packages suspended by a device admin app directly.
+                // (CalyxOS does not support device owner use cases.)
+                ipm.setPackagesSuspendedAsUser(suspendedPackageNames, false /* suspended */,
+                        null, null, null /* dialogInfo */,
+                        PLATFORM_PACKAGE_NAME, userInfo.id);
+
+                // We do not replace the suspension with another suspension because this would
+                // require creating a new suspend dialog with its own strings, etc. The limited
+                // number of affected users can simply re-pause affected apps. However, if we did
+                // want to add a launcher suspension, we could do it prior to the removal above.
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to remove package suspensions", e);
         }
     }
 
