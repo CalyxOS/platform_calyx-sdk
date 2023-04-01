@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10a20d12_81eead2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-01T18:18:40Z",
+      "side": 1,
+      "message": "Tested with main user and work profiles, secondary user and work profile. Suspensions (pauses) are removed only if they were added in 4.7.6, or by some otherwise-unknown mechanism (e.g. device owner) that we do not support.",
+      "revId": "3a4b2b1b5bb3484f50a7f7daa2e116f3b11681ec",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
