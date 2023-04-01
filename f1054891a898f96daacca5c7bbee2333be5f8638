@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30acf985_eaa095e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-01T17:26:06Z",
+      "side": 1,
+      "message": "Not even true, it looks like DATABASE_VERSION 5 was 4.7.5",
+      "revId": "f1054891a898f96daacca5c7bbee2333be5f8638",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
