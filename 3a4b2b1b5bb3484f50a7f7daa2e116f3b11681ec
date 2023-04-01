@@ -33,6 +33,23 @@
       "message": "Ugh, this actually will affect all profile owner or device policy apps that try to suspend packages, because PLATFORM_PACKAGE_NAME is used for that!\n\nSee: https://cs.android.com/android/platform/superproject/+/android-13.0.0_r31:frameworks/base/services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java;l\u003d11291",
       "revId": "3a4b2b1b5bb3484f50a7f7daa2e116f3b11681ec",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a1c048f_9fb8d375",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-01T18:35:27Z",
+      "side": 1,
+      "message": "I can\u0027t think of a better way for us to handle this. A legitimate device or profile owner app would be wise to applying its suspensions regularly. Even if we guarded by whether or not there is a device or profile owner, that would leave no way out for users who paused apps themselves. So I think this is all we can do.",
+      "revId": "3a4b2b1b5bb3484f50a7f7daa2e116f3b11681ec",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
