@@ -3,6 +3,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "669bf214_f3d7c28c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-04-04T18:59:53Z",
+      "side": 1,
+      "message": "FWIW I was fine with this style of migration.\n\nIn the future we can try to add something explicit, but this didn\u0027t seem so bad for now.",
+      "revId": "021de937f929171b0ff45027a334fee97334657f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0b3f21fd_4937b8e2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
