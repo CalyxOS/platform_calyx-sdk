@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "baf7feb4_41dfca62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-04T19:06:04Z",
+      "side": 1,
+      "message": "That\u0027s good to hear, but it\u0027s this part that I wasn\u0027t pleased with:\n\u003e This may have the one-time side effect of affecting package suspensions instituted by work profile owner apps.\n\nThere could be all kinds of reasons why an (actually-for-work) app that creates a work profile might suspend a package -- maybe not even always to limit what the user can do. It\u0027s difficult to predict what those reasons could be, or what impact could be had, if we unsuspend a package that was intentionally suspended, and possibly even installed by the work app in the first place. For all we know, the work profile owner could investigate its state, find something unsuspended that shouldn\u0027t be, and wipe itself. Or, it could install an app meant to wipe the profile but keep it suspended until it\u0027s needed... All of this is highly unlikely, but could be possible.\n\nAnd unfortunately this would have affected non-beta users, too.",
+      "parentUuid": "669bf214_f3d7c28c",
+      "revId": "021de937f929171b0ff45027a334fee97334657f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0b3f21fd_4937b8e2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
