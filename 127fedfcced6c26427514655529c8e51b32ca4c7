@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af24e92_b26a6205",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-07T20:05:27Z",
+      "side": 1,
+      "message": "🙏\n\nAs far as I can tell, this already defaults to off in Lineage, but I haven\u0027t tested it. Michael, do you know?\n\nKeeping CR-2 until we decide whether we even want this. (I know I do...)",
+      "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
