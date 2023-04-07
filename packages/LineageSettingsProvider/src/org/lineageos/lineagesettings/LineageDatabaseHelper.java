@@ -31,6 +31,7 @@ import android.database.sqlite.SQLiteDoneException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.net.ConnectivitySettingsManager;
+import android.os.Build;
 import android.os.Environment;
 import android.os.RemoteException;
 import android.os.SystemProperties;
@@ -514,12 +515,11 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     }
 
     private void loadTrustRestrictUsbSetting(SQLiteDatabase db) {
-        // This used to be a property pre-12, migrate it to setting
+        // This used to be a property pre-12, migrate it to setting or set a default value
         SQLiteStatement stmt = null;
         try {
-            // Default is allow usb only when unlocked
-            String propertyValue = SystemProperties.get("persist.security.deny_new_usb", "dynamic");
-            Integer settingsValue = 1;
+            String propertyValue = SystemProperties.get("persist.security.deny_new_usb");
+            final Integer settingsValue;
             switch (propertyValue) {
                 case "disabled":
                     settingsValue = 0;
@@ -529,6 +529,10 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     break;
                 case "enabled":
                     settingsValue = 2;
+                    break;
+                default:
+                    // Always allow for debuggable builds; otherwise, allow only when unlocked.
+                    settingsValue = Build.IS_DEBUGGABLE ? 0 : 1;
                     break;
             }
 
