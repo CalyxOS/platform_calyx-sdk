@@ -34,6 +34,24 @@
       "parentUuid": "7af24e92_b26a6205",
       "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13feaa76_fc8d392e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-04-13T06:08:55Z",
+      "side": 1,
+      "message": "Actually, for what I said above, we\u0027d have to add a debuggable check to https://review.calyxos.org/c/CalyxOS/platform_frameworks_base/+/16327/8/services/usb/java/com/android/server/usb/UsbDeviceManager.java \n\nWe have two options\n1) This commit, allow usb always setting set for debuggable builds, OR\n2) fw/b, don\u0027t eject devices on boot for debuggable builds.",
+      "parentUuid": "d8e05815_3d6c35df",
+      "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
