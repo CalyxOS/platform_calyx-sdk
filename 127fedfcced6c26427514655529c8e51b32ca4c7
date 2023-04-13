@@ -16,6 +16,24 @@
       "message": "🙏\n\nAs far as I can tell, this already defaults to off in Lineage, but I haven\u0027t tested it. Michael, do you know?\n\nKeeping CR-2 until we decide whether we even want this. (I know I do...)",
       "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8e05815_3d6c35df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-04-13T05:09:14Z",
+      "side": 1,
+      "message": "I was going to just add `adb shell settings put ..` to my list of steps when setting up devices to set this up.\n\nI like and would want the behaviour this brings after the recent changes otherwise, but I\u0027m not sure if we should do it this way, or just deal with it. Won\u0027t make a difference in behaviour AFAICT.",
+      "parentUuid": "7af24e92_b26a6205",
+      "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
