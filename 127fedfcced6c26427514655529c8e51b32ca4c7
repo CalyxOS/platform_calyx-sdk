@@ -52,6 +52,24 @@
       "parentUuid": "d8e05815_3d6c35df",
       "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1c429ad_15263f73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-13T11:14:20Z",
+      "side": 1,
+      "message": "What I like about this change is that it gives us the opportunity to get a closer experience to -user, at our option. But, if we do have ro.debuggable in the \"Try to restrict USB\" changes, it may not be that close. I have another thought on ro.debuggable but I\u0027ll post it in the GitLab issue.",
+      "parentUuid": "13feaa76_fc8d392e",
+      "revId": "127fedfcced6c26427514655529c8e51b32ca4c7",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
