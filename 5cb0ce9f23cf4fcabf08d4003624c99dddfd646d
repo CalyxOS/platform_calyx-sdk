@@ -33,6 +33,24 @@
       "message": "Why remove the \"dynamic\" here? What will it default to now? and what effect will that have on the switch-case below, given we don\u0027t have a default there. Perhaps we should have a default there instead?",
       "revId": "5cb0ce9f23cf4fcabf08d4003624c99dddfd646d",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04ffc151_054c3f28",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-26T19:16:46Z",
+      "side": 1,
+      "message": "1. We had a double default before, with the default value of settingsValue being 1 (representing dynamic) and then the string-based default. For maintainability we shouldn\u0027t specify it in two different places, and if we chose the string-based default instead, there would be no handling for if the property were an unexpected value.\n2. Now, it defaults to the empty string, [according to docs](https://cs.android.com/android/platform/superproject/+/android-13.0.0_r41:frameworks/base/core/java/android/os/SystemProperties.java;l\u003d142) and the one-argument definition of native_get.\n3. settingsValue\u0027s initial value will be used if there\u0027s no match.\n4. Yes, we could assign a default in the switch block and then simply not give settingsValue an initial value. The effect is the same. Maybe it would be clearer.",
+      "parentUuid": "abe2450e_25262ff2",
+      "revId": "5cb0ce9f23cf4fcabf08d4003624c99dddfd646d",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
