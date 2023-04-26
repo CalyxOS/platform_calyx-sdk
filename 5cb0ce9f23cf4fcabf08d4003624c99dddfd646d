@@ -51,6 +51,24 @@
       "parentUuid": "abe2450e_25262ff2",
       "revId": "5cb0ce9f23cf4fcabf08d4003624c99dddfd646d",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b7ea7e_e2270ae0",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-04-26T19:24:04Z",
+      "side": 1,
+      "message": "4. yes it would be, let\u0027s do that.",
+      "parentUuid": "04ffc151_054c3f28",
+      "revId": "5cb0ce9f23cf4fcabf08d4003624c99dddfd646d",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
