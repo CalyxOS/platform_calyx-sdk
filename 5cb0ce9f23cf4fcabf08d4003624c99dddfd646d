@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3ca263b_d79736ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-04-26T13:59:18Z",
+      "side": 1,
+      "message": "I still like this. What\u0027s the point of a debuggable build if you can\u0027t debug it?",
+      "revId": "5cb0ce9f23cf4fcabf08d4003624c99dddfd646d",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
