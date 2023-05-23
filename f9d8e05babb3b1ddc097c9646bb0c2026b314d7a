@@ -16,6 +16,24 @@
       "message": "It says ",
       "revId": "f9d8e05babb3b1ddc097c9646bb0c2026b314d7a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5415a5b_4c30a059",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-05-23T19:12:03Z",
+      "side": 1,
+      "message": "Oops, just meant to observe that it says one.one.one.one underneath Private DNS in settings now, instead of Cloudflare DNS, which is different but not wrong.",
+      "parentUuid": "9fcaf823_114fa4b2",
+      "revId": "f9d8e05babb3b1ddc097c9646bb0c2026b314d7a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
