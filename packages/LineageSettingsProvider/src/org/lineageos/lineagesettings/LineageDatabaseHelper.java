@@ -58,7 +58,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -268,6 +268,24 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED,
                     oldSetting);
             upgradeVersion = 5;
+        }
+
+        if (upgradeVersion < 6) {
+            // From ConnectivitySettingsUtils.PRIVATE_DNS_MODE
+            final String PRIVATE_DNS_MODE = "private_dns_mode";
+
+            final String currentPrivateDnsMode = Settings.Global.getString(
+                    mContext.getContentResolver(), PRIVATE_DNS_MODE);
+            if ("cloudflare".equals(currentPrivateDnsMode)) {
+                // From private_dns_hostname_cloudflare in Settings strings
+                final String PRIVATE_DNS_SPECIFIER_CLOUDFLARE = "one.one.one.one";
+
+                ConnectivitySettingsManager.setPrivateDnsHostname(mContext,
+                        PRIVATE_DNS_SPECIFIER_CLOUDFLARE);
+                ConnectivitySettingsManager.setPrivateDnsMode(mContext,
+                        ConnectivitySettingsManager.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME);
+            }
+            upgradeVersion = 6;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
