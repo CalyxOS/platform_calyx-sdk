@@ -34,6 +34,24 @@
       "parentUuid": "9fcaf823_114fa4b2",
       "revId": "f9d8e05babb3b1ddc097c9646bb0c2026b314d7a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "420cd424_fe23fb6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-05-23T19:54:13Z",
+      "side": 1,
+      "message": "That\u0027s a UI issue, should be fixable in Settings.",
+      "parentUuid": "b5415a5b_4c30a059",
+      "revId": "f9d8e05babb3b1ddc097c9646bb0c2026b314d7a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
