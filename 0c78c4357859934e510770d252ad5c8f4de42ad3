@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04b6335b_a2f70415",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-05-24T22:25:15Z",
+      "side": 1,
+      "message": "Is this still need after 16713: Debuggable devices default to USB data enabled | https://review.calyxos.org/c/CalyxOS/vendor_calyx/+/16713",
+      "revId": "0c78c4357859934e510770d252ad5c8f4de42ad3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
