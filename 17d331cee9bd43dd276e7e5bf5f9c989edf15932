@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0921ebf_50a1ec17",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-05-24T12:19:39Z",
+      "side": 1,
+      "message": "We usually put \"Sync with\" for things like this, but I intentionally didn\u0027t use that wording here, because this is a one-time migration and I don\u0027t think we need to worry about it.",
+      "revId": "17d331cee9bd43dd276e7e5bf5f9c989edf15932",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
