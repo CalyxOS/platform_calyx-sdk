@@ -52,6 +52,41 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf60cefa_38a70ea7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-05-26T23:44:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56237c23_917d64e1",
+      "revId": "29937135df90fb1cef70b454faad142fb8ed1d3b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e82a75f_78d751ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-05-26T23:44:16Z",
+      "side": 1,
+      "message": "https://review.calyxos.org/q/Ie82ede824fe904ba419933bdc560331527f38c4d",
+      "revId": "29937135df90fb1cef70b454faad142fb8ed1d3b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "412cf938_39be7c78",
@@ -65,6 +100,24 @@
       "writtenOn": "2022-06-29T16:47:52Z",
       "side": 1,
       "message": "This is going to get removed from SuW and move to Lupin.\n\nCan potentially move this to that then.",
+      "revId": "29937135df90fb1cef70b454faad142fb8ed1d3b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08871302_4ee544cc",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/BootReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-05-26T23:44:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "412cf938_39be7c78",
       "revId": "29937135df90fb1cef70b454faad142fb8ed1d3b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
