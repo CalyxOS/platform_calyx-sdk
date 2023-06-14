@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a371a5c_35f657d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-06-14T12:18:05Z",
+      "side": 1,
+      "message": "Note that this resets the side fps unlock setting, however google did it on purpose.",
+      "revId": "806ecbf33ad4010b149abe8dab70a3e5ea5a4460",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
