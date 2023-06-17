@@ -59,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -281,6 +281,35 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         ConnectivitySettingsManager.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME);
             }
             upgradeVersion = 6;
+        }
+
+        if (upgradeVersion < 7) {
+            Integer oldSetting = 0;
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
+                stmt.bindString(1, LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
+                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
+
+                // If network traffic icon was previously enabled, keep it at left position
+                if (!oldSetting.equals(0)) {
+                    Interger newSetting = 0; // left
+                    stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
+                                + " VALUES(?,?);");
+                    stmt.bindString(1, LineageSettings.Secure.NETWORK_TRAFFIC_POSITION);
+                    stmt.bindString(2, newSetting.toString());
+                    stmt.execute();
+                    db.setTransactionSuccessful();
+                }
+            } catch (SQLiteDoneException ex) {
+                // LineageSettings.Secure.NETWORK_TRAFFIC_MODE is not set, OR
+                // LineageSettings.Secure.NETWORK_TRAFFIC_POSITION couldn't get set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            upgradeVersion = 7;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
