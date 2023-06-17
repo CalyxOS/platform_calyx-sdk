@@ -59,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -281,6 +281,27 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         ConnectivitySettingsManager.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME);
             }
             upgradeVersion = 6;
+        }
+        if (upgradeVersion < 7) {
+            Integer oldSetting = 0;
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
+                stmt.bindString(1, LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
+                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
+            } catch (SQLiteDoneException ex) {
+                // LineageSettings.Secure.NETWORK_TRAFFIC_MODE is not set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            // If network traffic icon was previously enabled, keep it at left position
+            if (!oldSetting.equals(0)) {
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                        LineageSettings.Secure.NETWORK_TRAFFIC_POSITION, 0);
+            }
+            upgradeVersion = 7;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
