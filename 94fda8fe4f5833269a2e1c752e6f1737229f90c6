@@ -16,6 +16,24 @@
       "message": "We want this to be 0, I think",
       "revId": "94fda8fe4f5833269a2e1c752e6f1737229f90c6",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3d9d67b_1bd16ca3",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-21T19:59:51Z",
+      "side": 1,
+      "message": "It is 0, see line 297.",
+      "parentUuid": "eed944b3_33f3addb",
+      "revId": "94fda8fe4f5833269a2e1c752e6f1737229f90c6",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
