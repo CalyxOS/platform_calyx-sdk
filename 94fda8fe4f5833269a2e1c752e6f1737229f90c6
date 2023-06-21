@@ -34,6 +34,41 @@
       "parentUuid": "eed944b3_33f3addb",
       "revId": "94fda8fe4f5833269a2e1c752e6f1737229f90c6",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "827c8c71_dd106f17",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-06-21T20:09:18Z",
+      "side": 1,
+      "message": "Oh, you\u0027re right. That confuses me because the name `oldSetting` represents one thing at first and then represents something totally different. Mind if we just do this?\n\n`stmt.bindString(2, \"0\" /* left */);`",
+      "parentUuid": "a3d9d67b_1bd16ca3",
+      "revId": "94fda8fe4f5833269a2e1c752e6f1737229f90c6",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63db33b1_3ec4a97c",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-06-21T20:09:18Z",
+      "side": 1,
+      "message": "Missing curly brace below this line.",
+      "revId": "94fda8fe4f5833269a2e1c752e6f1737229f90c6",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
