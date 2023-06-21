@@ -69,6 +69,24 @@
       "message": "We need to write this to lineage db, the how is in the first migration above, line 184. Also has to go in the try { } catch block above.",
       "revId": "90e2c3af1183750929824b1b45acc9eaf6bcd1ad",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bedc370f_4fc226d1",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-21T19:50:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f48126a7_4154bf03",
+      "revId": "90e2c3af1183750929824b1b45acc9eaf6bcd1ad",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
