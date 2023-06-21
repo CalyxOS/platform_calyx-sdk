@@ -34,6 +34,24 @@
       "parentUuid": "cc1272c0_f154df2e",
       "revId": "90e2c3af1183750929824b1b45acc9eaf6bcd1ad",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe40c2a6_b8f75166",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-06-21T19:34:15Z",
+      "side": 1,
+      "message": "$ adb shell settings get --lineage secure network_traffic_mode\n3\n$ adb shell settings get --lineage secure network_traffic_position\nnull",
+      "parentUuid": "7d875f49_92f7208d",
+      "revId": "90e2c3af1183750929824b1b45acc9eaf6bcd1ad",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
