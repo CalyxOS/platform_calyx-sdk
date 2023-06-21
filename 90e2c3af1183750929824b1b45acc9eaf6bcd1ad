@@ -16,6 +16,24 @@
       "message": "I had it enabled on bramble, and after update, it moved to the center, so the behavior is not following the commit message.",
       "revId": "90e2c3af1183750929824b1b45acc9eaf6bcd1ad",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d875f49_92f7208d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-21T19:31:57Z",
+      "side": 1,
+      "message": "Could you\n\n```\nadb shell settings get secure network_traffic_mode\nadb shell settings get secure network_traffic_position\n```",
+      "parentUuid": "cc1272c0_f154df2e",
+      "revId": "90e2c3af1183750929824b1b45acc9eaf6bcd1ad",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
