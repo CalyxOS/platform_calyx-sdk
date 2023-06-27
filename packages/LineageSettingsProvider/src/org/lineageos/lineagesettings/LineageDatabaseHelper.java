@@ -59,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 9;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -241,33 +241,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 5) {
-            Integer oldSetting;
-            db.beginTransaction();
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("SELECT value FROM system WHERE name=?");
-                // Used to be LineageSettings.System.FINGERPRINT_WAKE_UNLOCK
-                stmt.bindString(1, "fingerprint_wake_unlock");
-                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
-
-                // Reverse 0/1 values, migrate 2 to 1
-                if (oldSetting.equals(0) || oldSetting.equals(2)) {
-                    oldSetting = 1;
-                } else if (oldSetting.equals(1)) {
-                    oldSetting = 0;
-                }
-            } catch (SQLiteDoneException ex) {
-                // LineageSettings.System.FINGERPRINT_WAKE_UNLOCK was not set,
-                // default to config_performantAuthDefault value
-                oldSetting = mContext.getResources().getBoolean(
-                        com.android.internal.R.bool.config_performantAuthDefault) ? 1 : 0;
-            } finally {
-                if (stmt != null) stmt.close();
-                db.endTransaction();
-            }
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED,
-                    oldSetting);
+            // Side FPS migration no longer needed, see versions 8 and 9
             upgradeVersion = 5;
         }
 
@@ -310,6 +284,50 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 db.endTransaction();
             }
             upgradeVersion = 7;
+        }
+
+        if (upgradeVersion < 8) {
+            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
+            Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver,
+                        "spfs_require_screen_on_to_auth_enabled", -1);
+                if (!oldSetting.equals(-1)) {
+                    // This will only run if the pre-QPR3 setting was configured
+                    // In that case, migrate to the QPR3 setting.
+                    Settings.Secure.putInt(mContext.getContentResolver,
+                    Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, oldSetting);
+                }  
+            upgradeVersion = 8;
+        }
+
+        if (upgradeVersion < 9) {
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver,
+                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, -1);
+                if (!oldSetting.equals(-1)) {
+                    // This will only run if the above setting was set
+                    Integer newSetting;
+                    // Reverse 0/1 values
+                    if (oldSetting.equals(0)) {
+                        newSetting = 1;
+                    } else if (oldSetting.equals(1)) {
+                        newSetting = 0;
+                    }
+                    stmt = db.compileStatement("INSERT OR IGNORE INTO system(name,value)"
+                            + " VALUES(?,?);");
+                    stmt.bindString(1, LineageSettings.System.FINGERPRINT_WAKE_UNLOCK);
+                    stmt.bindString(2, newSetting.toString());
+                    stmt.execute();
+                    db.setTransactionSuccessful();
+                }
+            } catch (SQLiteDoneException ex) {
+                // Could not set LineageSettings.System.FINGERPRINT_WAKE_UNLOCK
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            upgradeVersion = 9;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
