@@ -59,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -258,15 +258,15 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 }
             } catch (SQLiteDoneException ex) {
                 // LineageSettings.System.FINGERPRINT_WAKE_UNLOCK was not set,
-                // default to config_performantAuthDefault value
-                oldSetting = mContext.getResources().getBoolean(
-                        com.android.internal.R.bool.config_performantAuthDefault) ? 1 : 0;
+                // default to screen on required as that's less annoying
+                oldSetting = 1;
             } finally {
                 if (stmt != null) stmt.close();
                 db.endTransaction();
             }
+            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED,
+                    "spfs_require_screen_on_to_auth_enabled",
                     oldSetting);
             upgradeVersion = 5;
         }
@@ -310,6 +310,24 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 db.endTransaction();
             }
             upgradeVersion = 7;
+        }
+
+        if (upgradeVersion < 8) {
+            // Set default value based on config_performantAuthDefault
+            boolean isPerformantAuth = mContext.getResources().getBoolean(
+                    com.android.internal.R.bool.config_performantAuthDefault);
+            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
+            Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
+                    "spfs_require_screen_on_to_auth_enabled", isPerformantAuth ? 0 : 1);
+            // Flip value
+            if (oldSetting.equals(1)) {
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 0);
+            } else {
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
+            }
+            upgradeVersion = 8;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
