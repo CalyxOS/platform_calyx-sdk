@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e37b4e5f_60bf314d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-06-28T21:22:43Z",
+      "side": 1,
+      "message": "1. install build without migration, performant auth is enabled by default (AOSP behaviour for clean installs, also matches our behaviour in sdk after this patch)\n2. adb shell settings put secure sfps_require_screen_on_to_auth_enabled 1\n3. install build with migration, performant auth is disabled\n",
+      "revId": "0487d074f78923a93a7c022d5a39b0ffc208f510",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
