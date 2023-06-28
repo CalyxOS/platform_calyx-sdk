@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25456eeb_c69af41f",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-06-28T18:06:30Z",
+      "side": 1,
+      "message": "The only thing that I\u0027m concerned about is that we are changing default behaviour here to always disabled, while Tablet \u0026 Fold likely have this enabled by default. If we reuse the config_performantAuthDefault check like the old migration, this is no longer an issue.",
+      "range": {
+        "startLine": 318,
+        "startChar": 70,
+        "endLine": 318,
+        "endChar": 92
+      },
+      "revId": "cc01377f09bdab349776e75a56bb28ec77b94a06",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
