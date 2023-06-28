@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "777325d9_77ae6afb",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-28T18:42:21Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we undo this change too, then?\n\nBut the below is the old setting that\u0027s flipped, gah :/\n\nI guess this is fine.",
+      "revId": "43f835f01e8cf29907f7aaf220e71b3ca4820e77",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
