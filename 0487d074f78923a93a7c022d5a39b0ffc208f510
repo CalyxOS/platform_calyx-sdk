@@ -18,6 +18,23 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37c26d3f_1f627b8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-30T17:24:37Z",
+      "side": 1,
+      "message": "Option 1: No changes needed here\n\nOption 2: Should be fine, but let\u0027s confirm.",
+      "revId": "0487d074f78923a93a7c022d5a39b0ffc208f510",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3536f4cd_2437b635",
