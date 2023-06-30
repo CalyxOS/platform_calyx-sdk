@@ -16,6 +16,57 @@
       "message": "1. install build without migration, performant auth is enabled by default (AOSP behaviour for clean installs, also matches our behaviour in sdk after this patch)\n2. adb shell settings put secure sfps_require_screen_on_to_auth_enabled 1\n3. install build with migration, performant auth is disabled\n",
       "revId": "0487d074f78923a93a7c022d5a39b0ffc208f510",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3536f4cd_2437b635",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-30T17:24:14Z",
+      "side": 1,
+      "message": "I presume we\u0027d set this to true in either all rear fps devices, or just platform?",
+      "revId": "0487d074f78923a93a7c022d5a39b0ffc208f510",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "389a26e5_fcada773",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-30T17:24:14Z",
+      "side": 1,
+      "message": "Need to check but doubt they\u0027d have this set, meaning this should end up at 0",
+      "revId": "0487d074f78923a93a7c022d5a39b0ffc208f510",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55abbce3_318b4342",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-30T17:24:14Z",
+      "side": 1,
+      "message": "So we\u0027d be here, which is the default we want for rear fps users - same as before, unlock even when screen off.",
+      "revId": "0487d074f78923a93a7c022d5a39b0ffc208f510",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ],
   "submitRequirementResults": [
