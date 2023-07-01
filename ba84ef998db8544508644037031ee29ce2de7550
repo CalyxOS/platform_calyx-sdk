@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75cf2540_c009c3cd",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-01T23:19:26Z",
+      "side": 1,
+      "message": "This looks fine, but going forward let\u0027s avoid touching existing migrations entirely.\n\nIf needed, we drop the old migration and then add the new one separately at the bottom.",
+      "revId": "ba84ef998db8544508644037031ee29ce2de7550",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
