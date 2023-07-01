@@ -258,9 +258,10 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 }
             } catch (SQLiteDoneException ex) {
                 // LineageSettings.System.FINGERPRINT_WAKE_UNLOCK was not set,
-                // set default value based on config_performantAuthDefault
+                // set default value based on config_fingerprintWakeAndUnlock
                 oldSetting = mContext.getResources().getBoolean(
-                        com.android.internal.R.bool.config_performantAuthDefault) ? 0 : 1;
+                        org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
+                        ? 0 : 1;
             } finally {
                 if (stmt != null) stmt.close();
                 db.endTransaction();
@@ -314,12 +315,12 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 8) {
-            // Set default value based on config_performantAuthDefault
-            boolean isPerformantAuth = mContext.getResources().getBoolean(
-                    com.android.internal.R.bool.config_performantAuthDefault);
+            // Set default value based on config_fingerprintWakeAndUnlock
+            boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
+                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
             // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
-                    "sfps_require_screen_on_to_auth_enabled", isPerformantAuth ? 0 : 1);
+                    "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
             // Flip value
             if (oldSetting.equals(1)) {
                 Settings.Secure.putInt(mContext.getContentResolver(),
