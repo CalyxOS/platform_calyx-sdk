@@ -56,10 +56,10 @@ import java.util.stream.Collectors;
  */
 public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final String TAG = "LineageDatabaseHelper";
-    private static final boolean LOCAL_LOGV = false;
+    private static final boolean LOCAL_LOGV = true;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 14;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -286,13 +286,30 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 7) {
+            // Moved
+            upgradeVersion = 7;
+        }
+
+        if (upgradeVersion < 8) {
+            // Moved
+            upgradeVersion = 8;
+        }
+
+        // Intentionally skipped, we're testing
+
+        try { // Added for debugging
+        if (upgradeVersion < 13) {
+            if (LOCAL_LOGV) Log.d(TAG, "Running network traffic migration...");
             Integer oldSetting = 0;
             db.beginTransaction();
             SQLiteStatement stmt = null;
             try {
                 stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
                 stmt.bindString(1, LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
-                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
+                final var oldSettingUnparsed = stmt.simpleQueryForString();
+                if (LOCAL_LOGV) Log.d(TAG, "Found oldSetting unparsed: " + oldSettingUnparsed);
+                oldSetting = Integer.parseInt(oldSettingUnparsed);
+                if (LOCAL_LOGV) Log.d(TAG, "Parsed oldSetting: " + oldSetting);
 
                 // If network traffic icon was previously enabled, keep it at left position
                 if (!oldSetting.equals(0)) {
@@ -304,33 +321,49 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     stmt.execute();
                     db.setTransactionSuccessful();
                 }
+                if (LOCAL_LOGV) Log.d(TAG, "Network migration try block end.");
             } catch (SQLiteDoneException ex) {
                 // LineageSettings.Secure.NETWORK_TRAFFIC_MODE is not set, OR
                 // LineageSettings.Secure.NETWORK_TRAFFIC_POSITION couldn't get set
+                if (LOCAL_LOGV) Log.d(TAG, "Network migration failed, caught", ex);
             } finally {
+                if (LOCAL_LOGV) Log.d(TAG, "Network migration in finally block. stmt: " + stmt);
                 if (stmt != null) stmt.close();
+                if (LOCAL_LOGV) Log.d(TAG, "Network migration stmt closed if applicable.");
                 db.endTransaction();
+                if (LOCAL_LOGV) Log.d(TAG, "Network migration db transaction ended.");
             }
-            upgradeVersion = 7;
+            upgradeVersion = 13;
         }
 
-        if (upgradeVersion < 8) {
+        if (upgradeVersion < 14) {
+            if (LOCAL_LOGV) Log.d(TAG, "Running sfps migration...");
             // Set default value based on config_fingerprintWakeAndUnlock
             boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
                     org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
+            if (LOCAL_LOGV) Log.d(TAG, "Sfps migration got boolean");
             // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
                     "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
+            if (LOCAL_LOGV) Log.d(TAG, "Sfps migration got int");
             // Flip value
             if (oldSetting.equals(1)) {
                 Settings.Secure.putInt(mContext.getContentResolver(),
                         Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 0);
+                if (LOCAL_LOGV) Log.d(TAG, "Sfps migration put int 0");
             } else {
                 Settings.Secure.putInt(mContext.getContentResolver(),
                         Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
+                if (LOCAL_LOGV) Log.d(TAG, "Sfps migration put int 1");
             }
-            upgradeVersion = 8;
+            if (LOCAL_LOGV) Log.d(TAG, "Sfps migration succeeded");
+            upgradeVersion = 14;
         }
+        } catch (Exception ex) { // Added for debugging
+            if (LOCAL_LOGV) Log.d(TAG, "Migration failed, uncaught", ex);
+        }
+
+        if (LOCAL_LOGV) Log.d(TAG, "All migrations succeeded");
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
             Log.wtf(TAG, "warning: upgrading settings database to version "
@@ -338,6 +371,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                             + upgradeVersion +
                             " instead; this is probably a bug. Did you update DATABASE_VERSION?",
                     new RuntimeException("db upgrade error"));
+        } else {
+            if (LOCAL_LOGV) Log.d(TAG, "updateVersion == newVersion");
         }
     }
 
