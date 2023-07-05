@@ -35,6 +35,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3826c022_0ba8da2f",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T22:45:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53ab13e8_1e90bfed",
+      "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "78af38e8_9de9b2a2",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-07-05T22:25:22Z",
       "side": 1,
       "message": "s/load/read/",
+      "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a79eef9_547d686a",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T22:45:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78af38e8_9de9b2a2",
       "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
