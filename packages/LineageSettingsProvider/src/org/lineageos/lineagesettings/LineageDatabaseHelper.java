@@ -60,7 +60,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 9;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -303,6 +303,20 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
             }
             upgradeVersion = 8;
+        }
+
+        if (upgradeVersion < 9) {
+            Integer oldSetting = readIntegerSetting(db, LineageTableNames.TABLE_SECURE,
+                    LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0 /* turned off */);
+            if (!oldSetting.equals(0)) {
+                try {
+                    writeSettingIfNotPresent(db, LineageTableNames.TABLE_SECURE,
+                            LineageSettings.Secure.NETWORK_TRAFFIC_POSITION, 0 /* left */);
+                } catch (SQLiteDoneException ex) {
+                    // Value not set
+                }
+            }
+            upgradeVersion = 9;
         }
 
         // *** Remember to update DATABASE_VERSION above!
