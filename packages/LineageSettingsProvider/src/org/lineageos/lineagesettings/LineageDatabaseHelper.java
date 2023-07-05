@@ -286,31 +286,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 7) {
-            Integer oldSetting = 0;
-            db.beginTransaction();
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
-                stmt.bindString(1, LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
-                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
-
-                // If network traffic icon was previously enabled, keep it at left position
-                if (!oldSetting.equals(0)) {
-                    Integer newSetting = 0; // left
-                    stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
-                            + " VALUES(?,?);");
-                    stmt.bindString(1, LineageSettings.Secure.NETWORK_TRAFFIC_POSITION);
-                    stmt.bindString(2, newSetting.toString());
-                    stmt.execute();
-                    db.setTransactionSuccessful();
-                }
-            } catch (SQLiteDoneException | NumberFormatException ex) {
-                // LineageSettings.Secure.NETWORK_TRAFFIC_MODE is not set, OR
-                // LineageSettings.Secure.NETWORK_TRAFFIC_POSITION couldn't get set
-            } finally {
-                if (stmt != null) stmt.close();
-                db.endTransaction();
-            }
+            // Used to be NETWORK_TRAFFIC_MODE migration
+            // Broken, dropped to avoid a scenario where the other migrations don't run
             upgradeVersion = 7;
         }
 
