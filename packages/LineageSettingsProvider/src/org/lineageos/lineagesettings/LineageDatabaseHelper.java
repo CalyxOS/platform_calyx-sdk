@@ -292,19 +292,25 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 8) {
-            // Set default value based on config_fingerprintWakeAndUnlock
-            boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
-            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
-            Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
-                    "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
-            // Flip value
-            if (oldSetting.equals(1)) {
-                Settings.Secure.putInt(mContext.getContentResolver(),
-                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 0);
-            } else {
-                Settings.Secure.putInt(mContext.getContentResolver(),
-                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
+            // The setting is a boolean
+            Integer newSetting = Settings.Secure.getInt(mContext.getContentResolver(),
+                    Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, -1);
+            // Don't do anything if the setting is already set
+            if (newSetting.equals(-1)) {
+                // Set default value based on config_fingerprintWakeAndUnlock
+                boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
+                        org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
+                // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
+                Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
+                        "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
+                // Flip value
+                if (oldSetting.equals(1)) {
+                    Settings.Secure.putInt(mContext.getContentResolver(),
+                            Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 0);
+                } else {
+                    Settings.Secure.putInt(mContext.getContentResolver(),
+                            Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
+                }
             }
             upgradeVersion = 8;
         }
