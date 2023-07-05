@@ -315,19 +315,34 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 8) {
-            // Set default value based on config_fingerprintWakeAndUnlock
-            boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
-            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
-            Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
-                    "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
-            // Flip value
-            if (oldSetting.equals(1)) {
-                Settings.Secure.putInt(mContext.getContentResolver(),
-                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 0);
-            } else {
-                Settings.Secure.putInt(mContext.getContentResolver(),
-                        Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                // Set default value based on config_fingerprintWakeAndUnlock
+                boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
+                        org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
+                // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
+                Integer settingsValue = Settings.Secure.getInt(mContext.getContentResolver(),
+                        "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
+
+                // Flip value
+                if (settingsValue.equals(1)) {
+                    settingsValue = 0;
+                } else {
+                    settingsValue = 1;
+                }
+
+                stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
+                        + " VALUES(?,?);");
+                stmt.bindString(1, Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED);
+                stmt.bindString(2, settingsValue.toString());
+                stmt.execute();
+                db.setTransactionSuccessful();
+            } catch (SQLiteDoneException ex) {
+                // Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED couldn't get set
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
             }
             upgradeVersion = 8;
         }
