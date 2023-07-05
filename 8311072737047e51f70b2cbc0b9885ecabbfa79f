@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59bd9acc_0f997e4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-05T20:54:41Z",
+      "side": 1,
+      "message": "Basically comment out the network traffic migration code.\n\nI bet if you do that, `pragma user_version` will get bumped to 14 as expected.",
+      "revId": "8311072737047e51f70b2cbc0b9885ecabbfa79f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb3ae374_37472f84",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-05T20:54:41Z",
+      "side": 1,
+      "message": "Start comment here",
+      "revId": "8311072737047e51f70b2cbc0b9885ecabbfa79f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73148129_8627978f",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-05T20:54:41Z",
+      "side": 1,
+      "message": "End comment here",
+      "revId": "8311072737047e51f70b2cbc0b9885ecabbfa79f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
