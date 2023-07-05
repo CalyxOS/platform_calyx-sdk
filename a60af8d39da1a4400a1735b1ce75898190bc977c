@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c4ef196_e2c5a343",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-05T19:20:41Z",
+      "side": 1,
+      "message": "Change this to 9 or 11 to see if wtf works.",
+      "revId": "a60af8d39da1a4400a1735b1ce75898190bc977c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
