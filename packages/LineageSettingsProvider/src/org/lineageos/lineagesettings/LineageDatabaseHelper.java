@@ -59,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 10;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -286,6 +286,16 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 7) {
+            // Moved to 9
+            upgradeVersion = 7;
+        }
+
+        if (upgradeVersion < 8) {
+            // Moved to 10
+            upgradeVersion = 8;
+        }
+
+        if (upgradeVersion < 9) {
             Integer oldSetting = 0;
             db.beginTransaction();
             SQLiteStatement stmt = null;
@@ -311,10 +321,10 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 if (stmt != null) stmt.close();
                 db.endTransaction();
             }
-            upgradeVersion = 7;
+            upgradeVersion = 9;
         }
 
-        if (upgradeVersion < 8) {
+        if (upgradeVersion < 10) {
             // Set default value based on config_fingerprintWakeAndUnlock
             boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
                     org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
@@ -329,7 +339,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 Settings.Secure.putInt(mContext.getContentResolver(),
                         Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, 1);
             }
-            upgradeVersion = 8;
+            upgradeVersion = 10;
         }
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
