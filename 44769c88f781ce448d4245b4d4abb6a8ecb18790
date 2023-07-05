@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5b35b06_7ff53e9c",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T23:02:21Z",
+      "side": 1,
+      "message": "Last thing I\u0027ll try tonight is adding a semicolon to the end of this...",
+      "revId": "44769c88f781ce448d4245b4d4abb6a8ecb18790",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
