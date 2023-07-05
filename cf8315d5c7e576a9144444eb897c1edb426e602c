@@ -67,6 +67,23 @@
       "message": "s/save/write/",
       "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6c4daf8_4549addf",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-05T22:43:28Z",
+      "side": 1,
+      "message": "Bisect this.\n\nTry 1:\nLeave just the read in, don\u0027t write anything.\n\nTry 2:\nDon\u0027t read anything, just write 0.\n\n\nIf only one of these work, we found the culript.\n\nIf both work tries work (aka separately), then we know it\u0027s the combination which is causing issues.",
+      "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
