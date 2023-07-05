@@ -205,7 +205,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
                 stmt.bindString(1, Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS);
                 oldSetting = Integer.parseInt(stmt.simpleQueryForString());
-            } catch (SQLiteDoneException ex) {
+            } catch (SQLiteDoneException | NumberFormatException ex) {
                 // LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS is not set
             } finally {
                 if (stmt != null) stmt.close();
@@ -227,7 +227,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
                     stmt.bindString(1, Settings.Global.BLUETOOTH_OFF_TIMEOUT);
                     oldSetting = Long.parseLong(stmt.simpleQueryForString());
-                } catch (SQLiteDoneException ex) {
+                } catch (SQLiteDoneException | NumberFormatException ex) {
                     // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
                 } finally {
                     if (stmt != null) stmt.close();
@@ -256,7 +256,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 } else if (oldSetting.equals(1)) {
                     oldSetting = 0;
                 }
-            } catch (SQLiteDoneException ex) {
+            } catch (SQLiteDoneException | NumberFormatException ex) {
                 // LineageSettings.System.FINGERPRINT_WAKE_UNLOCK was not set,
                 // set default value based on config_performantAuthDefault
                 oldSetting = mContext.getResources().getBoolean(
@@ -303,7 +303,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     stmt.execute();
                     db.setTransactionSuccessful();
                 }
-            } catch (SQLiteDoneException ex) {
+            } catch (SQLiteDoneException | NumberFormatException ex) {
                 // LineageSettings.Secure.NETWORK_TRAFFIC_MODE is not set, OR
                 // LineageSettings.Secure.NETWORK_TRAFFIC_POSITION couldn't get set
             } finally {
