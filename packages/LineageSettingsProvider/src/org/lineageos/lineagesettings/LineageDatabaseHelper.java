@@ -47,6 +47,7 @@ import lineageos.providers.LineageSettings;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -59,7 +60,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 9;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -162,6 +163,78 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
         String createIndexSql = String.format(CREATE_INDEX_SQL_FORMAT, tableName, 1, tableName);
         db.execSQL(createIndexSql);
+    }
+
+    private static void ensureTableIsValid(final String table) {
+        switch (table) {
+            case LineageTableNames.TABLE_GLOBAL:
+                break;
+            case LineageTableNames.TABLE_SECURE:
+                break;
+            case LineageTableNames.TABLE_SYSTEM:
+                break;
+            default:
+                throw new IllegalArgumentException(
+                        "Table '" + table + "' is not a valid Lineage database table");
+        }
+    }
+
+    /** Read a String value from a given database table. */
+    private String loadStringValue(final SQLiteDatabase db, final String table, final String name,
+            final String defaultValue) {
+        ensureTableIsValid(table);
+        db.beginTransaction();
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("SELECT value FROM " + table + " WHERE name=?");
+            stmt.bindString(1, table);
+            stmt.bindString(2, name);
+            return stmt.simpleQueryForString();
+        } catch (SQLiteDoneException ex) {
+            // Value is not set
+        } finally {
+            if (stmt != null) stmt.close();
+            db.endTransaction();
+        }
+        return defaultValue;
+    }
+
+    /**
+     * Read an Integer value from a given database table. Use the default value if not found
+     * or if the value cannot be parsed as an Integer.
+     */
+    private Integer loadIntegerValue(final SQLiteDatabase db, final String table, final String name,
+            final Integer defaultValue) {
+        ensureTableIsValid(table);
+        final String value = loadStringValue(db, table, name, null);
+        try {
+            return value != null ? Integer.parseInt(value) : defaultValue;
+        } catch (NumberFormatException ex) {
+            return defaultValue;
+        }
+    }
+
+    /** Write a value to a given database table. */
+    private void saveValue(final SQLiteDatabase db, final String table, final String name,
+            final Object value) throws SQLiteDoneException {
+        ensureTableIsValid(table);
+        db.beginTransaction();
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("INSERT OR IGNORE INTO " + table + "(name,value)"
+                    + " VALUES(?,?);");
+            stmt.bindString(1, table);
+            stmt.bindString(2, name);
+            stmt.bindString(3, Objects.toString(value));
+            stmt.execute();
+            db.setTransactionSuccessful();
+        } catch (SQLiteDoneException ex) {
+            // Value is not set
+            throw ex;
+        } finally {
+            if (stmt != null) stmt.close();
+            db.endTransaction();
+        }
     }
 
     @Override
@@ -308,6 +381,21 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             }
             upgradeVersion = 8;
         }
+
+        if (upgradeVersion < 9) {
+            Integer oldSetting = loadIntegerValue(db, LineageTableNames.TABLE_SECURE,
+                    LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0 /* turned off */);
+            if (!oldSetting.equals(0)) {
+                try {
+                    saveValue(db, LineageTableNames.TABLE_SECURE,
+                            LineageSettings.Secure.NETWORK_TRAFFIC_POSITION, 0 /* left */);
+                } catch (SQLiteDoneException ex) {
+                    // Value not set
+                }
+            }
+            upgradeVersion = 9;
+        }
+
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
             Log.wtf(TAG, "warning: upgrading settings database to version "
