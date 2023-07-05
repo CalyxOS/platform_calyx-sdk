@@ -16,6 +16,57 @@
       "message": "(Still not working, I uploaded an older change initially)",
       "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53ab13e8_1e90bfed",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T22:25:22Z",
+      "side": 1,
+      "message": "s/load/read/",
+      "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78af38e8_9de9b2a2",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T22:25:22Z",
+      "side": 1,
+      "message": "s/load/read/",
+      "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d606dc6d_ef9d3d70",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T22:25:22Z",
+      "side": 1,
+      "message": "s/save/write/",
+      "revId": "cf8315d5c7e576a9144444eb897c1edb426e602c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
