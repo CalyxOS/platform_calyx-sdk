@@ -16,6 +16,24 @@
       "message": "Not working, currently; the problem is exactly the same as before.",
       "revId": "e12bedb7e963587fc3a2d1d464e63b6c2ae24d4a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05296ee5_165b395d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T23:46:09Z",
+      "side": 1,
+      "message": "It\u0027s working with the removal of the use of transactions, so no more `db.beginTransaction()`, `db.endTransaction()`, `db.setTransactionSuccessful()`.\n\nI looked around at other code in AOSP, like for ContactsProvider, and they don\u0027t use transactions for simple queries, or even for some writes. We don\u0027t use them for writes either in other methods.",
+      "parentUuid": "55905047_1ebc23d2",
+      "revId": "e12bedb7e963587fc3a2d1d464e63b6c2ae24d4a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }

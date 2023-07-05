@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d84f1e8_635ca2e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T23:46:09Z",
+      "side": 1,
+      "message": "Would appreciate if someone else could test.\n\nSome useful commands:\n```\n# see current db version\nadb wait-for-device root \u0026\u0026 adb wait-for-device shell \"sqlite3 /data/user_de/0/org.lineageos.lineagesettings/databases/calyxsettings.db \u0027pragma user_version\u0027\"\n\n# set db version to 8\nadb wait-for-device root \u0026\u0026 adb wait-for-device shell \"sqlite3 /data/user_de/0/org.lineageos.lineagesettings/databases/calyxsettings.db \u0027pragma user_version\u003d8\u0027\"\n\n# see current lineage secure settings; network_traffic_position should get set to 0 if network_traffic_mode is 1.\nadb shell settings --lineage list secure\n```",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
