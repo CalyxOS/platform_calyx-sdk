@@ -16,6 +16,23 @@
       "message": "`sqlite3 /data/user_de/0/org.lineageos.lineagesettings/databases/calyxsettings.db \u0027pragma user_version\u0027`\n\n8\n\nPreviously it\u0027d be stuck at 6",
       "revId": "8f5f6d00c1e3e6146831718060b02ee167a04776",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8934a997_652fa5db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-05T21:50:40Z",
+      "side": 1,
+      "message": "Seems fine for now",
+      "revId": "8f5f6d00c1e3e6146831718060b02ee167a04776",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
