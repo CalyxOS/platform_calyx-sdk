@@ -47,6 +47,7 @@ import lineageos.providers.LineageSettings;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -666,5 +667,82 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         stmt.bindString(1, key);
         stmt.bindString(2, value.toString());
         stmt.execute();
+    }
+
+    private static void ensureTableIsValid(final String table) {
+        switch (table) {
+            case LineageTableNames.TABLE_GLOBAL:
+                break;
+            case LineageTableNames.TABLE_SECURE:
+                break;
+            case LineageTableNames.TABLE_SYSTEM:
+                break;
+            default:
+                throw new IllegalArgumentException(
+                        "Table '" + table + "' is not a valid Lineage database table");
+        }
+    }
+
+    /** Read a String setting from a given database table. */
+    private static String readStringSetting(final SQLiteDatabase db, final String table,
+            final String name, final String defaultValue) {
+        ensureTableIsValid(table);
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("SELECT value FROM " + table + " WHERE name=?");
+            stmt.bindString(1, name);
+            return stmt.simpleQueryForString();
+        } catch (SQLiteDoneException ex) {
+            // Value is not set
+        } finally {
+            if (stmt != null) stmt.close();
+        }
+        return defaultValue;
+    }
+
+    /**
+     * Read an Integer setting from a given database table. Use the default value if not found
+     * or if the value cannot be parsed as an Integer.
+     */
+    private static Integer readIntegerSetting(final SQLiteDatabase db, final String table,
+            final String name, final Integer defaultValue) {
+        ensureTableIsValid(table);
+        final String value = readStringSetting(db, table, name, null);
+        try {
+            return value != null ? Integer.parseInt(value) : defaultValue;
+        } catch (NumberFormatException ex) {
+            return defaultValue;
+        }
+    }
+
+    /** Write a setting to a given database table. Existing settings will be overwritten. */
+    private static void writeSetting(final SQLiteDatabase db, final String table, final String name,
+            final Object value) throws SQLiteDoneException {
+        writeSetting(db, table, name, value, true /* replaceIfExists */);
+    }
+
+    /** Write a new setting to a given database table. Existing settings will not be overwritten. */
+    private static void writeSettingIfNotPresent(final SQLiteDatabase db, final String table,
+            final String name, final Object value) throws SQLiteDoneException {
+        writeSetting(db, table, name, value, false /* replaceIfExists */);
+    }
+
+    /** Write a setting to a given database table. */
+    private static void writeSetting(final SQLiteDatabase db, final String table, final String name,
+            final Object value, final boolean replaceIfExists) throws SQLiteDoneException {
+        ensureTableIsValid(table);
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("INSERT OR " + (replaceIfExists ? "REPLACE" : "IGNORE")
+                    + " INTO " + table + "(name,value) VALUES(?,?);");
+            stmt.bindString(1, name);
+            stmt.bindString(2, Objects.toString(value));
+            stmt.execute();
+        } catch (SQLiteDoneException ex) {
+            // Value is not set
+            throw ex;
+        } finally {
+            if (stmt != null) stmt.close();
+        }
     }
 }
