@@ -199,7 +199,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
         if (upgradeVersion < 3) {
             Integer oldSetting = 0;
-            db.beginTransaction();
             SQLiteStatement stmt = null;
             try {
                 stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
@@ -209,7 +208,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 // LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS is not set
             } finally {
                 if (stmt != null) stmt.close();
-                db.endTransaction();
             }
             Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
@@ -221,7 +219,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             // The global table only exists for the 'owner' user
             if (mUserHandle == UserHandle.USER_SYSTEM) {
                 Long oldSetting = 0L;
-                db.beginTransaction();
                 SQLiteStatement stmt = null;
                 try {
                     stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
@@ -231,7 +228,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
                 } finally {
                     if (stmt != null) stmt.close();
-                    db.endTransaction();
                 }
                 Settings.Global.putLong(mContext.getContentResolver(),
                         Settings.Global.BLUETOOTH_OFF_TIMEOUT,
@@ -242,7 +238,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
         if (upgradeVersion < 5) {
             Integer oldSetting;
-            db.beginTransaction();
             SQLiteStatement stmt = null;
             try {
                 stmt = db.compileStatement("SELECT value FROM system WHERE name=?");
@@ -264,7 +259,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         ? 0 : 1;
             } finally {
                 if (stmt != null) stmt.close();
-                db.endTransaction();
             }
             // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             Settings.Secure.putInt(mContext.getContentResolver(),
