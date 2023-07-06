@@ -182,11 +182,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         settingsValue = -1;
                     }
 
-                    stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
-                            + " VALUES(?,?);");
-                    stmt.bindString(1, LineageSettings.Global.CLEARTEXT_NETWORK_POLICY);
-                    stmt.bindString(2, settingsValue.toString());
-                    stmt.execute();
+                    writeSettingIfNotPresent(db, LineageTableNames.TABLE_GLOBAL,
+                            LineageSettings.Global.CLEARTEXT_NETWORK_POLICY, settingsValue)
                 } catch (SQLiteDoneException ex) {
                     // LineageSettings.Global.CLEARTEXT_NETWORK_POLICY is not set
                     Log.e(TAG, "Failed to migrate CLEARTEXT_NETWORK_POLICY", ex);
@@ -200,17 +197,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 3) {
-            Integer oldSetting = 0;
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
-                stmt.bindString(1, Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS);
-                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
-            } catch (SQLiteDoneException | NumberFormatException ex) {
-                // LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS is not set
-            } finally {
-                if (stmt != null) stmt.close();
-            }
+            Integer oldSetting = readIntegerSetting(db, LineageTableNames.TABLE_SECURE,
+                    Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS, 0 /* default */);
             Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
                     oldSetting);
@@ -220,17 +208,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         if (upgradeVersion < 4) {
             // The global table only exists for the 'owner' user
             if (mUserHandle == UserHandle.USER_SYSTEM) {
-                Long oldSetting = 0L;
-                SQLiteStatement stmt = null;
-                try {
-                    stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
-                    stmt.bindString(1, Settings.Global.BLUETOOTH_OFF_TIMEOUT);
-                    oldSetting = Long.parseLong(stmt.simpleQueryForString());
-                } catch (SQLiteDoneException | NumberFormatException ex) {
-                    // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
-                } finally {
-                    if (stmt != null) stmt.close();
-                }
+                Long oldSetting = readLongSetting(db, LineageTableNames.TABLE_GLOBAL,
+                        Settings.Global.BLUETOOTH_OFF_TIMEOUT, 0L /* default */);
                 Settings.Global.putLong(mContext.getContentResolver(),
                         Settings.Global.BLUETOOTH_OFF_TIMEOUT,
                         oldSetting);
@@ -256,6 +235,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             } catch (SQLiteDoneException | NumberFormatException ex) {
                 // LineageSettings.System.FINGERPRINT_WAKE_UNLOCK was not set,
                 // set default value based on config_fingerprintWakeAndUnlock
+                // TODO: Migrate this to new helpers, but how do we handle this part?
                 oldSetting = mContext.getResources().getBoolean(
                         org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
                         ? 0 : 1;
