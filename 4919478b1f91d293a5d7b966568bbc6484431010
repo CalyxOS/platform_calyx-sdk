@@ -106,6 +106,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd5c3e71_2876a574",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T23:50:11Z",
+      "side": 1,
+      "message": "I think that\u0027s fine. I\u0027m ok with the migration. Don\u0027t necessarily have to do it, but I don\u0027t want to block it. I\u0027ll leave the final decision to Mike.",
+      "parentUuid": "973e9409_31530230",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3d5c826_1e245269",
@@ -208,6 +226,24 @@
       "side": 1,
       "message": "4.11.0 has been tagged.",
       "parentUuid": "f377f531_1b635043",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37668a1b_5645ff1b",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T23:50:11Z",
+      "side": 1,
+      "message": "This won\u0027t override.",
+      "parentUuid": "cf1fbf7e_a39b041d",
       "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
