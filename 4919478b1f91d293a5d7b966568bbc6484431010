@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e33bb943_1293d7c6",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-06T12:07:15Z",
+      "side": 1,
+      "message": "This only adds a setting if it does not already exist. Makes sense if you look closely at the SQL statement, but is otherwise not expected. This helper method\u0027s name and comment should reflect its actual behavior, or there should be an argument that changes the behavior.",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3d5c826_1e245269",
         "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
         "patchSetId": 5
@@ -48,6 +65,24 @@
       "writtenOn": "2023-07-06T11:39:17Z",
       "side": 1,
       "message": "An option to avoid that, would be to add below:\nInteger newSetting \u003d readIntegerSetting(db, LineageTableNames.TABLE_SECURE,\n                            LineageSettings.Secure.NETWORK_TRAFFIC_POSITION, -1 /* invalid */);\noldSetting as normal\n\nif (newSetting.equals(-1) \u0026\u0026 oldSetting.equals(0))\n    rest of the code",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74931846_b77dac08",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-06T12:07:15Z",
+      "side": 1,
+      "message": "Ack, see my other comment; there is nothing to avoid at the moment",
+      "parentUuid": "e3d5c826_1e245269",
       "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
@@ -83,6 +118,24 @@
       "side": 1,
       "message": "Or, we revert the removal and fix it before shipping 4.11.0\n\nOr, we just don\u0027t bother with the migration anymore.",
       "parentUuid": "f51aafc1_7737a7cb",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f377f531_1b635043",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-06T12:07:15Z",
+      "side": 1,
+      "message": "Maybe we shouldn\u0027t bother it, I\u0027m not sure",
+      "parentUuid": "abf3519a_6f975f55",
       "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
