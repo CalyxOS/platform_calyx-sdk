@@ -106,6 +106,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05204696_23e03a38",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T23:37:59Z",
+      "side": 1,
+      "message": "It\u0027s fine without since a transaction isn\u0027t of much use if we always set it as successful - it\u0027d never roll back!\n\nUnless it crashed in a way that didn\u0027t get caught.",
+      "parentUuid": "b08e38d8_d0db954d",
+      "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1202eb60_0f5491d3",
@@ -119,6 +137,24 @@
       "writtenOn": "2023-07-06T13:49:16Z",
       "side": 1,
       "message": "This is fine but what about just having two methods so that it\u0027s clearer.\n\nMinor nit / just semantics anyways.",
+      "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "509e64cf_053aaa63",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T23:37:59Z",
+      "side": 1,
+      "message": "It\u0027s fine.",
+      "parentUuid": "1202eb60_0f5491d3",
       "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
