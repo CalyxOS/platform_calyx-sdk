@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4cd3936e_8cfa595a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-06T13:01:43Z",
+      "side": 1,
+      "message": "Done: https://review.calyxos.org/c/CalyxOS/platform_calyx-sdk/+/18241",
+      "parentUuid": "a8ba507a_6e6003dc",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "6d84f1e8_635ca2e0",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
