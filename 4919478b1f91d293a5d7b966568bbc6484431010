@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "973e9409_31530230",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-06T12:19:30Z",
+      "side": 1,
+      "message": "One possible remaining reason to skip doing this, that I can think of, is for users who are fine with it being in its new position for them (center or whatever) and haven\u0027t tried to change it. As far as I know, those users will have the position setting unset, so this would suddenly move it back to the left.\n\nDoesn\u0027t really matter to me whether we do this particular migration or not, at this point.",
+      "parentUuid": "b2f5a3e3_c54fba19",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3d5c826_1e245269",
         "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
         "patchSetId": 5
