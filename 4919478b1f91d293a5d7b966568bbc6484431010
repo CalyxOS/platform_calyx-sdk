@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8ba507a_6e6003dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T11:39:17Z",
+      "side": 1,
+      "message": "Nit: It\u0027d be better to add the methods to the bottom, and also in a separate commit. That way we can easily merge that right away, and pick that upstream. etc.",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6d84f1e8_635ca2e0",
@@ -20,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e3d5c826_1e245269",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T11:39:17Z",
+      "side": 1,
+      "message": "An option to avoid that, would be to add below:\nInteger newSetting \u003d readIntegerSetting(db, LineageTableNames.TABLE_SECURE,\n                            LineageSettings.Secure.NETWORK_TRAFFIC_POSITION, -1 /* invalid */);\noldSetting as normal\n\nif (newSetting.equals(-1) \u0026\u0026 oldSetting.equals(0))\n    rest of the code",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f51aafc1_7737a7cb",
         "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
         "patchSetId": 5
@@ -31,6 +65,24 @@
       "writtenOn": "2023-07-06T11:35:43Z",
       "side": 1,
       "message": "The issue now is for anyone whom the migration ran successfully, or who has this set will have it reset, which is not good.",
+      "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abf3519a_6f975f55",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T11:39:17Z",
+      "side": 1,
+      "message": "Or, we revert the removal and fix it before shipping 4.11.0\n\nOr, we just don\u0027t bother with the migration anymore.",
+      "parentUuid": "f51aafc1_7737a7cb",
       "revId": "4919478b1f91d293a5d7b966568bbc6484431010",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
