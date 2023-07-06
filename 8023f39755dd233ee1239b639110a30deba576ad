@@ -16,6 +16,23 @@
       "message": "Although the real test would be with an old build, but we\u0027d have to go really old.",
       "revId": "8023f39755dd233ee1239b639110a30deba576ad",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9cebda9_e2376aaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T22:42:16Z",
+      "side": 1,
+      "message": "\n\n```\nadb root\nadb shell\nsqlite3 /data/user_de/0/org.lineageos.lineagesettings/databases/calyxsettings.db \u0027pragma user_version\u0027\nrm /data/user_de/0/org.lineageos.lineagesettings/databases/calyxsettings.db\nreboot bootloader\nm # With this\nfastboot flashall\nadb wait-for-device root\nadb shell\nsqlite3 /data/user_de/0/org.lineageos.lineagesettings/databases/calyxsettings.db \u0027pragma user_version\u0027\n```\n\nLast output should be 1",
+      "revId": "8023f39755dd233ee1239b639110a30deba576ad",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
