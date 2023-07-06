@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8adef351_1d413162",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-06T13:04:21Z",
+      "side": 1,
+      "message": "Add db transactions for writing",
+      "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
