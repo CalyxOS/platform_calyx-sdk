@@ -186,11 +186,12 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                     stmt.bindString(1, LineageSettings.Global.CLEARTEXT_NETWORK_POLICY);
                     stmt.bindString(2, settingsValue.toString());
                     stmt.execute();
-                    db.setTransactionSuccessful();
                 } catch (SQLiteDoneException ex) {
                     // LineageSettings.Global.CLEARTEXT_NETWORK_POLICY is not set
+                    Log.e(TAG, "Failed to migrate CLEARTEXT_NETWORK_POLICY", ex);
                 } finally {
                     if (stmt != null) stmt.close();
+                    db.setTransactionSuccessful();
                     db.endTransaction();
                 }
             }
