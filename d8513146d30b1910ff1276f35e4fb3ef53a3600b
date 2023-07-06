@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b432379_be08cad5",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T13:49:16Z",
+      "side": 1,
+      "message": "This does something similar to writeSetting",
+      "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8adef351_1d413162",
         "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
         "patchSetId": 1
@@ -31,6 +48,41 @@
       "writtenOn": "2023-07-06T13:04:21Z",
       "side": 1,
       "message": "Add db transactions for writing",
+      "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be367102_82ab07bd",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T13:49:16Z",
+      "side": 1,
+      "message": "Should we do that here though or leave it upto the caller",
+      "parentUuid": "8adef351_1d413162",
+      "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1202eb60_0f5491d3",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T13:49:16Z",
+      "side": 1,
+      "message": "This is fine but what about just having two methods so that it\u0027s clearer.\n\nMinor nit / just semantics anyways.",
       "revId": "d8513146d30b1910ff1276f35e4fb3ef53a3600b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
