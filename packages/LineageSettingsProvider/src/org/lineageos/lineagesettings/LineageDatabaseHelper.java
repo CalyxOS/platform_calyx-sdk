@@ -182,11 +182,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         settingsValue = -1;
                     }
 
-                    stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
-                            + " VALUES(?,?);");
-                    stmt.bindString(1, LineageSettings.Global.CLEARTEXT_NETWORK_POLICY);
-                    stmt.bindString(2, settingsValue.toString());
-                    stmt.execute();
+                    writeSettingIfNotPresent(db, LineageTableNames.TABLE_GLOBAL,
+                            LineageSettings.Global.CLEARTEXT_NETWORK_POLICY, settingsValue)
                 } catch (SQLiteDoneException ex) {
                     // LineageSettings.Global.CLEARTEXT_NETWORK_POLICY is not set
                     Log.e(TAG, "Failed to migrate CLEARTEXT_NETWORK_POLICY", ex);
@@ -200,17 +197,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 3) {
-            Integer oldSetting = 0;
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("SELECT value FROM secure WHERE name=?");
-                stmt.bindString(1, Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS);
-                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
-            } catch (SQLiteDoneException | NumberFormatException ex) {
-                // LineageSettings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS is not set
-            } finally {
-                if (stmt != null) stmt.close();
-            }
+            Integer oldSetting = readIntegerSetting(db, LineageTableNames.TABLE_SECURE,
+                    Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS, 0 /* default */);
             Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
                     oldSetting);
@@ -220,17 +208,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         if (upgradeVersion < 4) {
             // The global table only exists for the 'owner' user
             if (mUserHandle == UserHandle.USER_SYSTEM) {
-                Long oldSetting = 0L;
-                SQLiteStatement stmt = null;
-                try {
-                    stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
-                    stmt.bindString(1, Settings.Global.BLUETOOTH_OFF_TIMEOUT);
-                    oldSetting = Long.parseLong(stmt.simpleQueryForString());
-                } catch (SQLiteDoneException | NumberFormatException ex) {
-                    // LineageSettings.Global.BLUETOOTH_OFF_TIMEOUT is not set
-                } finally {
-                    if (stmt != null) stmt.close();
-                }
+                Long oldSetting = readLongSetting(db, LineageTableNames.TABLE_GLOBAL,
+                        Settings.Global.BLUETOOTH_OFF_TIMEOUT, 0L /* default */);
                 Settings.Global.putLong(mContext.getContentResolver(),
                         Settings.Global.BLUETOOTH_OFF_TIMEOUT,
                         oldSetting);
@@ -239,29 +218,21 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 5) {
-            Integer oldSetting;
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("SELECT value FROM system WHERE name=?");
-                // Used to be LineageSettings.System.FINGERPRINT_WAKE_UNLOCK
-                stmt.bindString(1, "fingerprint_wake_unlock");
-                oldSetting = Integer.parseInt(stmt.simpleQueryForString());
+            Integer defaultValue = mContext.getResources().getBoolean(
+                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
+                    ? 1 : 0; // Reversed since they're reversed again below
 
-                // Reverse 0/1 values, migrate 2 to 1
-                if (oldSetting.equals(0) || oldSetting.equals(2)) {
-                    oldSetting = 1;
-                } else if (oldSetting.equals(1)) {
-                    oldSetting = 0;
-                }
-            } catch (SQLiteDoneException | NumberFormatException ex) {
-                // LineageSettings.System.FINGERPRINT_WAKE_UNLOCK was not set,
-                // set default value based on config_fingerprintWakeAndUnlock
-                oldSetting = mContext.getResources().getBoolean(
-                        org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
-                        ? 0 : 1;
-            } finally {
-                if (stmt != null) stmt.close();
+            // Used to be LineageSettings.System.FINGERPRINT_WAKE_UNLOCK
+            Integer oldSetting = readIntegerSetting(db, LineageTableNames.TABLE_SYSTEM,
+                    "fingerprint_wake_unlock", defaultValue)
+
+            // Reverse 0/1 values, migrate 2 to 1
+            if (oldSetting.equals(0) || oldSetting.equals(2)) {
+                oldSetting = 1;
+            } else if (oldSetting.equals(1)) {
+                oldSetting = 0;
             }
+
             // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             Settings.Secure.putInt(mContext.getContentResolver(),
                     "sfps_require_screen_on_to_auth_enabled",
