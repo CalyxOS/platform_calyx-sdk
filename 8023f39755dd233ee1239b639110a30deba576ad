@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f6c42b8_9554ba5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-06T22:05:25Z",
+      "side": 1,
+      "message": "Although the real test would be with an old build, but we\u0027d have to go really old.",
+      "revId": "8023f39755dd233ee1239b639110a30deba576ad",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
