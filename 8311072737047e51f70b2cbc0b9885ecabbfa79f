@@ -18,6 +18,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09a737eb_d071823c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-14T21:07:14Z",
+      "side": 1,
+      "message": "Aye, that\u0027s what it was :sob:\n\n18242: Do not use transactions when reading settings | https://review.calyxos.org/c/CalyxOS/platform_calyx-sdk/+/18242 and chain has some fixes.",
+      "parentUuid": "59bd9acc_0f997e4c",
+      "revId": "8311072737047e51f70b2cbc0b9885ecabbfa79f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb3ae374_37472f84",
