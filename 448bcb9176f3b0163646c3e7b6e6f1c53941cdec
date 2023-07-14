@@ -16,6 +16,24 @@
       "message": "This shouldn\u0027t be here.\n\nIt was removed in \"Do not use transactions when reading settings\"\n\nI think if you checkout this file from 18263: Change existing migrations to use new helper methods | https://review.calyxos.org/c/CalyxOS/platform_calyx-sdk/+/18263 - but without \"Add back network traffic setting migration\", which can then be rebased on top, it should be ok.",
       "revId": "448bcb9176f3b0163646c3e7b6e6f1c53941cdec",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "606d2b0f_0ea09d8a",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-14T21:12:16Z",
+      "side": 1,
+      "message": "Ah I see why, different migrations.",
+      "parentUuid": "479f4e09_5d5f70b5",
+      "revId": "448bcb9176f3b0163646c3e7b6e6f1c53941cdec",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
