@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6698db4_abd33529",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-14T21:14:18Z",
+      "side": 1,
+      "message": "This, once rebased on top of the merge, the only diffs should be minor nits that got fixed upstream.",
+      "revId": "b7eed0dd7a8b04b278e9c62394ed8a33b939c5c9",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
