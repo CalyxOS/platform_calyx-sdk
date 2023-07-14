@@ -34,6 +34,24 @@
       "parentUuid": "479f4e09_5d5f70b5",
       "revId": "448bcb9176f3b0163646c3e7b6e6f1c53941cdec",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25b51638_a10dcb9a",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-14T21:16:17Z",
+      "side": 1,
+      "message": "Will fix in the various open patches.\n\nAt the end, it should all closely match what we had before the merge",
+      "parentUuid": "606d2b0f_0ea09d8a",
+      "revId": "448bcb9176f3b0163646c3e7b6e6f1c53941cdec",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
