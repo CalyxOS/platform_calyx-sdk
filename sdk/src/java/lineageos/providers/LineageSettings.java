@@ -2132,6 +2132,10 @@ public final class LineageSettings {
         public static final Validator ENABLE_TASKBAR_VALIDATOR =
                 sBooleanValidator;
 
+        /** @hide */
+        public static final Validator USER_ACTIVITY_END_TIME_VALIDATOR =
+                sNonNegativeLongValidator;
+
         /**
          * I can haz more bukkits
          * @hide
@@ -2323,6 +2327,8 @@ public final class LineageSettings {
                     CLICK_PARTIAL_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(ENABLE_TASKBAR,
                     ENABLE_TASKBAR_VALIDATOR);
+            VALIDATORS.put(USER_ACTIVITY_END_TIME,
+                    USER_ACTIVITY_END_TIME_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
@@ -3023,6 +3029,12 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator BERRY_BLACK_THEME_VALIDATOR = sBooleanValidator;
+
+        /**
+         * Custom time when user is scheduled to deactivate
+         * @hide
+         */
+        public static final String USER_ACTIVITY_END_TIME = "user_activity_end_time";
         // endregion
 
         /**
