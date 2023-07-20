@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2112fcbc_2ea98e2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-20T13:02:18Z",
+      "side": 1,
+      "message": "If existing users on stable have already experienced the effects of no migration, meaning that the traffic moved from the left to somewhere else, I think we should abandon this. It\u0027s not worth having its position unexpectedly change for users twice. They can still change the setting any time, and they may already have.",
+      "revId": "973718077101858a04dfac1a6b23ac9c8f922804",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
