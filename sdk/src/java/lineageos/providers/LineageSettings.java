@@ -2137,20 +2137,6 @@ public final class LineageSettings {
                 sAlwaysTrueValidator;
 
         /**
-         * @hide
-         */
-        public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
-                LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS
-        };
-
-        /**
-         * @hide
-         */
-        public static boolean isLegacySetting(String key) {
-            return ArrayUtils.contains(LEGACY_SYSTEM_SETTINGS, key);
-        }
-
-        /**
          * Mapping of validators for all system settings.  This map is used to validate both valid
          * keys as well as validating the values for those keys.
          *
@@ -3022,25 +3008,6 @@ public final class LineageSettings {
                 "___magical_test_passing_enabler";
 
         /**
-         * @hide
-         */
-        public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
-                LineageSettings.Secure.BERRY_BLACK_THEME,
-                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE,
-                LineageSettings.Secure.NETWORK_TRAFFIC_MODE,
-                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS,
-                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS,
-                LineageSettings.Secure.PANIC_IN_POWER_MENU
-        };
-
-        /**
-         * @hide
-         */
-        public static boolean isLegacySetting(String key) {
-            return ArrayUtils.contains(LEGACY_SECURE_SETTINGS, key);
-        }
-
-        /**
          * Mapping of validators for all secure settings.  This map is used to validate both valid
          * keys as well as validating the values for those keys.
          *
@@ -3559,21 +3526,6 @@ public final class LineageSettings {
          */
         public static final Validator __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR =
                 sAlwaysTrueValidator;
-
-        /**
-         * @hide
-         */
-        public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
-                LineageSettings.Global.DEVICE_REBOOT_TIMEOUT,
-                LineageSettings.Global.GLOBAL_VPN_APP,
-        };
-
-        /**
-         * @hide
-         */
-        public static boolean isLegacySetting(String key) {
-            return ArrayUtils.contains(LEGACY_GLOBAL_SETTINGS, key);
-        }
 
         /**
          * Mapping of validators for all global settings.  This map is used to validate both valid
