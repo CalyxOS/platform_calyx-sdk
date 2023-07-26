@@ -52,6 +52,23 @@
       "parentUuid": "e2520393_1b3bc95f",
       "revId": "dcaa6dd86631da12fd9fdfc722cbb6af78418e82",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "776c3c7a_b73b04ea",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3020,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-26T22:39:55Z",
+      "side": 1,
+      "message": "Add a validator.\n\n`sNonNegativeIntegerValidator` could work?",
+      "revId": "dcaa6dd86631da12fd9fdfc722cbb6af78418e82",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
