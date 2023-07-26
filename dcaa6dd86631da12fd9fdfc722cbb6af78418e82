@@ -16,6 +16,24 @@
       "message": "Now I know this means \"user as in user 10/11/etc\", but it may cause confusion later on, given that this feature is for \"work profiles\".\n\nAt the very least, the comment should indicate that.\n\nAnd perhaps a rename if there is a better name.",
       "revId": "dcaa6dd86631da12fd9fdfc722cbb6af78418e82",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2520393_1b3bc95f",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3017,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-07-26T22:22:13Z",
+      "side": 1,
+      "message": "The way it is implemented this feature can also work for secondary users. Currently the only entry point is in work profile settings but the backend is viable for other users",
+      "parentUuid": "1c7138b4_1f3beb8d",
+      "revId": "dcaa6dd86631da12fd9fdfc722cbb6af78418e82",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
