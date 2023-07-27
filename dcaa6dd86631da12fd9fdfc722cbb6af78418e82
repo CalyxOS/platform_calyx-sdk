@@ -69,6 +69,24 @@
       "message": "Add a validator.\n\n`sNonNegativeIntegerValidator` could work?",
       "revId": "dcaa6dd86631da12fd9fdfc722cbb6af78418e82",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6163f563_bc19eeac",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3020,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-07-27T15:40:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "776c3c7a_b73b04ea",
+      "revId": "dcaa6dd86631da12fd9fdfc722cbb6af78418e82",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
