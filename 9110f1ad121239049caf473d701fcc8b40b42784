@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d635839e_1298b36a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-07-27T16:23:18Z",
+      "side": 1,
+      "message": "Per Oliver, we need to set it to 0 instead of -1 when it is turned off, or it fails the validator",
+      "revId": "9110f1ad121239049caf473d701fcc8b40b42784",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
