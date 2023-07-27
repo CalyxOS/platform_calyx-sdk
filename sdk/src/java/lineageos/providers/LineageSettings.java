@@ -367,6 +367,17 @@ public final class LineageSettings {
         }
     };
 
+    private static final Validator sNonNegativeLongValidator = new Validator() {
+        @Override
+        public boolean validate(String value) {
+            try {
+                return Long.parseLong(value) >= 0;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    };
+
     private static final Validator sUriValidator = new Validator() {
         @Override
         public boolean validate(String value) {
