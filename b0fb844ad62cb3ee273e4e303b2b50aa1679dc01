@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccd5f816_1806a6ba",
+        "filename": "sdk/src/java/org/lineageos/internal/statusbar/NetworkTraffic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-09-06T18:59:10Z",
+      "side": 1,
+      "message": "Do all interfaces have a v4 equivalent?",
+      "range": {
+        "startLine": 180,
+        "startChar": 20,
+        "endLine": 180,
+        "endChar": 68
+      },
+      "revId": "b0fb844ad62cb3ee273e4e303b2b50aa1679dc01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bdbe451_09163cc7",
+        "filename": "sdk/src/java/org/lineageos/internal/statusbar/NetworkTraffic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-09-06T18:59:10Z",
+      "side": 1,
+      "message": "If we can get the stacked links, could do a for loop here?",
+      "range": {
+        "startLine": 307,
+        "startChar": 24,
+        "endLine": 309,
+        "endChar": 57
+      },
+      "revId": "b0fb844ad62cb3ee273e4e303b2b50aa1679dc01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
