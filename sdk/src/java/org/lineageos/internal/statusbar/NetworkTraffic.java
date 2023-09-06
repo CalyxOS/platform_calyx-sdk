@@ -53,6 +53,9 @@ public class NetworkTraffic extends TextView {
 
     private static final boolean DEBUG = false;
 
+    // This must match the interface prefix in Connectivity's clatd.c.
+    private static final String CLAT_PREFIX = "v4-";
+
     private static final int MODE_DISABLED = 0;
     private static final int MODE_UPSTREAM_ONLY = 1;
     private static final int MODE_DOWNSTREAM_ONLY = 2;
@@ -172,6 +175,20 @@ public class NetworkTraffic extends TextView {
                     }
                     txBytes += ifaceTxBytes;
                     rxBytes += ifaceRxBytes;
+
+                    // Include stats from Clat's IPv4 interface (for applicable IPv6 networks).
+                    final String stackedIface = CLAT_PREFIX + iface;
+                    final long stackedIfaceTxBytes = TrafficStats.getTxBytes(stackedIface);
+                    final long stackedIfaceRxBytes = TrafficStats.getRxBytes(stackedIface);
+                    if (stackedIfaceTxBytes > 0 || stackedIfaceRxBytes > 0) {
+                        if (DEBUG) {
+                            Log.d(TAG, "adding stats from stacked interface " + stackedIface
+                                    + " txbytes " + stackedIfaceTxBytes + " rxbytes "
+                                    + stackedIfaceRxBytes);
+                        }
+                        txBytes += stackedIfaceTxBytes;
+                        rxBytes += stackedIfaceRxBytes;
+                    }
                 }
 
                 final long txBytesDelta = txBytes - mLastTxBytes;
