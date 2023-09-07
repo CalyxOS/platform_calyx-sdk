@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1b1e028e_6f381c3e",
+        "filename": "sdk/src/java/org/lineageos/internal/statusbar/NetworkTraffic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-09-07T18:51:11Z",
+      "side": 1,
+      "message": "Potentially, but not always. If it doesn\u0027t exist, the stats return 0 from what I\u0027ve seen. There\u0027s no failure or exception to worry about.",
+      "parentUuid": "ccd5f816_1806a6ba",
+      "range": {
+        "startLine": 180,
+        "startChar": 20,
+        "endLine": 180,
+        "endChar": 68
+      },
+      "revId": "b0fb844ad62cb3ee273e4e303b2b50aa1679dc01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2bdbe451_09163cc7",
         "filename": "sdk/src/java/org/lineageos/internal/statusbar/NetworkTraffic.java",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-06T18:59:10Z",
       "side": 1,
       "message": "If we can get the stacked links, could do a for loop here?",
+      "range": {
+        "startLine": 307,
+        "startChar": 24,
+        "endLine": 309,
+        "endChar": 57
+      },
+      "revId": "b0fb844ad62cb3ee273e4e303b2b50aa1679dc01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7224ddd6_6cbef627",
+        "filename": "sdk/src/java/org/lineageos/internal/statusbar/NetworkTraffic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-09-07T18:51:11Z",
+      "side": 1,
+      "message": "That could work, except we would need to make sure they get removed when they should, too. Whenever a stacked link is added or removed, onLinkPropertiesChanged will be called. onLost is not called when one is removed, which can apparently happen even if the network itself isn\u0027t lost. (In fact, it\u0027s possible that getStackedLinks would *always* be empty when onLost is called, but I am not sure.)\n\nSo if we were to do that, I guess we would have to track the difference between getStackedLinks across calls to make sure they get removed...\n\nAll things considered, it would probably be easier to just loop over getStackedLinks in recalculateStats then, and not bother tracking them.\n\nBy the way, from looking at the AOSP code, I don\u0027t see a way to be notified directly about changes to stacked link interfaces. :(",
+      "parentUuid": "2bdbe451_09163cc7",
       "range": {
         "startLine": 307,
         "startChar": 24,
