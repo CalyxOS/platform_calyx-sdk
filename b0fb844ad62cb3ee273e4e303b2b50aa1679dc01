@@ -72,6 +72,30 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9afdeb15_5ab640d3",
+        "filename": "sdk/src/java/org/lineageos/internal/statusbar/NetworkTraffic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2023-09-11T13:30:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8cc11238_7fce6d0d",
+      "range": {
+        "startLine": 180,
+        "startChar": 20,
+        "endLine": 180,
+        "endChar": 68
+      },
+      "revId": "b0fb844ad62cb3ee273e4e303b2b50aa1679dc01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2bdbe451_09163cc7",
