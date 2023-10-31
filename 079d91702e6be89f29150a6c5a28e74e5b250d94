@@ -34,6 +34,24 @@
       "parentUuid": "8c1bda8e_c41ca93b",
       "revId": "079d91702e6be89f29150a6c5a28e74e5b250d94",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aa007aa_e054959d",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-31T17:56:10Z",
+      "side": 1,
+      "message": "I\u0027m also fine with the simpler wholesale string replacement, less chance to have errors especially with migration where we\u0027ve gone through a lot.\n\nAlso, given that this was only a developer setting, overriding defaults is ok",
+      "parentUuid": "8a7e05a7_240bb6fc",
+      "revId": "079d91702e6be89f29150a6c5a28e74e5b250d94",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
