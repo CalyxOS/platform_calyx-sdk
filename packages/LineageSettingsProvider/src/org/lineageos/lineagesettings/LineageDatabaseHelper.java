@@ -60,7 +60,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 9;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -81,6 +81,9 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final String DROP_INDEX_SQL_FORMAT = "DROP INDEX IF EXISTS %sIndex%d;";
 
     private static final String MCC_PROP_NAME = "ro.prebundled.mcc";
+
+    // sync with fw/b packages/SettingsProvider/res/values/default.xml def_airplane_mode_radios
+    private static final String DEFAULT_AIRPLANE_MODE_RADIOS = "cell,bluetooth,uwb,wifi,wimax";
 
     private Context mContext;
     private int mUserHandle;
@@ -258,6 +261,18 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, oldSetting.equals(1) ? 0 : 1);
             upgradeVersion = 8;
+        }
+
+        if (upgradeVersion < 9) {
+            // The global table only exists for the 'owner' user
+            if (mUserHandle == UserHandle.USER_SYSTEM) {
+                // Return airplane_mode_radios to the default settings, as keeping Wi-Fi or
+                // Bluetooth enabled is now handled by the airplane mode enhancement feature.
+                Settings.Global.putString(mContext.getContentResolver(),
+                        Settings.Global.AIRPLANE_MODE_RADIOS,
+                        DEFAULT_AIRPLANE_MODE_RADIOS);
+            }
+            upgradeVersion = 9;
         }
 
         // *** Remember to update DATABASE_VERSION above!
