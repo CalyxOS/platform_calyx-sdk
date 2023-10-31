@@ -16,6 +16,24 @@
       "message": "We *could* alter more selectively, e.g. add `bluetooth` and/or `wifi` to the existing string if they are missing rather than resetting to default. Not sure if that\u0027s worth it.\n\nDoing it this current way, though, may remove `nfc` from the list for devices that have been upgraded from earlier versions of Android, since the default has changed.",
       "revId": "079d91702e6be89f29150a6c5a28e74e5b250d94",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a7e05a7_240bb6fc",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2023-10-31T17:03:27Z",
+      "side": 1,
+      "message": "Not sure what to think about nfc. For the rest, I personally am ok with resetting the value rather than just adding back the radios based on conditions",
+      "parentUuid": "8c1bda8e_c41ca93b",
+      "revId": "079d91702e6be89f29150a6c5a28e74e5b250d94",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
