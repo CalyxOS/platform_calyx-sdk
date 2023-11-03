@@ -352,6 +352,9 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadBooleanSetting(stmt, LineageSettings.Secure.VOLUME_PANEL_ON_LEFT,
                     R.bool.def_volume_panel_on_left);
 
+            loadBooleanSetting(stmt, LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
+                    R.bool.def_qs_show_brightness_slider);
+
             loadBooleanSetting(stmt, LineageSettings.Secure.BERRY_BLACK_THEME,
                     R.bool.def_berry_black_theme);
 
