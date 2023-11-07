@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "733802de_364e7108",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-11-07T14:30:36Z",
+      "side": 1,
+      "message": "`airplane_mode_toggleable_radios\u003dbluetooth,wifi`",
+      "revId": "079d91702e6be89f29150a6c5a28e74e5b250d94",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c1bda8e_c41ca93b",
