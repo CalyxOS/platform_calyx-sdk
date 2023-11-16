@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b1ee1ca_a1e072d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-11-16T01:42:29Z",
+      "side": 1,
+      "message": "This fixes https://gitlab.com/CalyxOS/calyxos/-/issues/595",
+      "revId": "a4e4772ed55070a3570c7659204c1aeef75dee03",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
