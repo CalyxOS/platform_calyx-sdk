@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="lineageos_system_label">LineageOS 系统</string>
+    <string name="lineageos_system_label">CalyxOS 系统</string>
     <string name="permlab_modifyProfiles">修改系统配置</string>
     <string name="permdesc_modifyProfiles">允许应用修改系统配置文件。</string>
     <string name="permlab_useHardwareFramework">使用硬件框架</string>

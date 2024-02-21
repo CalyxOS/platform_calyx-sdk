@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="lineageos_system_label">מערכת LineageOS</string>
+    <string name="lineageos_system_label">מערכת CalyxOS</string>
     <string name="permlab_modifyProfiles">שנה פרופילי מערכת</string>
     <string name="permdesc_modifyProfiles">מאפשר ליישום לשנות פרופילי מערכת.</string>
     <string name="permlab_useHardwareFramework">השתמש במסגרת חומרה</string>

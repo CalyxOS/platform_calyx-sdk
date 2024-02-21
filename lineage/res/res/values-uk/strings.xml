@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="lineageos_system_label">Система LineageOS</string>
+    <string name="lineageos_system_label">Система CalyxOS</string>
     <string name="permlab_modifyProfiles">зміна системних профілів</string>
     <string name="permdesc_modifyProfiles">Дозволяє додатку змінювати системні профілі.</string>
     <string name="permlab_useHardwareFramework">Взаємодія із обладнанням</string>

@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="lineageos_system_label">System LineageOS</string>
+    <string name="lineageos_system_label">System CalyxOS</string>
     <string name="permlab_modifyProfiles">addasu proffiliau system</string>
     <string name="permdesc_modifyProfiles">Mae\'n caniatáu i ap addasu proffiliau system.</string>
     <string name="permlab_useHardwareFramework">defnyddio fframwaith caledwedd</string>
