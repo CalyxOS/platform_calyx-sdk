@@ -94,9 +94,6 @@
     -->
     <integer name="def_clock_position">2</integer>
 
-    <!-- Default value for lockscreen rotation -->
-    <bool name="def_lockscreen_rotation">false</bool>
-
     <!-- Default value for navigation bar arrow keys -->
     <bool name="def_navigation_bar_arrow_keys">false</bool>
 
