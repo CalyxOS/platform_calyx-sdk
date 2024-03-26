@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2022 The LineageOS Project
+ * Copyright (C) 2018-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
-import android.os.RemoteException;
 import android.os.SELinux;
 import android.os.SystemProperties;
 import android.util.Log;
@@ -43,7 +42,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.NoSuchElementException;
 
 /** @hide **/
 public class TrustInterfaceService extends LineageSystemService {
