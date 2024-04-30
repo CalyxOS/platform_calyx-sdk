@@ -3018,6 +3018,16 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator USER_ACTIVITY_END_TIME_VALIDATOR =
                 sNonNegativeLongValidator;
+
+        /**
+         * Whether to disable the user when it is scheduled to deactivate
+         * @hide
+         */
+        public static final String USER_ACTIVITY_END_TIME_MODE = "user_activity_end_time_mode";
+
+        /** @hide */
+        public static final Validator USER_ACTIVITY_END_TIME_MODE_VALIDATOR =
+                sBooleanValidator;
         // endregion
 
         /**
@@ -3052,6 +3062,7 @@ public final class LineageSettings {
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
             VALIDATORS.put(USER_ACTIVITY_END_TIME, USER_ACTIVITY_END_TIME_VALIDATOR);
+            VALIDATORS.put(USER_ACTIVITY_END_TIME_MODE, USER_ACTIVITY_END_TIME_MODE_VALIDATOR);
         }
     }
 
