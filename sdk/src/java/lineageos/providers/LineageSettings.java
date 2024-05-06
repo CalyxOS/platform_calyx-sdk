@@ -36,7 +36,6 @@ import android.util.ArraySet;
 import android.util.Log;
 
 import com.android.internal.annotations.GuardedBy;
-import com.android.internal.util.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -3016,6 +3015,21 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator USER_ACTIVITY_END_TIME_VALIDATOR =
                 sNonNegativeLongValidator;
+
+        /**
+         * Used to enable / disable network access for new installed apps
+         *
+         * Values are:
+         * 0: disabled
+         * 1: enabled
+         * @hide
+         */
+        public static final String DEFAULT_RESTRICT_NETWORK_DATA =
+                "default_restrict_network_data";
+
+        /** @hide */
+        public static final Validator DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 1);
         // endregion
 
         /**
@@ -3050,6 +3064,7 @@ public final class LineageSettings {
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
             VALIDATORS.put(USER_ACTIVITY_END_TIME, USER_ACTIVITY_END_TIME_VALIDATOR);
+            VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
         }
     }
 
