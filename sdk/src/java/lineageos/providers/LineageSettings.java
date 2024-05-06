@@ -3529,6 +3529,21 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator GARLIC_LEVEL_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 2);
+
+        /**
+         * Used to enable / disable the Restricted Networking Mode in which network access is
+         * restricted to apps holding the CONNECTIVITY_USE_RESTRICTED_NETWORKS permission.
+         *
+         * Values are:
+         * 0: disabled
+         * 1: enabled
+         * @hide
+         */
+        public static final String RESTRICTED_NETWORKING_MODE = "restricted_networking_mode";
+
+        /** @hide */
+        public static final Validator RESTRICTED_NETWORKING_MODE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 1);
         // endregion
 
         /**
@@ -3564,6 +3579,7 @@ public final class LineageSettings {
                     value -> value.isEmpty() || PACKAGE_NAME_VALIDATOR.validate(value));
             VALIDATORS.put(TRUST_RESTRICT_USB, TRUST_RESTRICT_USB_VALIDATOR);
             VALIDATORS.put(GARLIC_LEVEL, GARLIC_LEVEL_VALIDATOR);
+            VALIDATORS.put(RESTRICTED_NETWORKING_MODE, RESTRICTED_NETWORKING_MODE_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
