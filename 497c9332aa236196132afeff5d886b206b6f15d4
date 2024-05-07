@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4177dd8f_8f4b617d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-05-07T18:49:53Z",
+      "side": 1,
+      "message": "Having a setting with the same name in both AOSP and Lineage existing at the same time may get confusing.",
+      "revId": "497c9332aa236196132afeff5d886b206b6f15d4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
