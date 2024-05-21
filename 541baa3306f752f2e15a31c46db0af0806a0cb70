@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe67e311_44ca7f85",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-21T17:39:44Z",
+      "side": 1,
+      "message": "Only this step remains since it was added in stable6, it be removed in the next stable channel migration",
+      "revId": "541baa3306f752f2e15a31c46db0af0806a0cb70",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
