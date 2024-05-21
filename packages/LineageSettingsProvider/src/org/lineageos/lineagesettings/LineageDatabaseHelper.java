@@ -31,7 +31,6 @@ import android.database.sqlite.SQLiteDoneException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.net.ConnectivitySettingsManager;
-import android.os.Build;
 import android.os.Environment;
 import android.os.RemoteException;
 import android.os.SystemProperties;
@@ -174,92 +173,37 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         int upgradeVersion = oldVersion;
 
         if (upgradeVersion < 2) {
-            if (mUserHandle == UserHandle.USER_SYSTEM) {
-                Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
-                        LineageSettings.Global.CLEARTEXT_NETWORK_POLICY, -1);
-
-                if (settingsValue.equals(0)) {
-                    settingsValue = -1;
-                }
-
-                writeSettingIfNotPresent(db, LineageTableNames.TABLE_GLOBAL,
-                        LineageSettings.Global.CLEARTEXT_NETWORK_POLICY, settingsValue);
-            }
+            // Use to migrate LineageSettings.Global.CLEARTEXT_NETWORK_POLICY
             upgradeVersion = 2;
         }
 
         if (upgradeVersion < 3) {
-            Integer oldSetting = readIntegerSetting(db, LineageTableNames.TABLE_SECURE,
-                    Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS, 0 /* default */);
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
-                    oldSetting);
+            // Used to migrate Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS
             upgradeVersion = 3;
         }
 
         if (upgradeVersion < 4) {
-            // The global table only exists for the 'owner' user
-            if (mUserHandle == UserHandle.USER_SYSTEM) {
-                Long oldSetting = readLongSetting(db, LineageTableNames.TABLE_GLOBAL,
-                        Settings.Global.BLUETOOTH_OFF_TIMEOUT, 0L /* default */);
-                Settings.Global.putLong(mContext.getContentResolver(),
-                        Settings.Global.BLUETOOTH_OFF_TIMEOUT,
-                        oldSetting);
-            }
+            // Used to migrate Settings.Global.BLUETOOTH_OFF_TIMEOUT
             upgradeVersion = 4;
         }
 
         if (upgradeVersion < 5) {
-            Integer defaultValue = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
-                    ? 1 : 0; // Reversed since they're reversed again below
-
-            // Used to be LineageSettings.System.FINGERPRINT_WAKE_UNLOCK
-            Integer oldSetting = readIntegerSetting(db, LineageTableNames.TABLE_SYSTEM,
-                    "fingerprint_wake_unlock", defaultValue);
-
-            // Reverse 0/1 values, migrate 2 to 1
-            if (oldSetting.equals(0) || oldSetting.equals(2)) {
-                oldSetting = 1;
-            } else if (oldSetting.equals(1)) {
-                oldSetting = 0;
-            }
-
-            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    "sfps_require_screen_on_to_auth_enabled",
-                    oldSetting);
+            // Used to migrate Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             upgradeVersion = 5;
         }
 
         if (upgradeVersion < 6) {
-            final String currentPrivateDnsMode = Settings.Global.getString(
-                    mContext.getContentResolver(), Settings.Global.PRIVATE_DNS_MODE);
-            if ("cloudflare".equals(currentPrivateDnsMode)) {
-                // DoT, used at time of migration
-                ConnectivitySettingsManager.setPrivateDnsHostname(mContext, "one.one.one.one");
-                ConnectivitySettingsManager.setPrivateDnsMode(mContext,
-                        ConnectivitySettingsManager.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME);
-            }
+            // Used to migrate Cloudflare DNS mode to hostname
             upgradeVersion = 6;
         }
 
         if (upgradeVersion < 7) {
-            // Used to be NETWORK_TRAFFIC_MODE migration
-            // Broken, dropped to avoid a scenario where the other migrations don't run
+            // Used to migrate LineageSettings.Secure.NETWORK_TRAFFIC_POSITION
             upgradeVersion = 7;
         }
 
         if (upgradeVersion < 8) {
-            // Set default value based on config_fingerprintWakeAndUnlock
-            boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
-            // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
-            Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
-                    "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);
-            // Flip value
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED, oldSetting.equals(1) ? 0 : 1);
+            // Used to migrate Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED
             upgradeVersion = 8;
         }
 
@@ -346,13 +290,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadGlobalSettings(db);
             // Initialize restricted-networking-mode
             loadRestrictedNetworkingModeSetting();
-            // Migrate from pre-12 usb setting
-            loadTrustRestrictUsbSetting(db);
         }
-        // Custom AOSP to LineageSettings migration, table change
-        loadLockscreenScramblePinLayoutSetting(db);
-        // Same as above, and additionally a value flip
-        loadQsTilesToggleableOnLockScreenSetting(db);
     }
 
     private void loadSecureSettings(SQLiteDatabase db) {
@@ -456,50 +394,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         }
     }
 
-    private void loadLockscreenScramblePinLayoutSetting(SQLiteDatabase db) {
-        // Move lockscreen_scramble_pin_layout to system from AOSP global
-        SQLiteStatement stmt = null;
-        try {
-            Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
-                    LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0);
-
-            stmt = db.compileStatement("INSERT OR IGNORE INTO system(name,value)"
-                    + " VALUES(?,?);");
-            stmt.bindString(1, LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
-            stmt.bindString(2, settingsValue.toString());
-            stmt.execute();
-
-        } catch (SQLiteDoneException ex) {
-            // LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT is not set
-        } finally {
-            if (stmt != null) stmt.close();
-        }
-    }
-
-    private void loadQsTilesToggleableOnLockScreenSetting(SQLiteDatabase db) {
-        // Move qs_tiles_toggleable_on_lock_screen to secure from AOSP global, and
-        // flip it's value
-        SQLiteStatement stmt = null;
-        try {
-            Integer settingsValue = Settings.Global.getInt(mContext.getContentResolver(),
-                LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 0);
-
-            // Flip the value
-            settingsValue = settingsValue == 1 ? 0 : 1;
-
-            stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
-                    + " VALUES(?,?);");
-            stmt.bindString(1, LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN);
-            stmt.bindString(2, settingsValue.toString());
-            stmt.execute();
-
-        } catch (SQLiteDoneException ex) {
-            // LineageSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN is not set
-        } finally {
-            if (stmt != null) stmt.close();
-        }
-    }
-
     private void loadRestrictedNetworkingModeSetting() {
         Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.RESTRICTED_NETWORKING_MODE, 1);
@@ -519,41 +413,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             ConnectivitySettingsManager.setUidsAllowedOnRestrictedNetworks(mContext, uids);
         } catch (RemoteException e) {
             Log.e(TAG, "Failed to set uids allowed on restricted networks");
-        }
-    }
-
-    private void loadTrustRestrictUsbSetting(SQLiteDatabase db) {
-        // This used to be a property pre-12, migrate it to setting or set a default value
-        SQLiteStatement stmt = null;
-        try {
-            String propertyValue = SystemProperties.get("persist.security.deny_new_usb");
-            final Integer settingsValue;
-            switch (propertyValue) {
-                case "disabled":
-                    settingsValue = 0;
-                    break;
-                case "dynamic":
-                    settingsValue = 1;
-                    break;
-                case "enabled":
-                    settingsValue = 2;
-                    break;
-                default:
-                    // Always allow for debuggable builds; otherwise, allow only when unlocked.
-                    settingsValue = Build.IS_DEBUGGABLE ? 0 : 1;
-                    break;
-            }
-
-            stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
-                    + " VALUES(?,?);");
-            stmt.bindString(1, LineageSettings.Global.TRUST_RESTRICT_USB);
-            stmt.bindString(2, settingsValue.toString());
-            stmt.execute();
-
-        } catch (SQLiteDoneException ex) {
-            // LineageSettings.Global.TRUST_RESTRICT_USB is not set
-        } finally {
-            if (stmt != null) stmt.close();
         }
     }
 
