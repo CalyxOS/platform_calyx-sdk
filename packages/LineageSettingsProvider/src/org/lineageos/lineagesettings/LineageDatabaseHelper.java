@@ -59,7 +59,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 8;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -168,6 +168,41 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (LOCAL_LOGV) Log.d(TAG, "Upgrading from version: " + oldVersion + " to " + newVersion);
         int upgradeVersion = oldVersion;
+
+        if (upgradeVersion < 2) {
+            // Used to migrate LineageSettings.Global.CLEARTEXT_NETWORK_POLICY
+            upgradeVersion = 2;
+        }
+
+        if (upgradeVersion < 3) {
+            // Used to migrate Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS
+            upgradeVersion = 3;
+        }
+
+        if (upgradeVersion < 4) {
+            // Used to migrate Settings.Global.BLUETOOTH_OFF_TIMEOUT
+            upgradeVersion = 4;
+        }
+
+        if (upgradeVersion < 5) {
+            // Used to migrate Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
+            upgradeVersion = 5;
+        }
+
+        if (upgradeVersion < 6) {
+            // Used to migrate Cloudflare DNS mode to hostname
+            upgradeVersion = 6;
+        }
+
+        if (upgradeVersion < 7) {
+            // Used to migrate LineageSettings.Secure.NETWORK_TRAFFIC_POSITION
+            upgradeVersion = 7;
+        }
+
+        if (upgradeVersion < 8) {
+            // Used to migrate Settings.Secure.SFPS_PERFORMANT_AUTH_ENABLED
+            upgradeVersion = 8;
+        }
 
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
