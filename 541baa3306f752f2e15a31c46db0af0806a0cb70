@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7747a5c7_cb529f4f",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-05-22T10:12:00Z",
+      "side": 1,
+      "message": "```suggestion\n            // Used to migrate LineageSettings.Global.CLEARTEXT_NETWORK_POLICY\n```",
+      "range": {
+        "startLine": 176,
+        "startChar": 15,
+        "endLine": 176,
+        "endChar": 18
+      },
+      "revId": "541baa3306f752f2e15a31c46db0af0806a0cb70",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "fe67e311_44ca7f85",
