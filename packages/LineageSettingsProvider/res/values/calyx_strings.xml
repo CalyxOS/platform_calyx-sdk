@@ -4,4 +4,5 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <string name="calyx_app_name">Calyx Settings Storage</string>
 </resources>
