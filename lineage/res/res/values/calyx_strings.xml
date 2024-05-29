@@ -4,4 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <!-- Label for the CalyxOS system components when they are shown to the user. -->
+    <string name="calyxos_system_label">CalyxOS System</string>
 </resources>
