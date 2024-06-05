@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "254e8aa6_aff87f6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-05T14:13:12Z",
+      "side": 1,
+      "message": "Tested via rebase, works fine.\n\nWe\u0027ve been on `stable6` since Android 14.",
+      "revId": "58e9848edbfa0962889326a3190b5d77dd811c3b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
