@@ -31,6 +31,7 @@ import android.database.sqlite.SQLiteDoneException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.net.ConnectivitySettingsManager;
+import android.os.Build;
 import android.os.Environment;
 import android.os.RemoteException;
 import android.os.SystemProperties;
@@ -388,6 +389,10 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
             loadStringSetting(stmt, LineageSettings.Global.GLOBAL_VPN_APP,
                     R.string.def_global_vpn_app);
+
+            // Always allow USB for debuggable builds; otherwise, allow only when unlocked.
+            loadSetting(stmt, LineageSettings.Global.TRUST_RESTRICT_USB,
+                    Build.IS_DEBUGGABLE ? "0" : "1");
         } finally {
             if (stmt != null) stmt.close();
         }
