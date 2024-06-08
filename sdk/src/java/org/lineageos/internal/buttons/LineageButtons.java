@@ -190,7 +190,7 @@ public final class LineageButtons {
             Resources res = mContext.getResources();
 
             mVolBtnMusicControls = LineageSettings.System.getIntForUser(
-                    resolver, LineageSettings.System.VOLBTN_MUSIC_CONTROLS, 1,
+                    resolver, LineageSettings.System.VOLBTN_MUSIC_CONTROLS, 0,
                     UserHandle.USER_CURRENT) == 1;
 
             if (DEBUG) {
