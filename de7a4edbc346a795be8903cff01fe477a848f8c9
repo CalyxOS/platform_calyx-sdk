@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e120f10_ac9b95d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-11T15:42:14Z",
+      "side": 1,
+      "message": "393146: ChargingControl: Decouple charging control and main logic | https://review.lineageos.org/c/LineageOS/android_lineage-sdk/+/393146",
+      "revId": "de7a4edbc346a795be8903cff01fe477a848f8c9",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
