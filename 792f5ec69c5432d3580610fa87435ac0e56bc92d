@@ -16,6 +16,24 @@
       "message": "Should we setup translations for these?",
       "revId": "792f5ec69c5432d3580610fa87435ac0e56bc92d",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fddb4f52_a2f13dcc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-24T13:33:56Z",
+      "side": 1,
+      "message": "Yes, but it doesn\u0027t have to block these commits.",
+      "parentUuid": "360ab6ff_b8c5854e",
+      "revId": "792f5ec69c5432d3580610fa87435ac0e56bc92d",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
