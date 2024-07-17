@@ -52,6 +52,24 @@
       "parentUuid": "f1cdc47f_f951b945",
       "revId": "6b4723130337909db75b908e8e820e033c5ed325",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cba9651_88940d3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-17T20:57:02Z",
+      "side": 1,
+      "message": "PS4: Some more misc removals",
+      "parentUuid": "e3667b7a_891b75d8",
+      "revId": "6b4723130337909db75b908e8e820e033c5ed325",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
