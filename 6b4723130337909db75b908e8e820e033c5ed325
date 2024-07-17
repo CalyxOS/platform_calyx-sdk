@@ -34,6 +34,24 @@
       "parentUuid": "ad0c3275_6ec5b4c6",
       "revId": "6b4723130337909db75b908e8e820e033c5ed325",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3667b7a_891b75d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-17T20:53:09Z",
+      "side": 1,
+      "message": "PS3: Removed sim specific and device-specific (density) code.",
+      "parentUuid": "f1cdc47f_f951b945",
+      "revId": "6b4723130337909db75b908e8e820e033c5ed325",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
