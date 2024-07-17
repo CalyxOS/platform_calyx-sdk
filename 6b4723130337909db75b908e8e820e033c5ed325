@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad0c3275_6ec5b4c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-17T16:06:03Z",
+      "side": 1,
+      "message": "PS1: Copied as-is",
+      "revId": "6b4723130337909db75b908e8e820e033c5ed325",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
