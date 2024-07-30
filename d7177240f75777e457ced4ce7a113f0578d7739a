@@ -16,6 +16,24 @@
       "message": "While it\u0027s a bit odd to use a boolean validator for something referred to as a \"mode\", we do only have two modes, so this seems fine enough. Just a small nit; no action needed imo.",
       "revId": "d7177240f75777e457ced4ce7a113f0578d7739a",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a448c9d3_02dae0f6",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 3044,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-07-30T16:51:28Z",
+      "side": 1,
+      "message": "(That said, looks like we do have an example of how to use an integer for two modes directly above.)",
+      "parentUuid": "609858a1_0041a185",
+      "revId": "d7177240f75777e457ced4ce7a113f0578d7739a",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
