@@ -3084,6 +3084,15 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR =
                 sNonNegativeIntegerValidator;
+
+        /**
+         * The amount of time in milliseconds before strong auth is required
+         * @hide
+         */
+        public static final String STRONG_AUTH_TIMEOUT_MS = "strong_auth_timeout_ms";
+
+        /** @hide */
+        public static final Validator STRONG_AUTH_TIMEOUT_MS_VALIDATOR = sNonNegativeLongValidator;
         // endregion
 
         /**
@@ -3124,6 +3133,7 @@ public final class LineageSettings {
                     USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR);
             VALIDATORS.put(MAXIMUM_FAILED_PASSWORDS_FOR_WIPE,
                     MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR);
+            VALIDATORS.put(STRONG_AUTH_TIMEOUT_MS, STRONG_AUTH_TIMEOUT_MS_VALIDATOR);
         }
     }
 
