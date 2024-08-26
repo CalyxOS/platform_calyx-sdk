@@ -3053,6 +3053,17 @@ public final class LineageSettings {
 
         public static final Validator USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR =
                 sBooleanValidator;
+
+        /**
+         * Number of failed password attempts before wiping
+         * @hide
+         */
+        public static final String MAXIMUM_FAILED_PASSWORDS_FOR_WIPE =
+                "maximum_failed_passwords_for_wipe";
+
+        /** @hide */
+        public static final Validator MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR =
+                sNonNegativeIntegerValidator;
         // endregion
 
         /**
@@ -3091,6 +3102,8 @@ public final class LineageSettings {
             VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
             VALIDATORS.put(USER_SWITCHER_HIDDEN_WHEN_LOCKED,
                     USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR);
+            VALIDATORS.put(MAXIMUM_FAILED_PASSWORDS_FOR_WIPE,
+                    MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR);
         }
     }
 
