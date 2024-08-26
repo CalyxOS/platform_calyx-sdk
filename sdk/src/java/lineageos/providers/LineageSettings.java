@@ -3032,6 +3032,15 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 1);
+
+        /**
+         * The amount of time in milliseconds before strong auth is required
+         * @hide
+         */
+        public static final String STRONG_AUTH_TIMEOUT_MS = "strong_auth_timeout_ms";
+
+        /** @hide */
+        public static final Validator STRONG_AUTH_TIMEOUT_MS_VALIDATOR = sNonNegativeLongValidator;
         // endregion
 
         /**
@@ -3067,6 +3076,7 @@ public final class LineageSettings {
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
             VALIDATORS.put(USER_ACTIVITY_END_TIME, USER_ACTIVITY_END_TIME_VALIDATOR);
             VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
+            VALIDATORS.put(STRONG_AUTH_TIMEOUT_MS, STRONG_AUTH_TIMEOUT_MS_VALIDATOR);
         }
     }
 
