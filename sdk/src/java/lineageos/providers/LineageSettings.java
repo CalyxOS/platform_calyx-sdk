@@ -3033,6 +3033,17 @@ public final class LineageSettings {
                 new InclusiveIntegerRangeValidator(0, 1);
 
         /**
+<<<<<<< PATCH SET (3a560c Add preference key for maximum failed passwords for wipe, se)
+         * Number of failed password attempts before wiping
+         * @hide
+         */
+        public static final String MAXIMUM_FAILED_PASSWORDS_FOR_WIPE =
+                "maximum_failed_passwords_for_wipe";
+
+        /** @hide */
+        public static final Validator MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR =
+                sNonNegativeIntegerValidator;
+=======
          * Whether or not switching users is allowed from lockscreen.
          * @hide
          */
@@ -3041,6 +3052,7 @@ public final class LineageSettings {
 
         public static final Validator USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR =
                 sBooleanValidator;
+>>>>>>> BASE      (807bda User timeout feature II)
         // endregion
 
         /**
@@ -3077,8 +3089,13 @@ public final class LineageSettings {
             VALIDATORS.put(USER_ACTIVITY_END_TIME, USER_ACTIVITY_END_TIME_VALIDATOR);
             VALIDATORS.put(USER_ACTIVITY_END_TIME_MODE, USER_ACTIVITY_END_TIME_MODE_VALIDATOR);
             VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
+<<<<<<< PATCH SET (3a560c Add preference key for maximum failed passwords for wipe, se)
+            VALIDATORS.put(MAXIMUM_FAILED_PASSWORDS_FOR_WIPE,
+                    MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR);
+=======
             VALIDATORS.put(USER_SWITCHER_HIDDEN_WHEN_LOCKED,
                     USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR);
+>>>>>>> BASE      (807bda User timeout feature II)
         }
     }
 
