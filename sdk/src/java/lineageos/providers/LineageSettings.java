@@ -3032,6 +3032,17 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 1);
+
+        /**
+         * Number of failed password attempts before wiping
+         * @hide
+         */
+        public static final String MAXIMUM_FAILED_PASSWORDS_FOR_WIPE =
+                "maximum_failed_passwords_for_wipe";
+
+        /** @hide */
+        public static final Validator MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR =
+                sNonNegativeIntegerValidator;
         // endregion
 
         /**
@@ -3067,6 +3078,8 @@ public final class LineageSettings {
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
             VALIDATORS.put(USER_ACTIVITY_END_TIME, USER_ACTIVITY_END_TIME_VALIDATOR);
             VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
+            VALIDATORS.put(MAXIMUM_FAILED_PASSWORDS_FOR_WIPE,
+                    MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR);
         }
     }
 
