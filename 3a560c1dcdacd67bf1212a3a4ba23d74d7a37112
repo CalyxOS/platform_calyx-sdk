@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f919e6c_87125014",
+        "filename": "sdk/src/java/lineageos/providers/LineageSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3045,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-09-19T15:25:45Z",
+      "side": 1,
+      "message": "I can see from the other changes that 0 means the feature is off. The Settings app controls what you can set it to. If someone were tricky they could use `settings --lineage` to make this something ridiculous like 1, but that\u0027s unlikely so probably acceptable? (Resolving on purpose since this is just a thought.)",
+      "revId": "3a560c1dcdacd67bf1212a3a4ba23d74d7a37112",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
