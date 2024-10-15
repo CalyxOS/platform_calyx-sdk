@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e6edbf4_a2f5703a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-10-15T16:38:01Z",
+      "side": 1,
+      "message": "It\u0027d be good to merge tags for calyx repos",
+      "revId": "5c59cd086011f2b0e2defec47b29d1cabfc42686",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
