@@ -87,6 +87,24 @@
       "message": "Didn\u0027t we remove the old migration code before and then bring it back for some reason, or am I thinking of something else?\n\nI\u0027d want to be sure, whatever that reason was, isn\u0027t something that we should be taking into consideration again now.",
       "revId": "4d3d3c432973272f8a9ea4984ecda9f997072179",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25f18fb4_edf72677",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-10-17T20:35:30Z",
+      "side": 1,
+      "message": "I discarded this comment but it got submitted anyway. Please disregard.",
+      "parentUuid": "f88f39bf_6df8b360",
+      "revId": "4d3d3c432973272f8a9ea4984ecda9f997072179",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ],
   "submitRequirementResults": [
