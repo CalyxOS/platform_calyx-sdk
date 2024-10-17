@@ -86,6 +86,40 @@
       "message": "The 15 variant worked, so this should, too.",
       "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8a73196_dc90ef0c",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-10-17T21:21:22Z",
+      "side": 1,
+      "message": "Unnecessary change, java imports always go to the end",
+      "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19d6b193_b6a0d4f2",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-10-17T21:21:22Z",
+      "side": 1,
+      "message": "This doesn\u0027t need to be inside the try block",
+      "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
