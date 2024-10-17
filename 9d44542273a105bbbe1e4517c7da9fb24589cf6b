@@ -33,6 +33,24 @@
       "message": "Just a reminder that ideally this is in the last 14 build before anyone is upgraded to 15",
       "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "079ff1de_e89cb788",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-10-17T20:34:00Z",
+      "side": 1,
+      "message": "And the 15 patch needs to at least not set the value anymore. Not sure if it should also contain the migration part",
+      "parentUuid": "58132ff4_1c37ca00",
+      "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
