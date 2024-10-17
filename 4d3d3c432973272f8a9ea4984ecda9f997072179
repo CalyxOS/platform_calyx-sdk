@@ -140,6 +140,23 @@
       "message": "Test:\n1. Prior to this change, check `adb shell settings get global uids_allowed_on_restricted_networks`, and it should have various values.\n2. Update to a build with this change.\n3. `adb shell settings get global uids_allowed_on_restricted_networks` will be empty.\n4. Run `adb shell settings put global uids_allowed_on_restricted_networks 2000` and reboot.\n5. Ensure `adb shell settings get global uids_allowed_on_restricted_networks` still contains `2000` so that we know the migration isn\u0027t being repeated for some reason.\n6. Now you can empty it again: `adb shell \u0027settings put global uids_allowed_on_restricted_networks \"\"\u0027`",
       "revId": "4d3d3c432973272f8a9ea4984ecda9f997072179",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41f133a7_17673016",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-10-17T23:14:52Z",
+      "side": 1,
+      "message": "31761: Revert \"Stop reading UIDS_ALLOWED_ON_RESTRICTED_NETWORKS setting in PermissionMonitor\" | https://review.calyxos.org/c/CalyxOS/platform_packages_modules_Connectivity/+/31761",
+      "revId": "4d3d3c432973272f8a9ea4984ecda9f997072179",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ],
   "submitRequirementResults": [
