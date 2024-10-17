@@ -16,6 +16,24 @@
       "message": "I guess if we merge this in 14, make it mandatory to update to it before updating to 15 and update the merge commit here we won\u0027t need this patch here",
       "revId": "4d3d3c432973272f8a9ea4984ecda9f997072179",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d40a5d1f_dc32fba7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-10-17T20:27:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0050fd82_a40ada91",
+      "revId": "4d3d3c432973272f8a9ea4984ecda9f997072179",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ],
   "submitRequirementResults": [
