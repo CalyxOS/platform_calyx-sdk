@@ -51,6 +51,24 @@
       "parentUuid": "58132ff4_1c37ca00",
       "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c19e7560_ed24fbe0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-10-17T20:41:33Z",
+      "side": 1,
+      "message": "It\u0027s too late for that for the test builds at least.\n\nBut for stable, it\u0027ll be included.",
+      "parentUuid": "079ff1de_e89cb788",
+      "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
