@@ -105,6 +105,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "41d9f8cd_13d334d9",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-10-18T20:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8a73196_dc90ef0c",
+      "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19d6b193_b6a0d4f2",
@@ -118,6 +136,24 @@
       "writtenOn": "2024-10-17T21:21:22Z",
       "side": 1,
       "message": "This doesn\u0027t need to be inside the try block",
+      "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "010f7443_57b710fb",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-10-18T20:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19d6b193_b6a0d4f2",
       "revId": "9d44542273a105bbbe1e4517c7da9fb24589cf6b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
