@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afc50a48_605ced4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-10-24T17:06:42Z",
+      "side": 1,
+      "message": "Should this be updated to match Lineage as was done for https://review.calyxos.org/c/CalyxOS/platform_calyx-sdk/+/31371 ?",
+      "revId": "319dad52a5ac424666cc231a2fc7319e84400767",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
