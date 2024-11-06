@@ -188,11 +188,6 @@
          accidental unlocks when the screen is off. -->
     <java-symbol type="bool" name="config_proximityCheckOnFpsUnlock" />
 
-    <!-- Package Manager -->
-    <java-symbol type="array" name="config_deviceDisabledComponents" />
-    <java-symbol type="array" name="config_globallyDisabledComponents" />
-    <java-symbol type="array" name="config_forceEnabledComponents" />
-
     <!-- Health interface -->
     <java-symbol type="bool" name="config_chargingControlEnabled" />
     <java-symbol type="integer" name="config_defaultChargingControlMode" />
@@ -212,4 +207,7 @@
 
     <!-- Lockscreen rotation default -->
     <java-symbol type="bool" name="config_lockScreenRotationEnabledByDefault" />
+
+    <!-- Advanced rotation settings -->
+    <java-symbol type="bool" name="config_enableAdvancedRotationSettings" />
 </resources>
