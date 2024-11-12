@@ -3021,6 +3021,16 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 1);
+
+        /**
+         * Whether or not switching users is allowed from lockscreen.
+         * @hide
+         */
+        public static final String USER_SWITCHER_HIDDEN_WHEN_LOCKED =
+                "user_switcher_hidden_when_locked";
+
+        public static final Validator USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR =
+                sBooleanValidator;
         // endregion
 
         /**
@@ -3056,6 +3066,8 @@ public final class LineageSettings {
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
             VALIDATORS.put(USER_ACTIVITY_END_TIME, USER_ACTIVITY_END_TIME_VALIDATOR);
             VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
+            VALIDATORS.put(USER_SWITCHER_HIDDEN_WHEN_LOCKED,
+                    USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR);
         }
     }
 
