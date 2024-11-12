@@ -3031,6 +3031,16 @@ public final class LineageSettings {
 
         public static final Validator DISABLE_QUICK_SETTINGS_ON_LOCK_SCREEN_VALIDATOR =
                 sBooleanValidator;
+
+        /**
+         * Whether or not switching users is allowed from lockscreen.
+         * @hide
+         */
+        public static final String USER_SWITCHER_HIDDEN_WHEN_LOCKED =
+                "user_switcher_hidden_when_locked";
+
+        public static final Validator USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR =
+                sBooleanValidator;
         // endregion
 
         /**
@@ -3066,6 +3076,8 @@ public final class LineageSettings {
             VALIDATORS.put(DEFAULT_RESTRICT_NETWORK_DATA, DEFAULT_RESTRICT_NETWORK_DATA_VALIDATOR);
             VALIDATORS.put(DISABLE_QUICK_SETTINGS_ON_LOCK_SCREEN,
                     DISABLE_QUICK_SETTINGS_ON_LOCK_SCREEN_VALIDATOR);
+            VALIDATORS.put(USER_SWITCHER_HIDDEN_WHEN_LOCKED,
+                    USER_SWITCHER_HIDDEN_WHEN_LOCKED_VALIDATOR);
         }
     }
 
