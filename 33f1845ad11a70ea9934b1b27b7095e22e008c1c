@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45af56d7_d4b39321",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-11-14T17:08:00Z",
+      "side": 1,
+      "message": "I don\u0027t think this feature should be removed, but if it were to be removed, ideally it would be removed in a version that includes other changes (some big feature update or major version update) and introduces the change to the user, along with a migration to a replacement behavior, which I assume would be the disabling of quick settings on the keyguard -- a totally different behavior.\n\nI would say that seeking UX feedback would be necessary before proceeding with this.",
+      "revId": "33f1845ad11a70ea9934b1b27b7095e22e008c1c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
