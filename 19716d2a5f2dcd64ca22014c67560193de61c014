@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e0715d3_35023841",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-11-15T14:05:50Z",
+      "side": 1,
+      "message": "See comments on other patches for the same ticket.",
+      "revId": "19716d2a5f2dcd64ca22014c67560193de61c014",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
