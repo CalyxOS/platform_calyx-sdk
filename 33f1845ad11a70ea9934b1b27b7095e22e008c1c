@@ -34,6 +34,23 @@
       "parentUuid": "45af56d7_d4b39321",
       "revId": "33f1845ad11a70ea9934b1b27b7095e22e008c1c",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa2661fe_462a4157",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-11-15T13:49:46Z",
+      "side": 1,
+      "message": "As mentioned above, we can\u0027t just remove a setting that people rely on.",
+      "revId": "33f1845ad11a70ea9934b1b27b7095e22e008c1c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
