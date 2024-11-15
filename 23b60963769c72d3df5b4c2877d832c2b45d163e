@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13e569d1_9d23d087",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-11-15T14:05:19Z",
+      "side": 1,
+      "message": "This is ready but can\u0027t go in until the dependencies are ready too.",
+      "revId": "23b60963769c72d3df5b4c2877d832c2b45d163e",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
