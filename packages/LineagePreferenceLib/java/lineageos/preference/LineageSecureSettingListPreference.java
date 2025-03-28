@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 
 import lineageos.providers.LineageSettings;
 
-
 public class LineageSecureSettingListPreference extends SelfRemovingListPreference {
 
     public LineageSecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) {

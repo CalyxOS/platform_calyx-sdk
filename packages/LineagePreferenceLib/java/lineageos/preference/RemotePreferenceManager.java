@@ -4,6 +4,10 @@
  */
 package lineageos.preference;
 
+import static lineageos.preference.RemotePreference.ACTION_REFRESH_PREFERENCE;
+import static lineageos.preference.RemotePreference.ACTION_UPDATE_PREFERENCE;
+import static lineageos.preference.RemotePreference.EXTRA_KEY;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -17,16 +21,12 @@ import android.os.UserHandle;
 import android.util.ArrayMap;
 import android.util.Log;
 
+import lineageos.platform.Manifest;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-
-import lineageos.platform.Manifest;
-
-import static lineageos.preference.RemotePreference.ACTION_REFRESH_PREFERENCE;
-import static lineageos.preference.RemotePreference.ACTION_UPDATE_PREFERENCE;
-import static lineageos.preference.RemotePreference.EXTRA_KEY;
 
 /**
  * Manages attaching and detaching of RemotePreferences and optimizes callbacks

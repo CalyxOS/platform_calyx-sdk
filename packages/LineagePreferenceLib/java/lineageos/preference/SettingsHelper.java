@@ -15,12 +15,12 @@ import android.provider.Settings;
 import android.util.ArrayMap;
 import android.util.ArraySet;
 
+import lineageos.providers.LineageSettings;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import lineageos.providers.LineageSettings;
 
 public class SettingsHelper {
 

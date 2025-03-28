@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 
 import lineageos.providers.LineageSettings;
 
-
 public class LineageSystemSettingDropDownPreference extends SelfRemovingDropDownPreference {
     public LineageSystemSettingDropDownPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

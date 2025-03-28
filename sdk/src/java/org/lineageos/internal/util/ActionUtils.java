@@ -19,7 +19,6 @@ import android.content.pm.ResolveInfo;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.os.UserHandle;
 import android.util.Log;
 import android.widget.Toast;
 

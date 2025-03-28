@@ -8,8 +8,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
 
-import lineageos.preference.RemotePreference;
-
 /**
  * A link to a remote preference screen which can be used with a minimum amount
  * of information. Supports summary updates asynchronously.

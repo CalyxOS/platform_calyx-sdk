@@ -13,11 +13,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
 
+import lineageos.providers.LineageSettings;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
-import lineageos.providers.LineageSettings;
 
 public class LongScreen {
     private Set<String> mApps = new HashSet<>();

@@ -14,10 +14,10 @@ import android.util.Log;
 
 import com.android.server.ServiceThread;
 
-import org.lineageos.platform.internal.LineageSystemService;
-
 import lineageos.app.LineageContextConstants;
 import lineageos.health.IHealthInterface;
+
+import org.lineageos.platform.internal.LineageSystemService;
 
 import vendor.lineage.health.ChargingControlSupportedMode;
 

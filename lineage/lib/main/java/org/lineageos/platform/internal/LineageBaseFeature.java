@@ -11,9 +11,9 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.UserHandle;
 
-import org.lineageos.platform.internal.common.UserContentObserver;
-
 import lineageos.providers.LineageSettings;
+
+import org.lineageos.platform.internal.common.UserContentObserver;
 
 import java.io.PrintWriter;
 

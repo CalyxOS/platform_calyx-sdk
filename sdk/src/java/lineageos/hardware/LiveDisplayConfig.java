@@ -6,9 +6,9 @@
 package lineageos.hardware;
 
 import static lineageos.hardware.LiveDisplayManager.FEATURE_COLOR_BALANCE;
-import static lineageos.hardware.LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT;
 import static lineageos.hardware.LiveDisplayManager.FEATURE_FIRST;
 import static lineageos.hardware.LiveDisplayManager.FEATURE_LAST;
+import static lineageos.hardware.LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT;
 import static lineageos.hardware.LiveDisplayManager.MODE_FIRST;
 import static lineageos.hardware.LiveDisplayManager.MODE_LAST;
 import static lineageos.hardware.LiveDisplayManager.MODE_OFF;
