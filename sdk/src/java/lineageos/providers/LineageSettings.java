@@ -3072,6 +3072,12 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator STRONG_AUTH_TIMEOUT_MS_VALIDATOR = sNonNegativeLongValidator;
+
+        public static final String CLIPBOARD_AUTO_CLEAR_TIMEOUT = "clipboard_auto_clear_timeout";
+
+        /** @hide */
+        public static final Validator CLIPBOARD_AUTO_CLEAR_TIMEOUT_VALIDATOR =
+                sNonNegativeLongValidator;
         // endregion
 
         /**
@@ -3113,6 +3119,7 @@ public final class LineageSettings {
             VALIDATORS.put(MAXIMUM_FAILED_PASSWORDS_FOR_WIPE,
                     MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR);
             VALIDATORS.put(STRONG_AUTH_TIMEOUT_MS, STRONG_AUTH_TIMEOUT_MS_VALIDATOR);
+            VALIDATORS.put(AUTO_CLEAR_TIMEOUT, AUTO_CLEAR_TIMEOUT_VALIDATOR);
         }
     }
 
