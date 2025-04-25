@@ -2120,6 +2120,12 @@ public final class LineageSettings {
         public static final Validator ENABLE_TASKBAR_VALIDATOR =
                 sBooleanValidator;
 
+        public static final String AUTO_CLEAR_TIMEOUT = "auto_clear_timeout";
+
+        /** @hide */
+        public static final Validator AUTO_CLEAR_TIMEOUT_VALIDATOR =
+                sNonNegativeLongValidator;
+
         /**
          * I can haz more bukkits
          * @hide
@@ -2296,6 +2302,7 @@ public final class LineageSettings {
                     CLICK_PARTIAL_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(ENABLE_TASKBAR,
                     ENABLE_TASKBAR_VALIDATOR);
+            VALIDATORS.put(AUTO_CLEAR_TIMEOUT, AUTO_CLEAR_TIMEOUT_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
