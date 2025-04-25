@@ -3072,6 +3072,19 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator STRONG_AUTH_TIMEOUT_MS_VALIDATOR = sNonNegativeLongValidator;
+
+        /**
+         * The amount of time in millseconds before the clipboard is cleared
+         * @hide
+         */
+        public static final String CLIPBOARD_AUTO_CLEAR_TIMEOUT = "clipboard_auto_clear_timeout";
+
+        // Sync this range's minimum and maximum with our UI preference.
+        // Maximum should not be greater than AOSP default of 1 hour in ClipboardService.
+        // Currently supports a range of (15 seconds, 1 hour).
+        /** @hide */
+        public static final Validator CLIPBOARD_AUTO_CLEAR_TIMEOUT_VALIDATOR =
+                new InclusiveIntegerRangeValidator(15000, 3600000);
         // endregion
 
         /**
@@ -3113,6 +3126,7 @@ public final class LineageSettings {
             VALIDATORS.put(MAXIMUM_FAILED_PASSWORDS_FOR_WIPE,
                     MAXIMUM_FAILED_PASSWORDS_FOR_WIPE_VALIDATOR);
             VALIDATORS.put(STRONG_AUTH_TIMEOUT_MS, STRONG_AUTH_TIMEOUT_MS_VALIDATOR);
+            VALIDATORS.put(CLIPBOARD_AUTO_CLEAR_TIMEOUT, CLIPBOARD_AUTO_CLEAR_TIMEOUT_VALIDATOR);
         }
     }
 
