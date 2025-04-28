@@ -6,6 +6,7 @@
 
 package org.lineageos.lineagesettings;
 
+import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -38,7 +39,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -205,6 +206,16 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                         Settings.Global.UIDS_ALLOWED_ON_RESTRICTED_NETWORKS, "");
             }
             upgradeVersion = 10;
+        }
+
+        if (upgradeVersion < 11) {
+            if (LineageSettings.Secure.getLongForUser(mContext.getContentResolver(),
+                    LineageSettings.Secure.STRONG_AUTH_TIMEOUT_MS, -1, mUserHandle) == 0) {
+                LineageSettings.Secure.putFloatForUser(mContext.getContentResolver(),
+                        LineageSettings.Secure.STRONG_AUTH_TIMEOUT_MS,
+                        DevicePolicyManager.DEFAULT_STRONG_AUTH_TIMEOUT_MS, mUserHandle);
+            }
+            upgradeVersion = 11;
         }
 
         // *** Remember to update DATABASE_VERSION above!
