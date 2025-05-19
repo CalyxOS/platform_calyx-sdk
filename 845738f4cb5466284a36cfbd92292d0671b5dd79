@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d9bda3a_939bc41e",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-05-19T21:34:07Z",
+      "side": 1,
+      "message": "We can\u0027t use LineageSettings this way here, because it\u0027s not ready; it\u0027s still in the process of being upgraded. Currently, I get this error in association with line 212 (the one this comment is attached to), and the system fails to start:\n\n```\nE AndroidRuntime: Caused by: java.lang.IllegalStateException: Cannot access system provider: \u0027lineagesettings\u0027 before system providers are installed!\n```\n\nI think commit 63769995c1ab962c7f6d34e679a1da584e774056 \"Drop \u003c lineage-16.0 database migration support\" contains many now-removed examples of how to do this properly.",
+      "revId": "845738f4cb5466284a36cfbd92292d0671b5dd79",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
