@@ -16,6 +16,24 @@
       "message": "This should be outside the userhandle check, under loadSecureSettings",
       "revId": "8faef0fa46219ea09c06f632d815f3a67721c1ca",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed28e3e1_f5b6ccc6",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2026-03-21T17:35:12Z",
+      "side": 1,
+      "message": "ah, yeah makes sense. Like so? I guess we don\u0027t need to use that cursor method to populate this?",
+      "parentUuid": "ddb418fe_71c6654c",
+      "revId": "8faef0fa46219ea09c06f632d815f3a67721c1ca",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
