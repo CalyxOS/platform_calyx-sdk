@@ -213,6 +213,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private void loadSettings(SQLiteDatabase db) {
         loadSystemSettings(db);
         loadSecureSettings(db);
+        loadIdentityCheckPromoCardShownSetting();
         // The global table only exists for the 'owner' user
         if (mUserHandle == UserHandle.USER_SYSTEM) {
             loadGlobalSettings(db);
@@ -317,6 +318,11 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         } finally {
             if (stmt != null) stmt.close();
         }
+    }
+
+    private void loadIdentityCheckPromoCardShownSetting() {
+        Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.IDENTITY_CHECK_PROMO_CARD_SHOWN, 1, mUserHandle);
     }
 
     private void loadRestrictedNetworkingModeSetting() {
