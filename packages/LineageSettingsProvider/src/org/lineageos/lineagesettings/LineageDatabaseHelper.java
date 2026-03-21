@@ -257,6 +257,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         } finally {
             if (stmt != null) stmt.close();
         }
+        loadDisableIdentityCheckSetting();
     }
 
     private void loadSystemSettings(SQLiteDatabase db) {
@@ -336,6 +337,11 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.DISABLE_WINDOW_BLURS,
                 mContext.getResources().getInteger(R.integer.def_disable_window_blurs));
+    }
+
+    private void loadDisableIdentityCheckSetting() {
+        Settings.Secure.putInt(mContext.getContentResolver(),
+                Settings.Secure.IDENTITY_CHECK_PROMO_CARD_SHOWN, 1);
     }
 
     /**
