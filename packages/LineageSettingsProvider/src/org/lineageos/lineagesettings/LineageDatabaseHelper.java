@@ -254,6 +254,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         } finally {
             if (stmt != null) stmt.close();
         }
+        loadIdentityCheckPromoCardShownSetting();
     }
 
     private void loadSystemSettings(SQLiteDatabase db) {
@@ -322,6 +323,11 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         } finally {
             if (stmt != null) stmt.close();
         }
+    }
+
+    private void loadIdentityCheckPromoCardShownSetting() {
+        Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.IDENTITY_CHECK_PROMO_CARD_SHOWN, 1, mUserHandle);
     }
 
     private void loadRestrictedNetworkingModeSetting() {
