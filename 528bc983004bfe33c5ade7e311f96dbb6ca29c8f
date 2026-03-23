@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57f4ccf3_2dcedb5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2026-03-23T17:26:17Z",
+      "side": 1,
+      "message": "On my debug builds this was set to `Allow new USB gadgets always`",
+      "revId": "528bc983004bfe33c5ade7e311f96dbb6ca29c8f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
