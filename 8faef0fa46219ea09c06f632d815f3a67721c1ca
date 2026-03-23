@@ -34,6 +34,24 @@
       "parentUuid": "ddb418fe_71c6654c",
       "revId": "8faef0fa46219ea09c06f632d815f3a67721c1ca",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73978960_b2333ab8",
+        "filename": "packages/LineageSettingsProvider/src/org/lineageos/lineagesettings/LineageDatabaseHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2026-03-23T08:13:20Z",
+      "side": 1,
+      "message": "The cursor stuff is only for the LineageSettings table, we don\u0027t need it to write to AOSP settings.",
+      "parentUuid": "ed28e3e1_f5b6ccc6",
+      "revId": "8faef0fa46219ea09c06f632d815f3a67721c1ca",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
