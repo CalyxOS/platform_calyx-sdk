@@ -16,6 +16,23 @@
       "message": "I tested the wipe after 5 failed unlock attempts and the device was indeed factory reset afterwards. I had the percentage progressbar again at the boot after reset.",
       "revId": "10745e396b3ceb9bdbb28261c8b7eef6b304dbfd",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8acfb2f8_45bbca2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2026-03-23T16:57:26Z",
+      "side": 1,
+      "message": "note that the feature isn\u0027t found when searching for \"wipe\". Also in current settings the feature is kinda hard to find.",
+      "revId": "10745e396b3ceb9bdbb28261c8b7eef6b304dbfd",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
