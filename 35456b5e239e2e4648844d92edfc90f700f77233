@@ -16,6 +16,24 @@
       "message": "This works for the main user, but if I create other users, they still get the notification. any idea why this could be?",
       "revId": "35456b5e239e2e4648844d92edfc90f700f77233",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b86d0517_b84f7bf1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2026-03-25T16:56:03Z",
+      "side": 1,
+      "message": "Should be fixed now in patchset 5",
+      "parentUuid": "b8002a80_4384115d",
+      "revId": "35456b5e239e2e4648844d92edfc90f700f77233",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
