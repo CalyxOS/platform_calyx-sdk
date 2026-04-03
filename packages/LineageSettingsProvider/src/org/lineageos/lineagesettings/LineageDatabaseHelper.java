@@ -220,6 +220,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadGlobalSettings(db);
             loadRestrictedNetworkingModeSetting();
             loadDisableWindowBlursSetting();
+            loadAllowUserSwitchingWhenSystemUserLockedSetting();
         }
     }
 
@@ -339,6 +340,11 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.DISABLE_WINDOW_BLURS,
                 mContext.getResources().getInteger(R.integer.def_disable_window_blurs));
+    }
+
+    private void loadAllowUserSwitchingWhenSystemUserLockedSetting() {
+        Settings.Global.putInt(mContext.getContentResolver(),
+                Settings.Global.ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED, 1);
     }
 
     /**
