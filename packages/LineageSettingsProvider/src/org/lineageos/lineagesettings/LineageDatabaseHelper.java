@@ -37,7 +37,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "lineagesettings.db";
-    private static final int DATABASE_VERSION = 24;
+    private static final int DATABASE_VERSION = 25;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -351,6 +351,20 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             // Set default value for Settings.Global.DISABLE_WINDOW_BLURS
             loadDisableWindowBlursSetting();
             upgradeVersion = 24;
+        }
+
+        if (upgradeVersion < 25) {
+            try {
+				String packageName = "org.calyxos.lupin.updater";
+                context.getSystemService(AppOpsManager.class).setMode(
+                        AppOpsManager.OP_REQUEST_INSTALL_PACKAGES,
+                        context.getPackageManager().getPackageUid(packageName, 0),
+                        packageName,
+                        AppOpsManager.MODE_ALLOWED);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to grant install unknown apps permission to " + packageName, e);
+            }
+            upgradeVersion = 25;
         }
 
         // *** Remember to update DATABASE_VERSION above!
