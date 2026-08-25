@@ -6,6 +6,7 @@
 
 package org.lineageos.lineagesettings;
 
+import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -38,7 +39,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "calyxsettings.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public static class LineageTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -147,6 +148,20 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (LOCAL_LOGV) Log.d(TAG, "Upgrading from version: " + oldVersion + " to " + newVersion);
         int upgradeVersion = oldVersion;
+
+        if (upgradeVersion < 2) {
+            String packageName = "org.calyxos.lupin.updater";
+            try {
+                mContext.getSystemService(AppOpsManager.class).setMode(
+                        AppOpsManager.OP_REQUEST_INSTALL_PACKAGES,
+                        mContext.getPackageManager().getPackageUid(packageName, 0),
+                        packageName,
+                        AppOpsManager.MODE_ALLOWED);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to grant install unknown apps permission to " + packageName, e);
+            }
+            upgradeVersion = 2;
+        }
 
         // *** Remember to update DATABASE_VERSION above!
         if (upgradeVersion != newVersion) {
