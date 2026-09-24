@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d92db192_ba416f7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2026-09-24T23:51:04Z",
+      "side": 1,
+      "message": "This should be merged in the same build as the one we include LupinUpdater",
+      "revId": "eb7fdcf40c2ac1271fdc2b0618d1f8d24466e6f1",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
